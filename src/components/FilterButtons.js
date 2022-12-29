@@ -84,9 +84,6 @@ const FilterButtons = ({ initialState, setFiltered, setActive, active }) => {
 const Wrapper = styled.div`
   .project-btns {
     display: flex;
-
-    /* grid-template-rows: repeat(auto-fit, minmax (3rem, 1fr)); */
-    /* border: var(--border-red); */
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
@@ -95,6 +92,13 @@ const Wrapper = styled.div`
 
   .project-btns a button {
     width: 12rem;
+  }
+
+  .hero-btn-1,
+  .hero-btn-2 {
+    max-width: 8rem;
+    padding: 0.7rem 0.8rem;
+    font-size: 0.6em;
   }
 
   button.active {

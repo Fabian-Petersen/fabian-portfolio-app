@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import FilterButtons from "./FilterButtons";
 import projects from "../projectData";
-import { motion, AnimatePresence } from "framer-motion";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Projects = () => {
   const [initialState, setInitialState] = useState(projects);
   const [filtered, setFiltered] = useState(projects);
   const [active, setActive] = useState(" ");
-  // console.log(setFiltered);
+
   return (
     <Wrapper>
       <section className="section projects" id="projects">
@@ -27,24 +28,19 @@ const Projects = () => {
           active={active}
           setActive={setActive}
         />
-        <motion.div
-          layout
-          aniamate={{ opacity: 0 }}
-          initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="section-center projects-center"
-        >
+        <div className="section-center projects-center">
           {filtered.map((project) => {
-            const { id, name, language, image, url } = project;
+            const { id, name, language, image, url, code } = project;
             return (
-              <AnimatePresence>
+              <div className="project" key={id}>
                 <a
+                  className="project-item"
+                  target="_blank"
+                  rel="noreferrer"
                   layout
-                  key={id}
                   href={url}
-                  className="project-item project-1"
                 >
-                  <article className="project">
+                  <article>
                     <img
                       src={image}
                       alt="single project"
@@ -56,10 +52,18 @@ const Projects = () => {
                     </div>
                   </article>
                 </a>
-              </AnimatePresence>
+                <a
+                  href={code}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="project-code-link"
+                >
+                  <FontAwesomeIcon icon={faGithub} className="code-icon" />
+                </a>
+              </div>
             );
           })}
-        </motion.div>
+        </div>
       </section>
     </Wrapper>
   );
@@ -78,23 +82,37 @@ const Wrapper = styled.section`
   }
 
   .project {
-    position: relative;
     background: var(--clr-primary-5);
     border-radius: var(--radius);
     margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .project-item {
+    width: 100%;
+    display: grid;
+    border: var(--border-white);
+  }
+
+  .project article {
+    position: relative;
   }
 
   .project-info {
     text-align: center;
-    color: var(--clr-white);
+    color: var(--clr-blue);
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: var(--transition);
     opacity: 0;
+    width: 90%;
   }
 
+  .project-info h4 {
+    font-size: 1.3rem;
+  }
   .project-info p {
     text-transform: capitalize;
     color: var(--clr-white);
@@ -122,15 +140,29 @@ const Wrapper = styled.section`
     transform: scale(0.8);
   }
 
-  .show {
-    visibility: hidden;
+  .project-code-link {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    color: white;
   }
 
-  .hero-btn-1,
-  .hero-btn-2 {
-    max-width: 8rem;
-    padding: 0.7rem 0.8rem;
-    font-size: 0.6em;
+  .project:hover .project-code-link {
+    opacity: 1;
+  }
+
+  .code-icon {
+    color: white;
+    font-size: 2rem;
+    color: var(--clr-white);
+  }
+
+  .code-icon:hover {
+    cursor: pointer;
+    color: var(--clr-yellow);
+    opacity: 1;
   }
 
   @media screen and (min-width: 676px) {
