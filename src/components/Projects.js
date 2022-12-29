@@ -68,7 +68,6 @@ const Projects = () => {
 const Wrapper = styled.section`
   .projects {
     min-height: 60vh;
-    padding-bottom: 10rem;
   }
 
   .projects-text {
@@ -153,35 +152,6 @@ const Wrapper = styled.section`
   @media screen and (min-width: 992px) {
     .projects-center {
       grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  @media screen and (min-width: 1170px) {
-    .projects-center {
-      grid-template-rows: 200px 200px;
-      gap: 1rem;
-      grid-template-areas:
-        "a b b"
-        "a c d";
-    }
-    .project-img {
-      height: 100%;
-    }
-    .project {
-      height: 100%;
-    }
-
-    .project-2 {
-      grid-area: a;
-    }
-    .project-1 {
-      grid-area: b;
-    }
-    .project-3 {
-      grid-area: c;
-    }
-    .project-4 {
-      grid-area: d;
     }
   }
 `;

@@ -5,5 +5,15 @@ import SideBar from "./SideBar";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import Projects from "./Projects";
+import Background from "./BackgroundSVG";
 
-export { About, Navbar, Header, SideBar, Projects, Contact, Footer };
+export {
+  About,
+  Background,
+  Navbar,
+  Header,
+  SideBar,
+  Projects,
+  Contact,
+  Footer,
+};

@@ -32,8 +32,9 @@ const Footer = () => {
           </li>
         </ul>
         <p>
-          &copy;
-          <span id="date"></span> Fabian Petersen. All Rights Reserved
+          <span id="date">&copy; {new Date().getFullYear()}</span> Fabian
+          Petersen.
+          <span>All Rights Reserved</span>
         </p>
       </footer>
     </Wrapper>
@@ -42,14 +43,17 @@ const Footer = () => {
 
 const Wrapper = styled.footer`
   .footer {
-    padding-bottom: 2rem;
+    padding: 2rem;
     background-color: var(--clr-grey-head-1);
     display: grid;
     place-items: center;
   }
 
-  .footer .social-icons {
+  .social-icons {
     margin-bottom: 1.5rem;
+    display: flex;
+    font-size: 2rem;
+    gap: 2rem;
   }
 
   .footer .social-icon {
@@ -61,7 +65,9 @@ const Wrapper = styled.footer`
     color: var(--clr-yellow);
   }
 
-  .footer p {
+  p {
+    display: flex;
+    gap: 0.6rem;
     font-size: 1rem;
     text-transform: capitalize;
   }

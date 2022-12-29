@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Icons from "../assets/images/icons";
+import Background from "./BackgroundSVG";
 
 // import bgImage from "../assets/images/hero-simple-shiny-bg.svg";
 
@@ -10,6 +11,7 @@ const Header = () => {
   return (
     <Wrapper>
       <header className="hero section" id="home">
+        <Background />
         <div className="section-center hero-center">
           <article className="hero-info">
             <div className="underline"></div>
@@ -58,6 +60,10 @@ const Header = () => {
 };
 
 const Wrapper = styled.header`
+  header {
+    position: realtive;
+  }
+
   /* @import url("../assets/images/hero-simple-shiny-bg/svg"); */
   .hero .underline {
     margin-bottom: 0.8rem;
@@ -65,12 +71,12 @@ const Wrapper = styled.header`
   }
 
   .hero {
-    background-color: var(--clr-grey-head-1);
+    /* background-color: var(--clr-grey-head-1); */
     /* background-size: cover; */
   }
 
   .hero-center {
-    min-height: calc(100vh - 5rem);
+    min-height: calc(100vh - 3rem);
     display: grid;
     place-items: center;
   }
