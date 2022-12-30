@@ -1,12 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 
-const FilterButtons = ({ initialState, setFiltered, setActive, active }) => {
+const FilterButtons = ({
+  initialState,
+  setFiltered,
+  setActive,
+  active,
+  openModal,
+  setOpenModal,
+}) => {
   const handleClick = (lang) => () => {
     setActive(lang);
     const filtered = initialState.filter(
       (project) => project.language === lang
     );
+
+    if (filtered.length === 0) {
+      setOpenModal(true);
+    }
+
     setFiltered(filtered);
   };
 

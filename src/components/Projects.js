@@ -4,14 +4,25 @@ import FilterButtons from "./FilterButtons";
 import projects from "../projectData";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Modal from "./Modal";
 
 const Projects = () => {
   const [initialState, setInitialState] = useState(projects);
   const [filtered, setFiltered] = useState(projects);
   const [active, setActive] = useState(" ");
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <Wrapper>
+      {openModal ? (
+        <Modal
+          openModal={openModal}
+          setOpenModal={setOpenModal}
+          active={active}
+        />
+      ) : (
+        ""
+      )}
       <section className="section projects" id="projects">
         <div className="section-title">
           <h2>Projects</h2>
@@ -27,6 +38,8 @@ const Projects = () => {
           setInitialState={setInitialState}
           active={active}
           setActive={setActive}
+          openModal={openModal}
+          setOpenModal={setOpenModal}
         />
         <div className="section-center projects-center">
           {filtered.map((project) => {
@@ -37,7 +50,6 @@ const Projects = () => {
                   className="project-item"
                   target="_blank"
                   rel="noreferrer"
-                  layout
                   href={url}
                 >
                   <article>
@@ -145,7 +157,8 @@ const Wrapper = styled.section`
     top: 60%;
     left: 50%;
     transform: translateX(-50%);
-    opacity: 0;
+    //Change this back to 0 hide the icon
+    opacity: 1;
     color: white;
   }
 
@@ -157,12 +170,27 @@ const Wrapper = styled.section`
     color: white;
     font-size: 2rem;
     color: var(--clr-white);
+    border: var(--border-red);
+    border-radius: 50%;
+  }
+
+  .code-icon::after {
+    content: "";
+    background-color: blue;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 
   .code-icon:hover {
     cursor: pointer;
     color: var(--clr-yellow);
     opacity: 1;
+    transform: translateY(-2px);
   }
 
   @media screen and (min-width: 676px) {

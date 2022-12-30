@@ -69,7 +69,7 @@ const projects = [
   {
     id: 7,
     name: "comfy-sloth",
-    language: "gatsby",
+    language: "javascript",
     description: "Random e-commerce store for your favourite items",
     image: projectDemo4,
     url: "",
@@ -78,7 +78,7 @@ const projects = [
   {
     id: 8,
     name: "comfy-sloth",
-    language: "next",
+    language: "javascript",
     description: "Random e-commerce store for your favourite items",
     image: projectDemo1,
     url: "",

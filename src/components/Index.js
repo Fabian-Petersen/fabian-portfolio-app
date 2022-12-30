@@ -6,6 +6,7 @@ import Contact from "./Contact";
 import Footer from "./Footer";
 import Projects from "./Projects";
 import Background from "./BackgroundSVG";
+import Modal from "./Modal";
 
 export {
   About,
@@ -16,4 +17,5 @@ export {
   Projects,
   Contact,
   Footer,
+  Modal,
 };
