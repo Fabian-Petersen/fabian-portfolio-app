@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import FilterButtons from "./FilterButtons";
 import projects from "../projectData";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Modal from "./Modal";
+import PulseIcon from "./PulseIcon";
 
 const Projects = () => {
   const [initialState, setInitialState] = useState(projects);
@@ -60,18 +59,11 @@ const Projects = () => {
                     />
                     <div className="project-info">
                       <h4>{name}</h4>
-                      <p>{language}</p>
+                      <p>Designed with {language}</p>
                     </div>
                   </article>
                 </a>
-                <a
-                  href={code}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="project-code-link"
-                >
-                  <FontAwesomeIcon icon={faGithub} className="code-icon" />
-                </a>
+                <PulseIcon code={code} />
               </div>
             );
           })}
@@ -82,37 +74,43 @@ const Projects = () => {
 };
 
 const Wrapper = styled.section`
-  .projects {
-    min-height: 60vh;
-  }
-
-  .projects-text {
-    width: 85vw;
-    max-width: 30rem;
-    margin: 0 auto;
-    color: #102a42;
-  }
-
   .project {
+    display: flex;
+    flex-direction: column;
     background: var(--clr-primary-5);
     border-radius: var(--radius);
     margin-bottom: 2rem;
+    width: 100%;
+    height: 20rem;
+    background-size: cover;
     position: relative;
+  }
+
+  .project:hover {
+    cursor: pointer;
   }
 
   .project-item {
+    position: relative;
     width: 100%;
-    display: grid;
-    border: var(--border-white);
+    height: 100%;
   }
 
-  .project article {
-    position: relative;
+  .project-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: var(--transition);
+    border-radius: var(--radius);
+    -o-object-fit: cover;
+    object-fit: cover;
   }
 
   .project-info {
     text-align: center;
     color: var(--clr-blue);
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 40%;
     left: 50%;
@@ -125,6 +123,7 @@ const Wrapper = styled.section`
   .project-info h4 {
     font-size: 1.3rem;
   }
+
   .project-info p {
     text-transform: capitalize;
     color: var(--clr-white);
@@ -132,14 +131,6 @@ const Wrapper = styled.section`
 
   .project:hover .project-info {
     opacity: 1;
-  }
-
-  .project-img {
-    transition: var(--transition);
-    border-radius: var(--radius);
-    height: 15rem;
-    -o-object-fit: cover;
-    object-fit: cover;
   }
 
   .project:hover .project-img {
@@ -150,47 +141,6 @@ const Wrapper = styled.section`
   .project:hover::after {
     opacity: 1;
     transform: scale(0.8);
-  }
-
-  .project-code-link {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translateX(-50%);
-    //Change this back to 0 hide the icon
-    opacity: 1;
-    color: white;
-  }
-
-  .project:hover .project-code-link {
-    opacity: 1;
-  }
-
-  .code-icon {
-    color: white;
-    font-size: 2rem;
-    color: var(--clr-white);
-    border: var(--border-red);
-    border-radius: 50%;
-  }
-
-  .code-icon::after {
-    content: "";
-    background-color: blue;
-    width: 100%;
-    height: 100%;
-    border-radius: 100%;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .code-icon:hover {
-    cursor: pointer;
-    color: var(--clr-yellow);
-    opacity: 1;
-    transform: translateY(-2px);
   }
 
   @media screen and (min-width: 676px) {
