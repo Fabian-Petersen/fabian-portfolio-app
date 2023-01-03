@@ -1,26 +1,18 @@
 import React from "react";
 import styled from "styled-components";
+import projects from "../projectData";
 
-const FilterButtons = ({
-  initialState,
-  setFiltered,
-  setActive,
-  active,
-  openModal,
-  setOpenModal,
-}) => {
-  const handleClick = (lang) => () => {
-    setActive(lang);
-    const filtered = initialState.filter(
-      (project) => project.language === lang
-    );
+const FilterButtons = ({ initialState, setFiltered, setActive, active }) => {
+  const handleClick =
+    ({ language }) =>
+    () => {
+      setActive(language);
+      const filtered = initialState.filter(
+        (project) => project.language === language
+      );
 
-    if (filtered.length === 0) {
-      setOpenModal(true);
-    }
-
-    setFiltered(filtered);
-  };
+      setFiltered(filtered);
+    };
 
   const reset = () => {
     setFiltered(initialState);
@@ -30,64 +22,30 @@ const FilterButtons = ({
   return (
     <Wrapper>
       <div className="project-btns section-center">
-        <a href="#1">
-          <button
-            className={
-              active === "javascript"
-                ? "btn hero-btn-1 project-btn active"
-                : "btn hero-btn-1 project-btn"
-            }
-            onClick={handleClick("javascript")}
-          >
-            tutorials
-          </button>
-        </a>
-        <a href="#1">
-          <button
-            className={
-              active === "react"
-                ? "btn hero-btn-1 project-btn active"
-                : "btn hero-btn-1 project-btn"
-            }
-            id="btn-react"
-            onClick={handleClick("react")}
-          >
-            react
-          </button>
-        </a>
-        {/* <a href="#1">
-          <button
-            className={
-              active === "gatsby"
-                ? "btn hero-btn-1 project-btn active"
-                : "btn hero-btn-1 project-btn"
-            }
-            onClick={handleClick("gatsby")}
-          >
-            gatsby
-          </button>
-        </a>
-        <a href="#1">
-          <button
-            className={
-              active === "next"
-                ? "btn hero-btn-1 project-btn active"
-                : "btn hero-btn-1 project-btn"
-            }
-            onClick={handleClick("next")}
-          >
-            next
-          </button>
-        </a> */}
-        <a href="#1">
-          <button
-            className="btn hero-btn-1"
-            id="project-btn-all"
-            onClick={reset}
-          >
-            All
-          </button>
-        </a>
+        <button
+          className={
+            active === "javascript"
+              ? "btn hero-btn-1 project-btn active"
+              : "btn hero-btn-1 project-btn"
+          }
+          onClick={handleClick("javascript")}
+        >
+          tutorials
+        </button>
+        <button
+          className={
+            active === "react"
+              ? "btn hero-btn-1 project-btn active"
+              : "btn hero-btn-1 project-btn"
+          }
+          id="btn-react"
+          onClick={handleClick("react")}
+        >
+          react
+        </button>
+        <button className="btn hero-btn-1" id="project-btn-all" onClick={reset}>
+          All
+        </button>
       </div>
     </Wrapper>
   );
@@ -97,12 +55,13 @@ const Wrapper = styled.div`
   .project-btns {
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
-    gap: 1rem;
+    justify-content: center;
+    gap: 2rem;
     margin-bottom: 4rem;
+    /* border: var(--border-white); */
   }
 
-  .project-btns a button {
+  .project-btns button {
     width: 12rem;
   }
 

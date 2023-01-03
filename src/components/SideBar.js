@@ -31,28 +31,6 @@ const SideBar = ({ openSidebar, setOpenSidebar }) => {
               );
             })}
           </ul>
-          <ul className="social-icons">
-            <li>
-              <a href="https://www.facebook.com" className="social-icon">
-                <i className="fab fa-facebook"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#1" className="social-icon">
-                <i className="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#1" className="social-icon">
-                <i className="fab fa-linkedin"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#1" className="social-icon">
-                <i className="fab fa-github"></i>
-              </a>
-            </li>
-          </ul>
         </div>
       </aside>
     </Wrapper>
@@ -101,25 +79,6 @@ const Wrapper = styled.aside`
     color: var(--clr-red);
   }
 
-  .social-icons {
-    display: grid;
-    margin-top: 3rem;
-    width: 20rem;
-    grid-template-columns: repeat(4, 1fr);
-    justify-items: center;
-  }
-
-  .social-icon {
-    font-size: 1.5rem;
-    color: var(--clr-white);
-    transition: var(--transition);
-  }
-
-  .social-icon:hover {
-    color: var(--clr-yellow);
-    transform: scale(1.1);
-  }
-
   .close-btn {
     position: absolute;
     top: 1rem;
@@ -130,6 +89,7 @@ const Wrapper = styled.aside`
     transition: var(--transition);
     color: #bb2525;
     cursor: pointer;
+    padding-right: 2rem;
   }
 
   .close-btn:hover {
