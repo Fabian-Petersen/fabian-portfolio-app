@@ -55,30 +55,6 @@ const FilterButtons = ({
             react
           </button>
         </a>
-        {/* <a href="#1">
-          <button
-            className={
-              active === "gatsby"
-                ? "btn hero-btn-1 project-btn active"
-                : "btn hero-btn-1 project-btn"
-            }
-            onClick={handleClick("gatsby")}
-          >
-            gatsby
-          </button>
-        </a>
-        <a href="#1">
-          <button
-            className={
-              active === "next"
-                ? "btn hero-btn-1 project-btn active"
-                : "btn hero-btn-1 project-btn"
-            }
-            onClick={handleClick("next")}
-          >
-            next
-          </button>
-        </a> */}
         <a href="#1">
           <button
             className="btn hero-btn-1"
@@ -97,7 +73,7 @@ const Wrapper = styled.div`
   .project-btns {
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: center;
     gap: 1rem;
     margin-bottom: 4rem;
   }

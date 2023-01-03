@@ -3,20 +3,16 @@ import styled from "styled-components";
 import logo from "../assets/images/fabian-logo-small.png";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import ThemeSelector from "./ThemeSelector";
 
 const Navbar = () => {
   return (
     <Wrapper>
       <nav className="nav navbar-fixed" id="nav">
         <div className="nav-center">
-          <div className="nav-header">
-            <img src={logo} className="nav-logo" alt="nav-logo" />
-            <button className="nav-btn" id="nav-btn">
-              <FontAwesomeIcon icon={faBars} />
-            </button>
-            {/* <ThemeSelector /> */}
-          </div>
+          <img src={logo} className="nav-logo" alt="nav-logo" />
+          <button className="nav-btn" id="nav-btn">
+            <FontAwesomeIcon icon={faBars} />
+          </button>
           <ul className="nav-links">
             <li>
               <a href="#home">Home</a>
@@ -37,6 +33,15 @@ const Navbar = () => {
   );
 };
 const Wrapper = styled.nav`
+  .nav {
+    height: 5rem;
+    display: grid;
+    align-items: center;
+    transition: var(--transition);
+    /* border: var(--border-white); */
+    width: 100%;
+  }
+
   .nav-logo:hover {
     cursor: pointer;
   }
@@ -45,29 +50,20 @@ const Wrapper = styled.nav`
     display: none;
   }
 
-  .nav {
-    height: 5rem;
-    padding: 1rem;
-    display: grid;
-    align-items: center;
-    transition: var(--transition);
-    /* border: var(--border-white); */
-  }
-
   .nav-center {
+    display: flex;
     width: 100%;
-    max-width: 1170px;
-    margin: 0 auto;
-  }
-
-  .nav-header {
-    display: grid;
-    grid-template-columns: auto 1fr;
+    justify-content: space-between;
     align-items: center;
   }
 
   .nav-logo {
-    width: 50%;
+    height: 3rem;
+    width: fit-content;
+  }
+
+  .nav-header {
+    width: 100%;
   }
 
   .nav-btn {
@@ -83,20 +79,24 @@ const Wrapper = styled.nav`
   @media screen and (min-width: 768px) {
     .nav {
       background-color: var(--clr-bg-dark);
+      margin: 0 auto;
     }
 
     .nav-btn {
       display: none;
     }
 
-    .nav-links {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      justify-items: right;
-      -moz-column-gap: 2rem;
-      column-gap: 1rem;
-      justify-self: end;
+    .nav-logo {
+      height: 5rem;
     }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      width: 25%;
+      justify-content: space-around;
+    }
+
     .nav-links a {
       position: relative;
       text-transform: capitalize;
@@ -121,9 +121,7 @@ const Wrapper = styled.nav`
     }
 
     .nav-center {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      align-items: center;
+      padding: 0 2.5rem;
     }
   }
 

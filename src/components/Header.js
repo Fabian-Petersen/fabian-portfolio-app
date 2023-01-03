@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Socials from "./Socials";
 import cv from "../assets/documents/fabian-petersen-12.2022.pdf";
 import SocialsHover from "./SocialsHover";
 
