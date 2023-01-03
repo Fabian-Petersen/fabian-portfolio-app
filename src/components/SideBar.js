@@ -1,27 +1,35 @@
 import React from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
+import links from "../pageLinks";
 
-const SideBar = () => {
+const SideBar = ({ openSidebar, setOpenSidebar }) => {
+  const handleClick = () => {
+    setOpenSidebar(false);
+  };
+
   return (
     <Wrapper>
-      <aside className="sidebar" id="sidebar">
+      <aside
+        className={openSidebar ? "show__sidebar" : "hide__sidebar"}
+        id="sidebar"
+      >
         <div>
-          <button className="close-btn" id="close-btn">
-            <i className="fas fa-times"></i>
+          <button className="close-btn" onClick={handleClick}>
+            <FontAwesomeIcon icon={faClose} id="close-btn" />
           </button>
           <ul className="sidebar-links">
-            <li>
-              <a href="#home">Home</a>
-            </li>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-            <li>
-              <a href="#projects">Projects</a>
-            </li>
+            {links.map((link) => {
+              const { id, name } = link;
+              return (
+                <li key={id}>
+                  <a href={id} onClick={handleClick}>
+                    {name}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
           <ul className="social-icons">
             <li>
@@ -52,26 +60,27 @@ const SideBar = () => {
 };
 
 const Wrapper = styled.aside`
-  .sidebar {
+  .show__sidebar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--clr-grey-par-10);
+    background: var(--clr-bg-light);
     z-index: 10;
     display: grid;
+    border: var(--border-white);
     /* 
   Can use place-items: center which do vertical and horizontal alignment 
   align-items: center;
   justify-content: center; */
     place-items: center;
-    transition: var(--transition);
-    transform: translateX(-100%);
+    transition: 1000ms ease-in;
+    transform: translateX(0);
   }
 
-  .show-sidebar {
-    transform: translateX(0);
+  .hide__sidebar {
+    transform: translateX(-100%);
   }
 
   .sidebar-links {
@@ -82,14 +91,14 @@ const Wrapper = styled.aside`
     font-size: 2rem;
     text-transform: capitalize;
     transition: var(--transition);
-    color: var(--clr-grey-par-5);
+    color: var(--clr-white);
     letter-spacing: var(--spacing);
     display: inline-block;
     margin-bottom: 1.5rem;
   }
 
   .sidebar-links a:hover {
-    color: var(--clr-primary-5);
+    color: var(--clr-red);
   }
 
   .social-icons {

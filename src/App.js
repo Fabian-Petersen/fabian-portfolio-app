@@ -1,21 +1,11 @@
 import React from "react";
 import "../src/index.css";
 
-import {
-  About,
-  Navbar,
-  Header,
-  SideBar,
-  Projects,
-  Contact,
-  Footer,
-} from "./components/Index";
+import { About, Header, Projects, Contact, Footer } from "./components/Index";
 
 const App = () => {
   return (
     <div>
-      <Navbar />
-      <SideBar />
       <Header />
       <About />
       <Projects />

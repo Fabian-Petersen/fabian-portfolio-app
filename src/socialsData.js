@@ -1,7 +1,7 @@
 import Icons from "./assets/images/icons";
 
 const { faGithub, faFacebook, faTwitter, faLinkedin } = Icons;
-const links = [
+const socialData = [
   {
     id: 1,
     name: "github",
@@ -26,4 +26,4 @@ const links = [
   { id: 4, name: "linkedin", url: "#linked", icon: faLinkedin, color: "" },
 ];
 
-export default links;
+export default socialData;
