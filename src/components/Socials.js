@@ -37,15 +37,26 @@ const Wrapper = styled.div`
     gap: 2rem;
   }
 
-  .social-icon {
+  .icon {
     transition: all 0.15s ease-in;
     color: var(--clr-white);
   }
 
-  .social-icon:hover {
+  .social-icon {
+    animation: colorAnimation 1000ms steps(5);
+  }
+
+  .icon:hover {
     transform: scale(1.1);
     color: var(--clr-yellow);
     transform: translateY(-2.5px);
+  }
+
+  @keyframes colorAnimation {
+    to {
+      left: 100%;
+      color: var(--clr-yellow);
+    }
   }
 `;
 

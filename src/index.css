@@ -13,6 +13,11 @@ Variables
 */
 
 :root {
+  /*The colors of the bgjar background - Can use to toggle between themes */
+  --clr-bg-dark: hsl(210, 68%, 13%);
+  --clr-bg-middle: hsl(211, 67%, 17%);
+  --clr-bg-light: hsl(211, 67%, 20%);
+
   /* lighter shades of primary color */
   --clr-primary-1: hsl(216, 10%, 87%);
   --clr-primary-2: hsl(216, 10%, 75%);
@@ -51,7 +56,7 @@ Variables
   --clr-blue: #486bd6;
   /* --clr-nav: #102a42; */
 
-  --ff-primary: "Roboto", sans-serif;
+  --ff-primary: "Roboto", sans-serif, monospace;
   --ff-secondary: "Open Sans", sans-serif;
   --ff-tertiary: "Montserrat", sans-serif;
   --transition: all 0.3s linear;
@@ -75,7 +80,7 @@ Global Styles
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 2.5rem;
+  scroll-padding-top: 3rem;
 }
 *,
 ::after,
@@ -87,7 +92,7 @@ html {
 
 body {
   font-family: var(--ff-secondary);
-  background: var(--clr-white);
+  background: var(--clr-bg-dark);
   color: var(--white);
   line-height: 1.5;
   font-size: 0.875rem;
@@ -187,9 +192,8 @@ p {
 
 /* section */
 .section {
-  /* height: 100vh; */
-  padding: 1rem 0;
-  /* scroll-snap-align: start; */
+  min-height: 100vh;
+  padding: 1.5rem 0;
 }
 
 .section-center {
@@ -218,6 +222,7 @@ p {
   margin: 2rem;
   margin-bottom: 4rem;
   text-align: center;
+  color: var(--clr-white);
 }
 
 /* Services Section Background Color */

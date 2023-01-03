@@ -78,7 +78,7 @@ const About = () => {
 
 const Wrapper = styled.section`
   .about {
-    background-color: var(--clr-primary-1);
+    background-color: var(--clr-bg-dark);
     padding-bottom: 10rem;
   }
 
@@ -89,6 +89,7 @@ const Wrapper = styled.section`
   .about-center {
     display: grid;
     gap: 3rem 2rem;
+    color: var(--clr-white);
   }
 
   .about-skills-heading {
@@ -100,7 +101,7 @@ const Wrapper = styled.section`
   }
 
   .about-info p {
-    color: var(--clr-grey-head-2);
+    color: var(--clr-white);
     margin-bottom: 3rem;
   }
 
@@ -123,17 +124,16 @@ const Wrapper = styled.section`
 
   .about-details ul li {
     display: flex;
-    /* justify-content: flex-start; */
-    /* gap: 0.5rem; */
     flex-direction: column;
     align-items: center;
-    /* border: var(--border-red); */
+    color: var(--clr-white);
   }
 
   .fa-icons {
     width: 18%;
     font-size: 2rem;
     padding: 0.5rem 0rem;
+    color: var(--clr-white);
   }
 
   .about-details ul li:not(li:last-child) {

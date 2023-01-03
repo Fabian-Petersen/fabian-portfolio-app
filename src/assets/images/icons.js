@@ -14,6 +14,8 @@ import {
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 
+import { faSun, faMoon } from "@fortawesome/free-regular-svg-icons";
+
 const Icons = {
   faFacebook,
   faTwitter,
@@ -26,5 +28,9 @@ const Icons = {
   faReact,
   faJs,
 };
+
+export const themeIcons = { faSun, faMoon };
+
+export const brandNames = ["Facebook", "Twitter", "Github", "Instagram"];
 
 export default Icons;

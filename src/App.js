@@ -9,7 +9,6 @@ import {
   Projects,
   Contact,
   Footer,
-  Modal,
 } from "./components/Index";
 
 const App = () => {
@@ -22,7 +21,6 @@ const App = () => {
       <Projects />
       <Contact />
       <Footer />
-      <Modal />
     </div>
   );
 };

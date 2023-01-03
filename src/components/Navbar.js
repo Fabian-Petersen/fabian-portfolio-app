@@ -3,6 +3,7 @@ import styled from "styled-components";
 import logo from "../assets/images/fabian-logo-small.png";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ThemeSelector from "./ThemeSelector";
 
 const Navbar = () => {
   return (
@@ -14,6 +15,7 @@ const Navbar = () => {
             <button className="nav-btn" id="nav-btn">
               <FontAwesomeIcon icon={faBars} />
             </button>
+            {/* <ThemeSelector /> */}
           </div>
           <ul className="nav-links">
             <li>
@@ -49,7 +51,7 @@ const Wrapper = styled.nav`
     display: grid;
     align-items: center;
     transition: var(--transition);
-    background-color: var(--clr-grey-head-1);
+    /* border: var(--border-white); */
   }
 
   .nav-center {
@@ -80,7 +82,7 @@ const Wrapper = styled.nav`
 
   @media screen and (min-width: 768px) {
     .nav {
-      background-color: var(--clr-grey-head-1);
+      background-color: var(--clr-bg-dark);
     }
 
     .nav-btn {
@@ -90,9 +92,9 @@ const Wrapper = styled.nav`
     .nav-links {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      justify-items: center;
+      justify-items: right;
       -moz-column-gap: 2rem;
-      column-gap: 2rem;
+      column-gap: 1rem;
       justify-self: end;
     }
     .nav-links a {
@@ -132,9 +134,7 @@ const Wrapper = styled.nav`
     top: 0;
     left: 0;
     width: 100%;
-    /* background: var(--clr-primary-3); */
     z-index: 2;
-    box-shadow: var(--light-shadow);
   }
 `;
 

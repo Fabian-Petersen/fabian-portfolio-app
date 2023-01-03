@@ -23,12 +23,13 @@ const Wrapper = styled.footer`
     background-color: var(--clr-grey-head-1);
     display: grid;
     place-items: center;
+    height: 10rem;
   }
 
   p {
     display: flex;
     gap: 0.6rem;
-    font-size: 1rem;
+    font-size: 0.85rem;
     text-transform: capitalize;
   }
 `;

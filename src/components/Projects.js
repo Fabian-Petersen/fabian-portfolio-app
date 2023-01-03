@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import FilterButtons from "./FilterButtons";
 import projects from "../projectData";
-import Modal from "./Modal";
+import Modal from "./SocialsHover";
 import PulseIcon from "./PulseIcon";
 
 const Projects = () => {

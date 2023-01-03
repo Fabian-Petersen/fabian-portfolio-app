@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Background from "./BackgroundSVG";
 import Socials from "./Socials";
 import cv from "../assets/documents/fabian-petersen-12.2022.pdf";
+import SocialsHover from "./SocialsHover";
 
 // import bgImage from "../assets/images/hero-simple-shiny-bg.svg";
 
@@ -10,12 +10,11 @@ const Header = () => {
   return (
     <Wrapper>
       <header className="hero section" id="home">
-        <Background />
         <div className="section-center hero-center">
           <article className="hero-info">
             <div className="underline"></div>
             <h1 className="hero-heading">
-              Hi, I'm <span className="hero-amplify">Fabian</span>
+              Hi, my name is <span className="hero-amplify">Fabian.</span>
             </h1>
             <h3 className="hero-sub-heading">
               Welcome to my official portfolio website showcasing my work as a
@@ -34,7 +33,8 @@ const Header = () => {
                 My Projects
               </a>
             </div>
-            <Socials />
+            <SocialsHover />
+            {/* <Socials /> */}
           </article>
         </div>
       </header>
@@ -47,9 +47,11 @@ const Wrapper = styled.header`
     position: realtive;
   }
 
-  .hero .underline {
+  .underline {
     margin-bottom: 0.8rem;
     margin-left: 0;
+    opacity: 0;
+    animation: underlineAnimation 0.5s ease-in 2800ms forwards;
   }
 
   .hero-center {
@@ -66,6 +68,76 @@ const Wrapper = styled.header`
   .hero-heading {
     margin-bottom: 2rem;
     font-size: 2rem;
+    position: relative;
+    width: max-content;
+    text-transform: none;
+    padding: 0.25rem;
+    /* border: var(--border-red); */
+  }
+
+  .hero-sub-heading {
+    animation: textAnimation 1000ms ease-in 2000ms forwards;
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  .hero-heading::before,
+  .hero-heading::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .hero-heading::before {
+    background-color: var(--clr-bg-dark);
+    animation: typewriterAnimation 3000ms steps(22) 1s forwards;
+  }
+
+  .hero-heading::after {
+    width: 3px;
+    background-color: var(--clr-yellow);
+    animation: cancelCursor 200ms ease 5s,
+      typewriterAnimation 3000ms steps(22) 1s forwards,
+      cursorBlink 850ms steps(2, start) infinite;
+  }
+
+  @keyframes typewriterAnimation {
+    to {
+      left: 100%;
+    }
+  }
+
+  @keyframes underlineAnimation {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes textAnimation {
+    0% {
+      opacity: 0;
+      transform: translateY(2.5rem);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes cursorBlink {
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes cursorCancel {
+    to {
+      opacity: 0;
+    }
   }
 
   .hero-amplify {
@@ -86,6 +158,8 @@ const Wrapper = styled.header`
     gap: 1rem;
     padding: 1.2rem 0;
     margin-bottom: 1rem;
+    opacity: 0;
+    animation: textAnimation 1000ms ease-in 2000ms forwards;
   }
 
   .hero-btn-1,
@@ -93,14 +167,6 @@ const Wrapper = styled.header`
     max-width: 10rem;
     padding: 0.8rem 1rem;
     font-size: 0.7em;
-  }
-
-  .hero-icons {
-    display: flex;
-    gap: 1.6rem;
-    font-size: 1.5rem;
-    justify-items: start;
-    padding: 1.2rem 0;
   }
 
   .hero-btn-1 {
@@ -160,14 +226,14 @@ const Wrapper = styled.header`
 
     .home-btns {
       gap: 1.5rem;
-      padding: 1.2rem 0;
+      padding: 1rem 0;
     }
 
     .hero-btn-1,
     .hero-btn-2 {
       max-width: 15rem;
-      padding: 1rem 1.5rem;
-      font-size: 0.7em;
+      padding: 0.8rem 1.3rem;
+      font-size: 0.6em;
     }
   }
 
@@ -188,8 +254,8 @@ const Wrapper = styled.header`
     .hero-btn-1,
     .hero-btn-2 {
       max-width: 20rem;
-      padding: 1.3rem 1.8rem;
-      font-size: 0.9em;
+      padding: 0.8rem 1.2rem;
+      font-size: 0.75em;
     }
 
     .social-icon {
