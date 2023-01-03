@@ -55,7 +55,7 @@ const FilterButtons = ({
             react
           </button>
         </a>
-        <a href="#1">
+        {/* <a href="#1">
           <button
             className={
               active === "gatsby"
@@ -78,7 +78,7 @@ const FilterButtons = ({
           >
             next
           </button>
-        </a>
+        </a> */}
         <a href="#1">
           <button
             className="btn hero-btn-1"
@@ -97,7 +97,7 @@ const Wrapper = styled.div`
   .project-btns {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
     gap: 1rem;
     margin-bottom: 4rem;
   }
