@@ -29,7 +29,7 @@ const Wrapper = styled.footer`
   p {
     display: flex;
     gap: 0.6rem;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     text-transform: capitalize;
   }
 `;

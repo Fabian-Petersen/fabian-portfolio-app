@@ -3,29 +3,32 @@ import styled from "styled-components";
 import logo from "../assets/images/fabian-logo-small.png";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import links from "../pageLinks";
 
-const Navbar = () => {
+const Navbar = ({ openSidebar, setOpenSidebar }) => {
   return (
     <Wrapper>
       <nav className="nav navbar-fixed" id="nav">
         <div className="nav-center">
-          <img src={logo} className="nav-logo" alt="nav-logo" />
-          <button className="nav-btn" id="nav-btn">
-            <FontAwesomeIcon icon={faBars} />
-          </button>
+          <div className="nav-header">
+            <img src={logo} className="nav-logo" alt="nav-logo" />
+            <button
+              className={openSidebar ? "show-sidebar" : "nav-btn hide-sidebar"}
+              id="nav-btn"
+              onClick={() => setOpenSidebar(true)}
+            >
+              <FontAwesomeIcon icon={faBars} />
+            </button>
+          </div>
           <ul className="nav-links">
-            <li>
-              <a href="#home">Home</a>
-            </li>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#projects">Projects</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
+            {links.map((link) => {
+              const { id, name } = link;
+              return (
+                <li key={id}>
+                  <a href={id}>{name}</a>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </nav>
@@ -74,6 +77,10 @@ const Wrapper = styled.nav`
     cursor: pointer;
     justify-self: end;
     padding-right: 2rem;
+  }
+
+  .show-sidebar {
+    transform: translateX(0);
   }
 
   @media screen and (min-width: 768px) {

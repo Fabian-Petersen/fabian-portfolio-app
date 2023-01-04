@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import cv from "../assets/documents/fabian-petersen-12.2022.pdf";
+import Navbar from "./Navbar";
+import SideBar from "./SideBar";
 import SocialsHover from "./SocialsHover";
 
 // import bgImage from "../assets/images/hero-simple-shiny-bg.svg";
 
 const Header = () => {
+  const [openSidebar, setOpenSidebar] = useState(false);
+
   return (
     <Wrapper>
+      {openSidebar ? (
+        <SideBar setOpenSidebar={setOpenSidebar} openSidebar={openSidebar} />
+      ) : (
+        <Navbar setOpenSidebar={setOpenSidebar} openSidebar={openSidebar} />
+      )}
       <header className="hero section" id="home">
         <div className="section-center hero-center">
           <article className="hero-info">
@@ -15,10 +24,10 @@ const Header = () => {
             <h1 className="hero-heading">
               Hi, my name is <span className="hero-amplify">Fabian.</span>
             </h1>
-            <h3 className="hero-sub-heading">
+            <p className="hero-sub-heading">
               Welcome to my official portfolio website showcasing my work as a
-              <span className="hero-amplify"> React Web Developer</span>
-            </h3>
+              <span className="hero-amplify"> React Web Developer.</span>
+            </p>
             <div className="home-btns">
               <a
                 href={cv}
@@ -33,7 +42,6 @@ const Header = () => {
               </a>
             </div>
             <SocialsHover />
-            {/* <Socials /> */}
           </article>
         </div>
       </header>
@@ -59,25 +67,23 @@ const Wrapper = styled.header`
     place-items: center;
   }
 
-  .hero-info h4 {
-    color: var(--clr-grey-par-5);
-    margin-bottom: 2rem;
-  }
-
   .hero-heading {
-    margin-bottom: 2rem;
     font-size: 2rem;
+    line-height: 1.5;
     position: relative;
-    width: max-content;
+    width: fit-content;
     text-transform: none;
     padding: 0.25rem;
-    /* border: var(--border-red); */
+    margin-bottom: 2rem;
   }
 
   .hero-sub-heading {
-    animation: textAnimation 1000ms ease-in 2000ms forwards;
     transform: translateY(0);
     opacity: 0;
+    font-size: 5em;
+    width: 100%;
+    /* border: var(--border-white); */
+    animation: textAnimation 1000ms ease-in 2000ms forwards;
   }
 
   .hero-heading::before,
@@ -145,10 +151,10 @@ const Wrapper = styled.header`
 
   .hero-sub-heading {
     color: var(--clr-white);
-    margin-bottom: 3rem;
     font-size: 0.8rem;
     line-height: 2.5rem;
     text-transform: none;
+    max-width: fit-content;
   }
 
   .home-btns {
