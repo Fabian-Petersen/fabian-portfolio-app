@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import projects from "../projectData";
 
 const FilterButtons = ({ initialState, setFiltered, setActive, active }) => {
   const handleClick =
@@ -46,40 +45,6 @@ const FilterButtons = ({ initialState, setFiltered, setActive, active }) => {
         <button className="btn hero-btn-1" id="project-btn-all" onClick={reset}>
           All
         </button>
-        <a href="#1">
-          <button
-            className={
-              active === "javascript"
-                ? "btn hero-btn-1 project-btn active"
-                : "btn hero-btn-1 project-btn"
-            }
-            onClick={handleClick("javascript")}
-          >
-            tutorials
-          </button>
-        </a>
-        <a href="#1">
-          <button
-            className={
-              active === "react"
-                ? "btn hero-btn-1 project-btn active"
-                : "btn hero-btn-1 project-btn"
-            }
-            id="btn-react"
-            onClick={handleClick("react")}
-          >
-            react
-          </button>
-        </a>
-        <a href="#1">
-          <button
-            className="btn hero-btn-1"
-            id="project-btn-all"
-            onClick={reset}
-          >
-            All
-          </button>
-        </a>
       </div>
     </Wrapper>
   );
