@@ -21,12 +21,14 @@ const Header = () => {
         <div className="section-center hero-center">
           <article className="hero-info">
             <div className="underline"></div>
-            <h1 className="hero-heading">
-              Hi, my name is <span className="hero-amplify">Fabian.</span>
-            </h1>
+            <div className="hero-heading">
+              <h1>
+                Hi, my name is <span>Fabian.</span>
+              </h1>
+            </div>
             <p className="hero-sub-heading">
               Welcome to my official portfolio website showcasing my work as a
-              <span className="hero-amplify"> React Web Developer.</span>
+              <span> React Web Developer.</span>
             </p>
             <div className="home-btns">
               <a
@@ -58,7 +60,7 @@ const Wrapper = styled.header`
     margin-bottom: 0.8rem;
     margin-left: 0;
     opacity: 0;
-    animation: underlineAnimation 0.5s ease-in 2800ms forwards;
+    animation: underlineAnimation 0.5s ease 3400ms forwards;
   }
 
   .hero-center {
@@ -68,23 +70,38 @@ const Wrapper = styled.header`
   }
 
   .hero-heading {
-    font-size: 2rem;
-    line-height: 1.5;
     position: relative;
+    margin-bottom: 1rem;
+    /* border: var(--border-white); */
     width: fit-content;
-    text-transform: none;
-    padding: 0.25rem;
-    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+
+    h1 {
+      font-size: 1.4rem;
+      text-transform: none;
+    }
+
+    span {
+      color: var(--clr-yellow);
+    }
   }
 
   .hero-sub-heading {
-    transform: translateY(0);
     opacity: 0;
-    font-size: 5em;
+    font-size: 1.2em;
     width: 100%;
+    line-height: 2rem;
+    text-transform: none;
+    animation: textAnimation 500ms ease 3400ms forwards;
     /* border: var(--border-white); */
-    animation: textAnimation 1000ms ease-in 2000ms forwards;
+    max-width: fit-content;
+    span {
+      color: var(--clr-yellow);
+    }
   }
+
+  //? ======================== Start of the styles for the animation for the typewriter text and pointer ================= //
 
   .hero-heading::before,
   .hero-heading::after {
@@ -103,75 +120,30 @@ const Wrapper = styled.header`
 
   .hero-heading::after {
     width: 3px;
+    height: 1.5rem;
     background-color: var(--clr-yellow);
-    animation: cancelCursor 200ms ease 5s,
-      typewriterAnimation 3000ms steps(22) 1s forwards,
+    animation: typewriterAnimation 3000ms steps(22) 1s forwards,
       cursorBlink 850ms steps(2, start) infinite;
   }
 
-  @keyframes typewriterAnimation {
-    to {
-      left: 100%;
-    }
-  }
+  //? ======================== End of the styles for the animation for the typewriter text and pointer ================= //
 
-  @keyframes underlineAnimation {
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes textAnimation {
-    0% {
-      opacity: 0;
-      transform: translateY(2.5rem);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes cursorBlink {
-    to {
-      opacity: 0;
-    }
-  }
-
-  @keyframes cursorCancel {
-    to {
-      opacity: 0;
-    }
-  }
-
-  .hero-amplify {
-    color: var(--clr-yellow);
-  }
-
-  .hero-sub-heading {
-    color: var(--clr-white);
-    font-size: 0.8rem;
-    line-height: 2.5rem;
-    text-transform: none;
-    max-width: fit-content;
-  }
+  //$  ================================================= Start Button Styles ============================================ //
 
   .home-btns {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     padding: 1.2rem 0;
-    margin-bottom: 1rem;
     opacity: 0;
-    animation: textAnimation 1000ms ease-in 2000ms forwards;
+    /* border: var(--border-white); */
+    animation: textAnimation 600ms ease 3500ms forwards;
   }
 
   .hero-btn-1,
   .hero-btn-2 {
-    max-width: 10rem;
-    padding: 0.8rem 1rem;
-    font-size: 0.7em;
+    max-width: 8rem;
+    padding: 0.9rem 0.55rem;
+    font-size: 0.6em;
   }
 
   .hero-btn-1 {
@@ -193,6 +165,38 @@ const Wrapper = styled.header`
   .hero-btn-2:hover {
     background-color: var(--clr-red);
     color: var(--clr-white);
+  }
+
+  //$  ================================================= End Button Styles ============================================ //
+
+  @keyframes underlineAnimation {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes textAnimation {
+    0% {
+      opacity: 0;
+      transform: translateY(2.5rem);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes typewriterAnimation {
+    to {
+      left: 100%;
+    }
+  }
+
+  @keyframes cursorBlink {
+    to {
+      opacity: 0;
+    }
   }
 
   @media screen and (min-width: 450px) {

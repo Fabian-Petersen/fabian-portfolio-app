@@ -9,7 +9,7 @@ const SocialsHover = () => {
       <div>
         <ul className="social-icons">
           {links.map((link) => {
-            const { id, url, icon, name } = link;
+            const { id, url, icon, name, color } = link;
             return (
               <li key={id}>
                 <a
@@ -23,7 +23,11 @@ const SocialsHover = () => {
                       {name}
                       <div className="tooltip__point"></div>
                     </div>
-                    <FontAwesomeIcon icon={icon} className="icon" />
+                    <FontAwesomeIcon
+                      icon={icon}
+                      className="icon"
+                      color={color}
+                    />
                   </div>
                 </a>
               </li>
@@ -39,6 +43,8 @@ const Wrapper = styled.div`
   .social-icons {
     margin-bottom: 1.5rem;
     display: flex;
+    opacity: 0;
+    animation: startAnimation 1500ms ease 3400ms forwards;
   }
 
   .icon-container {
@@ -99,6 +105,18 @@ const Wrapper = styled.div`
 
     to {
       opacity: 1;
+    }
+  }
+
+  @keyframes startAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(5rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 `;
