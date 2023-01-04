@@ -26,7 +26,7 @@ const Header = () => {
             </h1>
             <p className="hero-sub-heading">
               Welcome to my official portfolio website showcasing my work as a
-              <span className="hero-amplify"> React Web Developer</span>
+              <span className="hero-amplify"> React Web Developer.</span>
             </p>
             <div className="home-btns">
               <a
