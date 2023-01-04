@@ -47,7 +47,7 @@ const Wrapper = styled.aside`
     background: var(--clr-bg-light);
     z-index: 10;
     display: grid;
-    border: var(--border-white);
+    /* border: var(--border-white); */
     /* 
   Can use place-items: center which do vertical and horizontal alignment 
   align-items: center;
@@ -89,7 +89,7 @@ const Wrapper = styled.aside`
     transition: var(--transition);
     color: #bb2525;
     cursor: pointer;
-    padding-right: 2rem;
+    padding-right: 1rem;
   }
 
   .close-btn:hover {

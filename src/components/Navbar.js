@@ -10,16 +10,14 @@ const Navbar = ({ openSidebar, setOpenSidebar }) => {
     <Wrapper>
       <nav className="nav navbar-fixed" id="nav">
         <div className="nav-center">
-          <div className="nav-header">
-            <img src={logo} className="nav-logo" alt="nav-logo" />
-            <button
-              className={openSidebar ? "show-sidebar" : "nav-btn hide-sidebar"}
-              id="nav-btn"
-              onClick={() => setOpenSidebar(true)}
-            >
-              <FontAwesomeIcon icon={faBars} />
-            </button>
-          </div>
+          <img src={logo} className="nav-logo" alt="nav-logo" />
+          <button
+            className={openSidebar ? "show-sidebar" : "nav-btn hide-sidebar"}
+            id="nav-btn"
+            onClick={() => setOpenSidebar(true)}
+          >
+            <FontAwesomeIcon icon={faBars} />
+          </button>
           <ul className="nav-links">
             {links.map((link) => {
               const { id, name } = link;
@@ -38,7 +36,7 @@ const Navbar = ({ openSidebar, setOpenSidebar }) => {
 const Wrapper = styled.nav`
   .nav {
     height: 5rem;
-    display: grid;
+    display: flex;
     align-items: center;
     transition: var(--transition);
     /* border: var(--border-white); */
@@ -63,10 +61,6 @@ const Wrapper = styled.nav`
   .nav-logo {
     height: 3rem;
     width: fit-content;
-  }
-
-  .nav-header {
-    width: 100%;
   }
 
   .nav-btn {
