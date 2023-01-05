@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import cv from "../assets/documents/fabian-petersen-12.2022.pdf";
+import cv from "../assets/documents/fabian-petersen-12.2022-v1.pdf";
 import { useGlobalContext } from "../ContextAPI";
 import Navbar from "./Navbar";
 import SideBar from "./SideBar";
@@ -89,7 +89,7 @@ const Wrapper = styled.header`
 
   .hero-sub-heading {
     opacity: 0;
-    font-size: 1.2em;
+    font-size: 1.1em;
     width: 100%;
     line-height: 2rem;
     text-transform: none;
@@ -120,7 +120,7 @@ const Wrapper = styled.header`
 
   .hero-heading::after {
     width: 3px;
-    height: 1.5rem;
+    height: 2rem;
     background-color: var(--clr-yellow);
     animation: typewriterAnimation 3000ms steps(22) 1s forwards,
       cursorBlink 850ms steps(2, start) infinite;
@@ -200,8 +200,12 @@ const Wrapper = styled.header`
   }
 
   @media screen and (min-width: 450px) {
-    .hero-heading {
-      font-size: 2rem;
+    .hero-heading h1 {
+      font-size: 1.8rem;
+    }
+
+    .hero-sub-heading {
+      font-size: 1.2em;
     }
 
     .home-btns {
@@ -221,15 +225,19 @@ const Wrapper = styled.header`
     .hero-icons {
       font-size: 1.8rem;
     }
+
+    .hero-heading::after {
+      height: 1.8rem;
+    }
   }
 
   @media screen and (min-width: 720px) {
-    .hero-heading {
-      font-size: 3rem;
+    .hero-heading h1 {
+      font-size: 4rem;
     }
 
     .hero-sub-heading {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       line-height: 2.5rem;
     }
 
@@ -243,6 +251,10 @@ const Wrapper = styled.header`
       max-width: 15rem;
       padding: 0.8rem 1.3rem;
       font-size: 0.6em;
+    }
+
+    .hero-heading::after {
+      height: 4rem;
     }
   }
 
