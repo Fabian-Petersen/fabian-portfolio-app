@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import cv from "../assets/documents/fabian-petersen-12.2022.pdf";
+import { useGlobalContext } from "../ContextAPI";
 import Navbar from "./Navbar";
 import SideBar from "./SideBar";
 import SocialsHover from "./SocialsHover";
@@ -8,8 +9,7 @@ import SocialsHover from "./SocialsHover";
 // import bgImage from "../assets/images/hero-simple-shiny-bg.svg";
 
 const Header = () => {
-  const [openSidebar, setOpenSidebar] = useState(false);
-
+  const { openSidebar, setOpenSidebar } = useGlobalContext();
   return (
     <Wrapper>
       {openSidebar ? (

@@ -1,16 +1,19 @@
 import React from "react";
 import "../src/index.css";
+import AppProvider from "./ContextAPI";
 
 import { About, Header, Projects, Contact, Footer } from "./components/Index";
 
 const App = () => {
   return (
     <div>
-      <Header />
-      <About />
-      <Projects />
-      <Contact />
-      <Footer />
+      <AppProvider>
+        <Header />
+        <About />
+        <Projects />
+        <Contact />
+        <Footer />
+      </AppProvider>
     </div>
   );
 };

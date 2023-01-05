@@ -1,27 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import FilterButtons from "./FilterButtons";
-import projects from "../projectData";
-import Modal from "./SocialsHover";
 import PulseIcon from "./PulseIcon";
+import { useGlobalContext } from "../ContextAPI";
 
 const Projects = () => {
-  const [initialState, setInitialState] = useState(projects);
-  const [filtered, setFiltered] = useState(projects);
-  const [active, setActive] = useState(" ");
-  const [openModal, setOpenModal] = useState(false);
-
+  const { filtered } = useGlobalContext();
   return (
     <Wrapper>
-      {openModal ? (
-        <Modal
-          openModal={openModal}
-          setOpenModal={setOpenModal}
-          active={active}
-        />
-      ) : (
-        ""
-      )}
       <section className="section projects" id="projects">
         <div className="section-title">
           <h2>Projects</h2>
@@ -30,16 +16,7 @@ const Projects = () => {
             This is my latest work and work in progress
           </p>
         </div>
-        <FilterButtons
-          initialState={initialState}
-          setFiltered={setFiltered}
-          filtered={filtered}
-          setInitialState={setInitialState}
-          active={active}
-          setActive={setActive}
-          openModal={openModal}
-          setOpenModal={setOpenModal}
-        />
+        <FilterButtons />
         <div className="section-center projects-center">
           {filtered.map((project) => {
             const { id, name, language, image, url, code } = project;

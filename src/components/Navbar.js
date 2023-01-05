@@ -3,14 +3,19 @@ import styled from "styled-components";
 import logo from "../assets/images/fabian-logo-small.png";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ThemeSelector from "./ThemeSelector";
 import links from "../pageLinks";
+import { useGlobalContext } from "../ContextAPI";
 
-const Navbar = ({ openSidebar, setOpenSidebar }) => {
+const Navbar = () => {
+  const { theme, setTheme, openSidebar, setOpenSidebar } = useGlobalContext();
+
   return (
     <Wrapper>
       <nav className="nav navbar-fixed" id="nav">
         <div className="nav-center">
           <img src={logo} className="nav-logo" alt="nav-logo" />
+          <ThemeSelector theme={theme} setTheme={setTheme} />
           <button
             className={openSidebar ? "show-sidebar" : "nav-btn hide-sidebar"}
             id="nav-btn"
@@ -36,8 +41,6 @@ const Navbar = ({ openSidebar, setOpenSidebar }) => {
 const Wrapper = styled.nav`
   .nav {
     height: 5rem;
-    display: flex;
-    align-items: center;
     transition: var(--transition);
     /* border: var(--border-white); */
     width: 100%;
@@ -55,12 +58,14 @@ const Wrapper = styled.nav`
     display: flex;
     width: 100%;
     justify-content: space-between;
+    /* border: var(--border-red); */
     align-items: center;
   }
 
   .nav-logo {
-    height: 3rem;
     width: fit-content;
+    height: 3rem;
+    /* border: var(--border-red); */
   }
 
   .nav-btn {
@@ -69,7 +74,6 @@ const Wrapper = styled.nav`
     color: var(--clr-white);
     font-size: 2rem;
     cursor: pointer;
-    justify-self: end;
     padding-right: 2rem;
   }
 
@@ -93,8 +97,8 @@ const Wrapper = styled.nav`
 
     .nav-links {
       display: flex;
+      /* border: var(--border-red); */
       gap: 2rem;
-      width: 25%;
       justify-content: space-around;
     }
 

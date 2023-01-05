@@ -1,17 +1,18 @@
 import React from "react";
 import styled from "styled-components";
+import { useGlobalContext } from "../ContextAPI";
 
-const FilterButtons = ({ initialState, setFiltered, setActive, active }) => {
-  const handleClick =
-    ({ language }) =>
-    () => {
-      setActive(language);
-      const filtered = initialState.filter(
-        (project) => project.language === language
-      );
+const FilterButtons = () => {
+  const { initialState, setFiltered, setActive, active } = useGlobalContext();
 
-      setFiltered(filtered);
-    };
+  const handleClick = (lang) => () => {
+    setActive(lang);
+    const filtered = initialState.filter(
+      (project) => project.language === lang
+    );
+
+    setFiltered(filtered);
+  };
 
   const reset = () => {
     setFiltered(initialState);
