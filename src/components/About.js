@@ -18,14 +18,16 @@ const About = () => {
         {/* <!-- end of section title --> */}
         <div className="section-center about-center">
           {/* <!-- about info --> */}
-          <article className="about-img">
-            <img src={image} className="hero-photo" alt="heroimage" />
-          </article>
           <article className="about-info">
             <p>
-              My Name is Fabian Petersen, I'm a React Web Developer based in
-              Cape Town, South Africa. I'm very passionate and dedicated about
-              web development
+              I'm a chemical engineer by trade and throughout my career I worked
+              on various software implementation projects with TotalEnergies.
+              Through this exposure I fell in love with the development of apps
+              myself and today I'm a passionate React Developer.
+              <br />
+              <br /> As a developer I love to learn new technologies and to
+              build exciting projects. Below is a list (and growing) of
+              technologies I have worked with thus far.
             </p>
             <h3 className="about-skills-heading">My Skills</h3>
             <div className="about-details">
@@ -66,7 +68,7 @@ const About = () => {
                 </li>
               </ul>
             </div>
-            <a href="#contact" className="btn hero-btn-1" id="btn">
+            <a href="#contact" className="btn hero-btn-1 btn-about" id="btn">
               Contact ME
             </a>
           </article>
@@ -87,39 +89,31 @@ const Wrapper = styled.section`
   }
 
   .about-center {
-    display: grid;
-    gap: 3rem 2rem;
     color: var(--clr-white);
+    /* border: var(--border-red); */
   }
 
   .about-skills-heading {
-    margin-bottom: 1.5rem;
-  }
-
-  .resume-btn {
-    background-color: var(--clr-primary-8);
+    /* border: var(--border-red); */
+    font-size: 1.5rem;
+    text-align: center;
   }
 
   .about-info p {
     color: var(--clr-white);
-    margin-bottom: 3rem;
-  }
-
-  .about-img {
-    display: none;
-    justify-self: center;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
   }
 
   .about-details {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    display: flex;
+    position: relative;
     border: 3px solid var(--clr-red);
     justify-content: space-between;
     padding: 1.2rem;
-    margin-bottom: 2rem;
     max-width: 500px;
     border-radius: var(--radius);
+    /* border: var(--border-white); */
   }
 
   .about-details ul li {
@@ -140,72 +134,64 @@ const Wrapper = styled.section`
     margin-bottom: 15px;
   }
 
+  .btn-about {
+    min-width: 10rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    /* border: var(--border-white); */
+  }
+
   @media screen and (min-width: 475px) {
+    .about-skills-heading {
+      font-size: 2rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .about-details {
+      display: flex;
+      margin: 0 auto;
+      margin-bottom: 2rem;
+      /* border: var(--border-white); */
+    }
+
     .about-details ul li {
       gap: 0.8rem;
       flex-direction: row;
-      align-items: center;
       /* border: var(--border-red); */
     }
 
     .hero-btn-1,
     .hero-btn-2 {
-      max-width: 10rem;
       padding: 0.8rem 1rem;
       font-size: 0.7em;
     }
   }
 
   @media screen and (min-width: 760px) {
-    .about-center {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .hero-photo {
-      height: 500px;
-      border-radius: var(--radius);
-    }
-
-    .hero-photo::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background-color: rgba(0, 0, 0, 0.1);
-      z-index: -1;
-    }
-
-    .about-img {
-      display: block;
-      position: relative;
-    }
-
-    .about-img::before {
-      left: -2rem;
-    }
-
     .about-info {
       align-self: start;
-    }
-
-    .about-details ul li {
-      display: flex;
-      flex-direction: row;
-      gap: 1.3rem;
-      align-items: center;
-    }
-
-    .resume-btn {
-      margin-left: 1rem;
     }
 
     .hero-btn-1,
     .hero-btn-2 {
       max-width: 15rem;
+      width: 0 auto;
       padding: 1rem 1.5rem;
       font-size: 0.7em;
+    }
+
+    .about-details {
+      font-size: 1.3rem;
+      gap: 2rem;
+      max-width: 600px;
+      justify-content: space-between;
+    }
+
+    .fa-icons {
+      font-size: 2.5rem;
+      color: var(--clr-white);
     }
   }
 `;
