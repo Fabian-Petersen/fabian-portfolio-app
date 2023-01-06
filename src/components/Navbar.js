@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../assets/images/fabian-logo-small.png";
+import logo from "../assets/images/fabian-logo-vivaldi.svg";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ThemeSelector from "./ThemeSelector";
@@ -64,7 +64,7 @@ const Wrapper = styled.nav`
 
   .nav-logo {
     width: fit-content;
-    height: 3rem;
+    height: 5rem;
     /* border: var(--border-red); */
   }
 

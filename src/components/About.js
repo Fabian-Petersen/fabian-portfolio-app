@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import image from "../assets/images/hero-img.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Icons from "../assets/images/icons";
 import "../index.css";
