@@ -17,14 +17,20 @@ const Navbar = () => {
           <a href="/">
             <img src={logo} className="nav-logo" alt="nav-logo" />
           </a>
-          <ThemeSelector theme={theme} setTheme={setTheme} />
-          <button
-            className={openSidebar ? "show-sidebar" : "nav-btn hide-sidebar"}
-            id="nav-btn"
-            onClick={() => setOpenSidebar(true)}
-          >
-            <FontAwesomeIcon icon={faBars} />
-          </button>
+          <div className="nav-btns">
+            <ThemeSelector
+              theme={theme}
+              setTheme={setTheme}
+              className="theme"
+            />
+            <button
+              className={openSidebar ? "show-sidebar" : "nav-btn hide-sidebar"}
+              id="nav-btn"
+              onClick={() => setOpenSidebar(true)}
+            >
+              <FontAwesomeIcon icon={faBars} />
+            </button>
+          </div>
           <ul className="nav-links">
             {links.map((link) => {
               const { id, name } = link;
@@ -59,9 +65,15 @@ const Wrapper = styled.nav`
   .nav-center {
     display: flex;
     width: 100%;
-    justify-content: space-between;
     /* border: var(--border-red); */
     align-items: center;
+  }
+
+  .nav-btns {
+    display: flex;
+    gap: 2rem;
+    margin-left: auto;
+    /* border: var(--border-white); */
   }
 
   .nav-logo {
@@ -102,6 +114,14 @@ const Wrapper = styled.nav`
       /* border: var(--border-red); */
       gap: 2rem;
       justify-content: space-around;
+    }
+
+    .nav-btns {
+      display: flex;
+      margin-left: auto;
+      gap: 2rem;
+      /* border: var(--border-white); */
+      margin-right: 1rem;
     }
 
     .nav-links a {
