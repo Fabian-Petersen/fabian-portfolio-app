@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Icons from "../assets/images/icons";
+// import Icons from "../assets/images/icons";
+import skills from "../skillsData";
 import "../index.css";
 
 const About = () => {
-  const { faHtml5, faGithub, faCss3, faJs, faReact, faBootstrap, faSass } =
-    Icons;
   return (
     <Wrapper>
       <section className="section about" id="about">
@@ -29,46 +28,21 @@ const About = () => {
               technologies I have worked with thus far.
             </p>
             <h3 className="about-skills-heading">My Skills</h3>
-            <div className="about-details">
-              <ul className="details-left">
-                <li>
-                  <FontAwesomeIcon icon={faHtml5} className="fa-icons" />
-                  HTML5
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faCss3} className="fa-icons" />
-                  CSS
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faJs} className="fa-icons" />
-                  JavaScript
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faReact} className="fa-icons" />
-                  React
-                </li>
-              </ul>
-              <ul className="details-right">
-                <li>
-                  <FontAwesomeIcon icon={faBootstrap} className="fa-icons" />
-                  Bootstrap 5
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faJs} className="fa-icons" />
-                  Jquery
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faSass} className="fa-icons" />
-                  SCSS
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faGithub} className="fa-icons" />
-                  Git Version Control
-                </li>
+            <div className="about-skills-container">
+              <ul>
+                {skills.map((item) => {
+                  const { id, name, icon } = item;
+                  return (
+                    <li key={id}>
+                      <FontAwesomeIcon icon={icon} className="fa-icons" />
+                      {name}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
-            <a href="#contact" className="btn hero-btn-1 btn-about" id="btn">
-              Contact ME
+            <a href="#contact">
+              <button className="btn hero-btn-1 btn-about">Contact ME</button>
             </a>
           </article>
         </div>
@@ -100,45 +74,57 @@ const Wrapper = styled.section`
 
   .about-info p {
     color: var(--clr-white);
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 2rem;
   }
 
-  .about-details {
-    display: flex;
-    position: relative;
+  .about-skills-container {
     border: 3px solid var(--clr-red);
-    justify-content: space-between;
     padding: 1.2rem;
-    max-width: 500px;
+    max-width: 400px;
     border-radius: var(--radius);
-    /* border: var(--border-white); */
+    margin: 0 auto;
   }
 
-  .about-details ul li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .about-skills-container ul {
+    display: grid;
+    column-gap: 3rem;
+    grid-template-columns: 1fr 1fr;
     color: var(--clr-white);
+    width: 100%;
+  }
+
+  .about-skills-container ul li {
+    display: flex;
+    /* border: var(--border-white); */
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--clr-white);
+    font-size: 0.8rem;
+    padding: 0.5rem 0;
   }
 
   .fa-icons {
-    width: 18%;
     font-size: 2rem;
-    padding: 0.5rem 0rem;
+    position: relative;
+    width: 2rem;
+    height: 2rem;
     color: var(--clr-white);
   }
 
-  .about-details ul li:not(li:last-child) {
+  .about-skills-container ul li:not(li:last-child) {
     margin-bottom: 15px;
   }
 
   .btn-about {
-    min-width: 10rem;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
+    max-width: 8rem;
+    padding: 0.75rem 0.8rem;
+    font-size: 0.5rem;
+    margin-top: 2rem;
     /* border: var(--border-white); */
   }
 
@@ -148,23 +134,17 @@ const Wrapper = styled.section`
       margin-bottom: 1.8rem;
     }
 
-    .about-details {
-      display: flex;
+    .about-skills-container {
       margin: 0 auto;
-      margin-bottom: 2rem;
       /* border: var(--border-white); */
     }
 
-    .about-details ul li {
+    .about-skills-container ul li {
       gap: 0.8rem;
-      flex-direction: row;
+      font-size: 1rem;
+      padding: 0.5rem 0;
+      /* flex-direction: row; */
       /* border: var(--border-red); */
-    }
-
-    .hero-btn-1,
-    .hero-btn-2 {
-      padding: 0.8rem 1rem;
-      font-size: 0.7em;
     }
   }
 

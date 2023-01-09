@@ -14,9 +14,7 @@ const PulseIcon = ({ code, url }) => {
             rel="noreferrer"
             className="project-code-link"
           >
-            <button className="demo-btn" onClick={() => console.log({ url })}>
-              Demo
-            </button>
+            <button className="demo-btn">Demo</button>
           </a>
           <a
             href={code}

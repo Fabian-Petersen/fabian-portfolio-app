@@ -53,14 +53,12 @@ const Wrapper = styled.div`
     flex-wrap: wrap;
     justify-content: left;
     gap: 1rem;
-    margin-bottom: 4rem;
-    /* border: var(--border-white); */
+    margin-bottom: 2rem;
   }
 
   .project-btns button {
-    width: 10rem;
+    flex-basis: 100%;
   }
-
   .hero-btn-1,
   .hero-btn-2 {
     max-width: 8rem;
