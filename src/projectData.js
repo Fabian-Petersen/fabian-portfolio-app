@@ -21,7 +21,7 @@ const projects = [
   },
   {
     id: 2,
-    name: "Github User Search Project",
+    name: "Github Users Project",
     language: "react",
     description:
       "Search for your favoutrite user on the github site. The app make use of the github API to search the users in the database",
@@ -80,6 +80,15 @@ const projects = [
     name: "Coming Soon",
     language: "javascript",
     description: "Random e-commerce store for your favourite items",
+    image: projectDemo3,
+    url: "",
+    code: "",
+  },
+  {
+    id: 9,
+    name: "Coming Soon",
+    language: "javascript",
+    description: "",
     image: projectDemo3,
     url: "",
     code: "",

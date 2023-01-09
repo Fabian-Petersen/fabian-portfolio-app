@@ -14,7 +14,9 @@ const Navbar = () => {
     <Wrapper>
       <nav className="nav navbar-fixed" id="nav">
         <div className="nav-center">
-          <img src={logo} className="nav-logo" alt="nav-logo" />
+          <a href="/">
+            <img src={logo} className="nav-logo" alt="nav-logo" />
+          </a>
           <ThemeSelector theme={theme} setTheme={setTheme} />
           <button
             className={openSidebar ? "show-sidebar" : "nav-btn hide-sidebar"}

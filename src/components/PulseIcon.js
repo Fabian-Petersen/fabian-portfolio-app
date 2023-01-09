@@ -3,11 +3,21 @@ import styled from "styled-components";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const PulseIcon = ({ code }) => {
+const PulseIcon = ({ code, url }) => {
   return (
     <Wrapper>
       <div className="project-container">
         <div className="container">
+          <a
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            className="project-code-link"
+          >
+            <button className="demo-btn" onClick={() => console.log({ url })}>
+              Demo
+            </button>
+          </a>
           <a
             href={code}
             target="_blank"
@@ -15,7 +25,11 @@ const PulseIcon = ({ code }) => {
             className="project-code-link"
           >
             <div className="pulse">
-              <FontAwesomeIcon icon={faGithub} className="code-icon" />
+              <FontAwesomeIcon
+                icon={faGithub}
+                className="code-icon"
+                onClick={() => console.log({ url })}
+              />
             </div>
           </a>
         </div>
@@ -26,30 +40,21 @@ const PulseIcon = ({ code }) => {
 
 const Wrapper = styled.div`
   .project-container {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* border: var(--border-red); */
   }
 
   .container {
-    position: absolute;
-    left: 50%;
-    top: 60%;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .project-code-link {
-    //Change this back to 0 hide the icon
-    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
   }
 
   .project-container:hover .project-code-link {
-    opacity: 1;
     color: yellow;
+    cursor: pointer;
   }
 
   .pulse {
@@ -65,6 +70,48 @@ const Wrapper = styled.div`
     font-size: 2rem;
     color: var(--clr-white);
     /* transform: translateX(1px); */
+  }
+
+  .demo-btn {
+    padding: 0.4rem 0.8rem;
+    background-color: var(--clr-white);
+    color: var(--clr-red);
+    border-radius: 20px;
+    position: relative;
+    border: 1px solid var(--clr-red);
+  }
+
+  .demo-btn:hover {
+    cursor: pointer;
+    background-color: var(--clr-red);
+    color: var(--clr-white);
+  }
+
+  /* .demo-btn :is(::before, ::after) {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  } */
+
+  .demo-btn::before,
+  .demo-btn::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
   }
 
   .pulse::before,
@@ -91,6 +138,10 @@ const Wrapper = styled.div`
     animation: pulse 850ms infinite;
   }
 
+  .demo-btn:hover::after {
+    animation: pulseBtn 850ms infinite;
+  }
+
   @keyframes pulse {
     0% {
       opacity: 1;
@@ -102,6 +153,20 @@ const Wrapper = styled.div`
       opacity: 0;
       transform: scale(1.5);
       outline: 0px solid yellow;
+    }
+  }
+
+  @keyframes pulseBtn {
+    0% {
+      opacity: 1;
+      transform: scale(0.8);
+      outline: 8px solid var(--clr-red);
+    }
+
+    100% {
+      opacity: 0;
+      transform: scale(1.5);
+      outline: 0px solid var(--clr-red);
     }
   }
 `;

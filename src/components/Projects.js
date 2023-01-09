@@ -5,7 +5,7 @@ import PulseIcon from "./PulseIcon";
 import { useGlobalContext } from "../ContextAPI";
 
 const Projects = () => {
-  const { filtered } = useGlobalContext();
+  const { projectMenu } = useGlobalContext();
   return (
     <Wrapper>
       <section className="section projects" id="projects">
@@ -18,29 +18,16 @@ const Projects = () => {
         </div>
         <FilterButtons />
         <div className="section-center projects-center">
-          {filtered.map((project) => {
-            const { id, name, language, image, url, code } = project;
+          {projectMenu.map((item) => {
+            const { id, name, language, image, code, url } = item;
             return (
-              <div className="project" key={id}>
-                <a
-                  className="project-item"
-                  target="_blank"
-                  rel="noreferrer"
-                  href={url}
-                >
-                  <article>
-                    <img
-                      src={image}
-                      alt="single project"
-                      className="project-img"
-                    />
-                    <div className="project-info">
-                      <h4>{name}</h4>
-                      <p>Designed with {language}</p>
-                    </div>
-                  </article>
-                </a>
-                <PulseIcon code={code} />
+              <div className="project-card" key={id}>
+                <img src={image} alt={name} className="project-img" />
+                <div className="card-body">
+                  <h4 className="project-title">{name}</h4>
+                  <p>Designed with {language}</p>
+                  <PulseIcon code={code} url={url} />
+                </div>
               </div>
             );
           })}
@@ -51,73 +38,75 @@ const Projects = () => {
 };
 
 const Wrapper = styled.section`
-  .project {
+  .project-card {
+    position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
     background: var(--clr-primary-5);
     border-radius: var(--radius);
     margin-bottom: 2rem;
     width: 100%;
-    height: 20rem;
+    height: 25rem;
+    align-items: center;
     background-size: cover;
-    position: relative;
+    transition: all 200ms ease;
+    overflow: hidden;
   }
 
-  .project:hover {
-    cursor: pointer;
-  }
-
-  .project-item {
-    position: relative;
-    width: 100%;
-    height: 100%;
+  .projects-text {
+    font-size: 1rem;
   }
 
   .project-img {
-    position: absolute;
     width: 100%;
     height: 100%;
-    transition: var(--transition);
     border-radius: var(--radius);
     -o-object-fit: cover;
     object-fit: cover;
   }
 
-  .project-info {
-    text-align: center;
-    color: var(--clr-blue);
-    display: flex;
-    flex-direction: column;
+  .project-img:hover {
+    opacity: 0.3;
+  }
+
+  .card-body {
     position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: var(--transition);
-    opacity: 0;
-    width: 90%;
+    display: grid;
+    place-content: center;
+    left: 0;
+    right: 0;
+    height: 100%;
+    bottom: -100%;
+    border-radius: var(--radius);
+    transition: 0.3s ease;
+    background-color: var(--clr-black);
+    opacity: 0.3;
   }
 
-  .project-info h4 {
-    font-size: 1.3rem;
+  .project-card:hover .card-body {
+    transform: translateY(0);
+    opacity: 0.8;
+    bottom: 0;
+    /* visibility: visible; */
   }
 
-  .project-info p {
+  .project-title {
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+  }
+
+  .project-card p {
     text-transform: capitalize;
+    font-size: 1.3rem;
     color: var(--clr-white);
+    text-align: center;
   }
 
   .project:hover .project-info {
     opacity: 1;
-  }
-
-  .project:hover .project-img {
-    opacity: 0.1;
-    transform: scale(1.05);
-  }
-
-  .project:hover::after {
-    opacity: 1;
-    transform: scale(0.8);
   }
 
   @media screen and (min-width: 676px) {
