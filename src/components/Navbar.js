@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ThemeSelector from "./ThemeSelector";
 import links from "../pageLinks";
 import { useGlobalContext } from "../ContextAPI";
+import "../index.css";
 
 const Navbar = () => {
   const { theme, setTheme, openSidebar, setOpenSidebar } = useGlobalContext();
@@ -21,7 +22,7 @@ const Navbar = () => {
             <ThemeSelector
               theme={theme}
               setTheme={setTheme}
-              className="theme"
+              className={theme ? "theme theme-dark" : "theme theme-light"}
             />
             <button
               className={openSidebar ? "show-sidebar" : "nav-btn hide-sidebar"}
@@ -76,6 +77,10 @@ const Wrapper = styled.nav`
     /* border: var(--border-white); */
   }
 
+  .theme {
+    font-size: 1.5rem;
+  }
+
   .nav-logo {
     width: fit-content;
     height: 5rem;
@@ -121,7 +126,7 @@ const Wrapper = styled.nav`
       margin-left: auto;
       gap: 2rem;
       /* border: var(--border-white); */
-      margin-right: 1rem;
+      margin-right: 2rem;
     }
 
     .nav-links a {
