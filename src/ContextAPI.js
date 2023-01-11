@@ -13,6 +13,7 @@ const AppProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
+        projects,
         projectMenu,
         setProjectMenu,
         activeButton,
@@ -23,8 +24,7 @@ const AppProvider = ({ children }) => {
         setTheme,
         buttonCategory,
         setButtonCategory,
-      }}
-    >
+      }}>
       {children}
     </AppContext.Provider>
   );

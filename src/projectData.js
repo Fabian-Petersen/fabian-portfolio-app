@@ -18,6 +18,12 @@ const projects = [
     image: projectCockTails,
     url: "https://fabian-portfolio-cocktail-project.netlify.app",
     code: "https://github.com/fabian-petersen/cocktail-api-project",
+    singlePage: {
+      description:
+        "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
+      images: "",
+      skills: ["React", "HTML", "CSS", "styled components"],
+    },
   },
   {
     id: 2,
@@ -28,6 +34,19 @@ const projects = [
     image: projectGithub,
     url: "https://fabian-portfolio-react-github-users.netlify.app/login",
     code: "https://github.com/fabian-petersen/react-github-users-search-app.git",
+    singlePage: {
+      description:
+        "In this project i used the Github API to get the information of the users.",
+      images: "",
+      skills: [
+        "React",
+        "HTML",
+        "CSS",
+        "React Router V6",
+        "axios",
+        "styled components",
+      ],
+    },
   },
   {
     id: 3,
@@ -38,6 +57,12 @@ const projects = [
     image: projectTours,
     url: "",
     code: "https://github.com/fabian-petersen/natours",
+    singlePage: {
+      description:
+        "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
+      images: "",
+      skills: ["HTML", "CSS", "SASS"],
+    },
   },
   {
     id: 4,
@@ -47,6 +72,12 @@ const projects = [
     image: projectTea,
     url: "",
     code: "https://github.com/Fabian-Petersen/tea-shop-app",
+    singlePage: {
+      description:
+        "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
+      images: "",
+      skills: ["React", "HTML", "CSS", "Styled Components"],
+    },
   },
   {
     id: 5,
@@ -56,6 +87,19 @@ const projects = [
     image: projectDemo4,
     url: "",
     code: "",
+    singlePage: {
+      description:
+        "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
+      images: "",
+      skills: [
+        "React",
+        "HTML",
+        "CSS",
+        "React Router v6",
+        "Styled Components",
+        "Redux",
+      ],
+    },
   },
   {
     id: 6,
@@ -65,6 +109,12 @@ const projects = [
     image: projectDemo4,
     url: "",
     code: "",
+    singlePage: {
+      description:
+        "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
+      images: "",
+      skills: ["React", "HTML", "CSS"],
+    },
   },
   {
     id: 7,
@@ -74,6 +124,12 @@ const projects = [
     image: projectDemo4,
     url: "",
     code: "",
+    singlePage: {
+      description:
+        "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
+      images: "",
+      skills: ["React", "HTML", "CSS"],
+    },
   },
   {
     id: 8,
@@ -83,6 +139,12 @@ const projects = [
     image: projectDemo3,
     url: "",
     code: "",
+    singlePage: {
+      description:
+        "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
+      images: "",
+      skills: ["React", "HTML", "CSS"],
+    },
   },
   {
     id: 9,
@@ -92,6 +154,12 @@ const projects = [
     image: projectDemo3,
     url: "",
     code: "",
+    singlePage: {
+      description:
+        "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
+      images: "",
+      skills: ["React", "HTML", "CSS"],
+    },
   },
 ];
 
