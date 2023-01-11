@@ -23,7 +23,7 @@ const FilterButtons = () => {
   const uniqueValues = [...new Set(projects.map((item) => item.language))];
   return (
     <Wrapper>
-      <div className="project-btns section-center">
+      <div className='project-btns section-center'>
         {uniqueValues.map((item, index) => {
           return (
             <button
@@ -33,13 +33,12 @@ const FilterButtons = () => {
                   ? "btn hero-btn-1 project-btn active"
                   : "btn hero-btn-1 project-btn"
               }
-              onClick={handleClick(item)}
-            >
+              onClick={handleClick(item)}>
               {item}
             </button>
           );
         })}
-        <button className="btn hero-btn-1" id="project-btn-all" onClick={reset}>
+        <button className='btn hero-btn-1' id='project-btn-all' onClick={reset}>
           All
         </button>
       </div>
@@ -51,8 +50,8 @@ const Wrapper = styled.div`
   .project-btns {
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
-    gap: 1rem;
+    justify-content: center;
+    gap: 2rem;
     margin-bottom: 2rem;
   }
 

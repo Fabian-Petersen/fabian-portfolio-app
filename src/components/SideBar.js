@@ -13,13 +13,12 @@ const SideBar = ({ openSidebar, setOpenSidebar }) => {
     <Wrapper>
       <aside
         className={openSidebar ? "show__sidebar" : "hide__sidebar"}
-        id="sidebar"
-      >
+        id='sidebar'>
         <div>
-          <button className="close-btn" onClick={handleClick}>
-            <FontAwesomeIcon icon={faClose} id="close-btn" />
+          <button className='close-btn' onClick={handleClick}>
+            <FontAwesomeIcon icon={faClose} id='close-btn' />
           </button>
-          <ul className="sidebar-links">
+          <ul className='sidebar-links'>
             {links.map((link) => {
               const { id, name } = link;
               return (

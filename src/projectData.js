@@ -59,7 +59,7 @@ const projects = [
     code: "https://github.com/fabian-petersen/natours",
     singlePage: {
       description:
-        "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
+        "The project does not use any framework e.g. React. The project was created in in my early stages as a developer to learn vanilla sematic HTML, CSS (with SCSS) and JavaScript.",
       images: "",
       skills: ["HTML", "CSS", "SASS"],
     },

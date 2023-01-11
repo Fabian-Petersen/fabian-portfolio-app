@@ -3,28 +3,32 @@ import styled from "styled-components";
 import FilterButtons from "./FilterButtons";
 import PulseIcon from "./PulseIcon";
 import { useGlobalContext } from "../ContextAPI";
+import { useParams, Link } from "react-router-dom";
 
 const Projects = () => {
   const { projectMenu } = useGlobalContext();
+  const { id } = useParams();
   return (
     <Wrapper>
-      <section className="section projects" id="projects">
-        <div className="section-title">
+      <section className='section projects' id='projects'>
+        <div className='section-title'>
           <h2>Projects</h2>
-          <div className="underline"></div>
-          <p className="projects-text">
+          <div className='underline'></div>
+          <p className='projects-text'>
             This is my latest work and work in progress
           </p>
         </div>
-        <FilterButtons />
-        <div className="section-center projects-center">
+        <FilterButtons className='filterButtons' />
+        <div className='section-center projects-center'>
           {projectMenu.map((item) => {
             const { id, name, language, image, code, url } = item;
             return (
-              <div className="project-card" key={id}>
-                <img src={image} alt={name} className="project-img" />
-                <div className="card-body">
-                  <h4 className="project-title">{name}</h4>
+              <div className='project-card' key={id}>
+                <img src={image} alt={name} className='project-img' />
+                <div className='card-body'>
+                  <Link to={`/${id}`}>
+                    <h4 className='project-title'>{name}</h4>
+                  </Link>
                   <p>Designed with {language}</p>
                   <PulseIcon code={code} url={url} />
                 </div>
@@ -55,6 +59,12 @@ const Wrapper = styled.section`
     overflow: hidden;
   }
 
+  .project-title:hover {
+    cursor: pointer;
+    color: var(--clr-yellow);
+    transform: scale(1.05);
+  }
+
   .projects-text {
     font-size: 1rem;
   }
@@ -80,7 +90,7 @@ const Wrapper = styled.section`
     height: 100%;
     bottom: -100%;
     border-radius: var(--radius);
-    transition: 0.3s ease;
+    transition: var(--transition);
     background-color: var(--clr-black);
     opacity: 0.3;
   }

@@ -1,18 +1,33 @@
 import React from "react";
 import "../src/index.css";
 import AppProvider from "./ContextAPI";
-
-import { About, Header, Projects, Contact, Footer } from "./components/Index";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  About,
+  Header,
+  Projects,
+  Contact,
+  Footer,
+  SinglePage,
+} from "./components/Index";
 
 const App = () => {
   return (
     <div>
       <AppProvider>
-        <Header />
-        <About />
-        <Projects />
-        <Contact />
-        <Footer />
+        <Router>
+          <Routes>
+            <Route exact path='/' element={<Header />} />
+          </Routes>
+          <About />
+          <Projects />
+          <SinglePage />
+          <Routes>
+            <Route path='/project/:id' element={<SinglePage />} />
+          </Routes>
+          <Contact />
+          <Footer />
+        </Router>
       </AppProvider>
     </div>
   );

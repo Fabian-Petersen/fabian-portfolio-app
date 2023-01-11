@@ -17,29 +17,28 @@ const Header = () => {
       ) : (
         <Navbar setOpenSidebar={setOpenSidebar} openSidebar={openSidebar} />
       )}
-      <header className="hero section" id="home">
-        <div className="section-center hero-center">
-          <article className="hero-info">
-            <div className="underline"></div>
-            <div className="hero-heading">
+      <header className='hero section' id='home'>
+        <div className='section-center hero-center'>
+          <article className='hero-info'>
+            <div className='underline'></div>
+            <div className='hero-heading' id='home'>
               <h1>
                 Hi, my name is <span>Fabian.</span>
               </h1>
             </div>
-            <p className="hero-sub-heading">
+            <p className='hero-sub-heading'>
               Welcome to my official portfolio website showcasing my work as a
               <span> React Web Developer.</span>
             </p>
-            <div className="home-btns">
+            <div className='home-btns'>
               <a
                 href={cv}
-                target="_blank"
-                rel="noreferrer"
-                className="btn hero-btn-1"
-              >
+                target='_blank'
+                rel='noreferrer'
+                className='btn hero-btn-1'>
                 Download CV
               </a>
-              <a href="#projects" className="btn hero-btn-2">
+              <a href='#projects' className='btn hero-btn-2'>
                 My Projects
               </a>
             </div>
