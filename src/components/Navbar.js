@@ -7,6 +7,7 @@ import ThemeSelector from "./ThemeSelector";
 import links from "../pageLinks";
 import { useGlobalContext } from "../ContextAPI";
 import "../index.css";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { theme, setTheme, openSidebar, setOpenSidebar } = useGlobalContext();
@@ -15,9 +16,9 @@ const Navbar = () => {
     <Wrapper>
       <nav className="nav navbar-fixed" id="nav">
         <div className="nav-center">
-          <a href="/">
+          <Link href="/">
             <img src={logo} className="nav-logo" alt="nav-logo" />
-          </a>
+          </Link>
           <div className="nav-btns">
             <ThemeSelector
               theme={theme}

@@ -9,6 +9,7 @@ import {
   Contact,
   Footer,
   SinglePage,
+  Navbar,
 } from "./components/Index";
 
 const App = () => {
@@ -16,16 +17,14 @@ const App = () => {
     <div>
       <AppProvider>
         <Router>
+          <Navbar />
           <Routes>
             <Route exact path='/' element={<Header />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/projects' element={<Projects />} />
+            <Route path='/projects/:projectId' element={<SinglePage />} />
+            <Route path='/contact' element={<Contact />} />
           </Routes>
-          <About />
-          <Projects />
-          <SinglePage />
-          <Routes>
-            <Route path='/project/:id' element={<SinglePage />} />
-          </Routes>
-          <Contact />
           <Footer />
         </Router>
       </AppProvider>

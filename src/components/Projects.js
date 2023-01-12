@@ -3,11 +3,10 @@ import styled from "styled-components";
 import FilterButtons from "./FilterButtons";
 import PulseIcon from "./PulseIcon";
 import { useGlobalContext } from "../ContextAPI";
-import { useParams, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   const { projectMenu } = useGlobalContext();
-  const { id } = useParams();
   return (
     <Wrapper>
       <section className='section projects' id='projects'>
@@ -26,7 +25,7 @@ const Projects = () => {
               <div className='project-card' key={id}>
                 <img src={image} alt={name} className='project-img' />
                 <div className='card-body'>
-                  <Link to={`/${id}`}>
+                  <Link to={`/projects/${id}`}>
                     <h4 className='project-title'>{name}</h4>
                   </Link>
                   <p>Designed with {language}</p>

@@ -51,7 +51,7 @@ const projects = [
   {
     id: 3,
     name: "Tours Project",
-    language: "react",
+    language: "javascript",
     description:
       "Search for your favoutrite destination and book with us for a memorable holiday.",
     image: projectTours,
