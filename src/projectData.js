@@ -1,4 +1,9 @@
 import { projectImages } from "./assets/images/index.js";
+import skills from "./skillsData";
+
+const { icon } = skills;
+
+console.log(icon);
 
 const {
   projectCockTails,
@@ -7,6 +12,14 @@ const {
   projectTea,
   projectDemo3,
   projectDemo4,
+  html,
+  css,
+  javascript,
+  react,
+  sass,
+  github,
+  redux,
+  // bootstrap,
 } = projectImages;
 
 const projects = [
@@ -22,7 +35,7 @@ const projects = [
       description:
         "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
       images: "",
-      skills: ["React", "HTML", "CSS", "styled components"],
+      skills: [html, css, javascript, react, github],
     },
   },
   {
@@ -38,14 +51,7 @@ const projects = [
       description:
         "In this project i used the Github API to get the information of the users.",
       images: "",
-      skills: [
-        "React",
-        "HTML",
-        "CSS",
-        "React Router V6",
-        "axios",
-        "styled components",
-      ],
+      skills: [html, css, javascript, react],
     },
   },
   {
@@ -61,7 +67,7 @@ const projects = [
       description:
         "The project does not use any framework e.g. React. The project was created in in my early stages as a developer to learn vanilla sematic HTML, CSS (with SCSS) and JavaScript.",
       images: "",
-      skills: ["HTML", "CSS", "SASS"],
+      skills: [html, css, javascript, sass, github],
     },
   },
   {
@@ -76,7 +82,7 @@ const projects = [
       description:
         "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
       images: "",
-      skills: ["React", "HTML", "CSS", "Styled Components"],
+      skills: [html, css, javascript, react, github],
     },
   },
   {
@@ -91,14 +97,7 @@ const projects = [
       description:
         "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
       images: "",
-      skills: [
-        "React",
-        "HTML",
-        "CSS",
-        "React Router v6",
-        "Styled Components",
-        "Redux",
-      ],
+      skills: [html, css, javascript, react, github, redux],
     },
   },
   {
@@ -113,7 +112,7 @@ const projects = [
       description:
         "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
       images: "",
-      skills: ["React", "HTML", "CSS"],
+      skills: [html, css, javascript, react, github],
     },
   },
   {
@@ -128,7 +127,7 @@ const projects = [
       description:
         "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
       images: "",
-      skills: ["React", "HTML", "CSS"],
+      skills: [html, css, javascript, github],
     },
   },
   {
@@ -143,7 +142,7 @@ const projects = [
       description:
         "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
       images: "",
-      skills: ["React", "HTML", "CSS"],
+      skills: [html, css, javascript, react, github],
     },
   },
   {
@@ -158,7 +157,7 @@ const projects = [
       description:
         "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
       images: "",
-      skills: ["React", "HTML", "CSS"],
+      skills: [html, css, javascript, react, github],
     },
   },
 ];

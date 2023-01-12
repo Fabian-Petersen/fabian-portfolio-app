@@ -1,47 +1,53 @@
-import Icons from "../src/assets/images/icons";
+import { projectImages } from "./assets/images/index.js";
 
-const { faHtml5, faGithub, faCss3, faJs, faReact, faBootstrap, faSass } = Icons;
+const { html, css, javascript, react, sass, github, redux, bootstrap } =
+  projectImages;
 
 const skills = [
   {
     id: 1,
-    name: "HTML 5",
-    icon: faHtml5,
+    name: "hmtl",
+    icon: html,
   },
   {
     id: 2,
     name: "CSS",
-    icon: faCss3,
+    icon: css,
   },
   {
     id: 3,
     name: "JavaScript",
-    icon: faJs,
+    icon: javascript,
   },
   {
     id: 4,
     name: "React",
-    icon: faReact,
+    icon: react,
   },
   {
     id: 5,
-    name: "Git",
-    icon: faGithub,
+    name: "Github",
+    icon: github,
   },
   {
     id: 6,
     name: "Bootstrap",
-    icon: faBootstrap,
+    icon: bootstrap,
   },
   {
     id: 7,
     name: "Jquery",
-    icon: faJs,
+    icon: "",
   },
   {
     id: 8,
     name: "SCSS",
-    icon: faSass,
+    icon: sass,
+  },
+  {
+    id: 9,
+    name: "Redux",
+    icon: redux,
   },
 ];
 
