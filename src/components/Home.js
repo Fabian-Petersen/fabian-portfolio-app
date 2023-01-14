@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import cv from "../assets/documents/fabian-petersen-12.2022-v1.pdf";
 import { useGlobalContext } from "../ContextAPI";
@@ -8,7 +9,7 @@ import SocialsHover from "./SocialsHover";
 
 // import bgImage from "../assets/images/hero-simple-shiny-bg.svg";
 
-const Header = () => {
+const Home = () => {
   const { openSidebar, setOpenSidebar } = useGlobalContext();
   return (
     <Wrapper>
@@ -21,11 +22,10 @@ const Header = () => {
         <div className='section-center hero-center'>
           <article className='hero-info'>
             <div className='underline'></div>
-            <div className='hero-heading' id='home'>
-              <h1>
-                Hi, my name is <span>Fabian.</span>
-              </h1>
-            </div>
+            <h3>Hi, my name is</h3>
+            <h1>
+              <span>Fabian </span>Petersen.
+            </h1>
             <p className='hero-sub-heading'>
               Welcome to my official portfolio website showcasing my work as a
               <span> React Web Developer.</span>
@@ -35,12 +35,12 @@ const Header = () => {
                 href={cv}
                 target='_blank'
                 rel='noreferrer'
-                className='btn hero-btn-1'>
+                className='btn btn-1'>
                 Download CV
               </a>
-              <a href='#projects' className='btn hero-btn-2'>
+              <Link to='/projects' className='btn btn-2'>
                 My Projects
-              </a>
+              </Link>
             </div>
             <SocialsHover />
           </article>
@@ -68,33 +68,38 @@ const Wrapper = styled.header`
     place-items: center;
   }
 
-  .hero-heading {
+  h1,
+  h3 {
     position: relative;
-    margin-bottom: 1rem;
-    /* border: var(--border-white); */
     width: fit-content;
-    display: flex;
-    align-items: center;
+    align-items: left;
+    ${"" /* border: var(--border-white); */}
+    color: var(--clr-white);
+    text-transform: none;
+    padding: 0.5rem 0;
+    margin: 0;
+  }
 
-    h1 {
-      font-size: 1.4rem;
-      text-transform: none;
-    }
+  h3 {
+    font-size: 1rem;
+  }
 
-    span {
-      color: var(--clr-yellow);
-    }
+  h1 {
+    font-size: 2rem;
+  }
+
+  h1 span {
+    color: var(--clr-yellow);
   }
 
   .hero-sub-heading {
     opacity: 0;
-    font-size: 1.1em;
-    width: 100%;
+    font-size: 0.8rem;
     line-height: 2rem;
     text-transform: none;
     animation: textAnimation 500ms ease 3400ms forwards;
     /* border: var(--border-white); */
-    max-width: fit-content;
+    max-width: 80%;
     span {
       color: var(--clr-yellow);
     }
@@ -102,8 +107,8 @@ const Wrapper = styled.header`
 
   //? ======================== Start of the styles for the animation for the typewriter text and pointer ================= //
 
-  .hero-heading::before,
-  .hero-heading::after {
+  h1::before,
+  h3::before {
     content: "";
     position: absolute;
     top: 0;
@@ -112,17 +117,14 @@ const Wrapper = styled.header`
     bottom: 0;
   }
 
-  .hero-heading::before {
+  h3::before {
     background-color: var(--clr-bg-dark);
-    animation: typewriterAnimation 3000ms steps(22) 1s forwards;
+    animation: typewriterAnimation 1500ms steps(14) 1s forwards;
   }
 
-  .hero-heading::after {
-    width: 3px;
-    height: 2rem;
-    background-color: var(--clr-yellow);
-    animation: typewriterAnimation 3000ms steps(22) 1s forwards,
-      cursorBlink 850ms steps(2, start) infinite;
+  h1::before {
+    background-color: var(--clr-bg-dark);
+    animation: typewriterAnimation 1500ms steps(16) 2.5s forwards;
   }
 
   //? ======================== End of the styles for the animation for the typewriter text and pointer ================= //
@@ -138,32 +140,33 @@ const Wrapper = styled.header`
     animation: textAnimation 600ms ease 3500ms forwards;
   }
 
-  .hero-btn-1,
-  .hero-btn-2 {
-    max-width: 8rem;
-    padding: 0.9rem 0.55rem;
-    font-size: 0.6em;
+  .home-btns :is(.btn-1, .btn-2) {
+    max-width: 10rem;
+    border-radius: 0px;
+    font-size: 0.5rem;
+    padding: 0.7rem 1rem;
   }
 
-  .hero-btn-1 {
-    background-color: var(--clr-primary-5);
+  .btn-1 {
+    background-color: var(--clr-yellow);
+    color: var(--clr-primary-5);
+  }
+
+  .btn-2 {
+    background-color: transparent;
     color: var(--clr-white);
+    border: 1px solid yellow;
   }
 
-  .hero-btn-1:hover {
+  .btn-1:hover {
     background-color: white;
-    color: var(--clr-grey-head-3);
+    color: var(--clr-red);
   }
 
-  .hero-btn-2 {
-    background-color: var(--clr-white);
-    color: var(--clr-grey-head-1);
-  }
-
-  .hero-btn-1:hover,
-  .hero-btn-2:hover {
-    background-color: var(--clr-red);
-    color: var(--clr-white);
+  .btn-2:hover {
+    background-color: white;
+    border: 1px solid var(--clr-white);
+    color: var(--clr-red);
   }
 
   //$  ================================================= End Button Styles ============================================ //
@@ -192,12 +195,6 @@ const Wrapper = styled.header`
     }
   }
 
-  @keyframes cursorBlink {
-    to {
-      opacity: 0;
-    }
-  }
-
   @media screen and (min-width: 450px) {
     .hero-heading h1 {
       font-size: 1.8rem;
@@ -214,11 +211,11 @@ const Wrapper = styled.header`
       padding: 1.2rem 0;
     }
 
-    .hero-btn-1,
-    .hero-btn-2 {
+    .btn-1,
+    .btn-2 {
       max-width: 10rem;
       padding: 0.8rem 1rem;
-      font-size: 0.7em;
+      font-size: 0.7rem;
     }
 
     .hero-icons {
@@ -231,8 +228,13 @@ const Wrapper = styled.header`
   }
 
   @media screen and (min-width: 720px) {
-    .hero-heading h1 {
+    h3 {
+      font-size: 2rem;
+    }
+
+    h1 {
       font-size: 4rem;
+      margin-bottom: 1.5rem;
     }
 
     .hero-sub-heading {
@@ -243,21 +245,28 @@ const Wrapper = styled.header`
     .home-btns {
       gap: 1.5rem;
       padding: 1rem 0;
-    }
 
-    .hero-btn-1,
-    .hero-btn-2 {
-      max-width: 15rem;
-      padding: 0.8rem 1.3rem;
-      font-size: 0.6em;
+      .btn-1,
+      .btn-2 {
+        max-width: 15rem;
+        padding: 0.8rem 1.3rem;
+        font-size: 0.6em;
+      }
     }
-
     .hero-heading::after {
       height: 4rem;
     }
   }
 
   @media screen and (min-width: 992px) {
+    h3 {
+      font-size: 3rem;
+    }
+
+    h1 {
+      font-size: 6rem;
+    }
+
     .hero .underline {
       margin-bottom: 1.5rem;
     }
@@ -271,11 +280,8 @@ const Wrapper = styled.header`
       padding: 1.5rem 0;
     }
 
-    .hero-btn-1,
-    .hero-btn-2 {
-      max-width: 20rem;
-      padding: 0.8rem 1.2rem;
-      font-size: 0.75em;
+    .home-btns :is(.btn-1, .btn-2) {
+      max-width: 25rem;
     }
 
     .social-icon {
@@ -292,4 +298,4 @@ const Wrapper = styled.header`
   }
 `;
 
-export default Header;
+export default Home;

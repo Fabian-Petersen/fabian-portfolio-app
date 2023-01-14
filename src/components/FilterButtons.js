@@ -23,22 +23,22 @@ const FilterButtons = () => {
   const uniqueValues = [...new Set(projects.map((item) => item.language))];
   return (
     <Wrapper>
-      <div className='project-btns section-center'>
+      <div className='btn-container section-center'>
         {uniqueValues.map((item, index) => {
           return (
             <button
               key={index}
               className={
                 activeButton === item
-                  ? "btn hero-btn-1 project-btn active"
-                  : "btn hero-btn-1 project-btn"
+                  ? "btn btn-1 project-btn active"
+                  : "btn btn-1 project-btn"
               }
               onClick={handleClick(item)}>
               {item}
             </button>
           );
         })}
-        <button className='btn hero-btn-1' id='project-btn-all' onClick={reset}>
+        <button className='btn btn-1' id='project-btn-all' onClick={reset}>
           All
         </button>
       </div>
@@ -47,26 +47,35 @@ const FilterButtons = () => {
 };
 
 const Wrapper = styled.div`
-  .project-btns {
+  .btn-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
     margin-bottom: 2rem;
+    gap: 0.5rem;
   }
 
-  .project-btns button {
-    flex-basis: 100%;
-  }
-  .hero-btn-1,
-  .hero-btn-2 {
-    max-width: 8rem;
-    padding: 0.7rem 0.8rem;
-    font-size: 0.6rem;
+  button {
+    flex: 1 1 0;
+    width: max-content;
+    padding: 0.8rem 0rem;
   }
 
   button.active {
     background-color: var(--clr-red);
+    color: white;
+  }
+
+  @media screen and (min-width: 450px) {
+    .btn-container {
+      gap: 1rem;
+      padding: 0.7rem 1rem;
+      font-size: 0.7rem;
+    }
+
+    button {
+      max-width: 9rem;
+    }
   }
 `;
 

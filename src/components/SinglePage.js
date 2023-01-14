@@ -18,7 +18,7 @@ const SinglePage = () => {
               <h2>{name}</h2>
               <div className='underline'></div>
               <p className='desc'>{singlePage.description}</p>
-              <h3 className='skills-title'>Skills Used</h3>
+              <h3 className='skills-title'>Tools Used</h3>
               <SkillsIcons name={name} singlePage={singlePage} />
               <Link to='/projects'>
                 <button className='btn hero-btn-2'>Back</button>

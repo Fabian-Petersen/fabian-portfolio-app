@@ -13,10 +13,8 @@ const Projects = () => {
         <div className='section-title'>
           <h2>Projects</h2>
           <div className='underline'></div>
-          <p className='projects-text'>
-            This is my latest work and work in progress
-          </p>
         </div>
+        <p className='projects-text'>My latest completed projects</p>
         <FilterButtons className='filterButtons' />
         <div className='section-center projects-center'>
           {projectMenu.map((item) => {
@@ -41,6 +39,11 @@ const Projects = () => {
 };
 
 const Wrapper = styled.section`
+  .projects-text {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
   .project-card {
     position: relative;
     display: flex;
@@ -51,7 +54,7 @@ const Wrapper = styled.section`
     border-radius: var(--radius);
     margin-bottom: 2rem;
     width: 100%;
-    height: 25rem;
+    height: 20rem;
     align-items: center;
     background-size: cover;
     transition: all 200ms ease;
@@ -62,10 +65,6 @@ const Wrapper = styled.section`
     cursor: pointer;
     color: var(--clr-yellow);
     transform: scale(1.05);
-  }
-
-  .projects-text {
-    font-size: 1rem;
   }
 
   .project-img {
@@ -124,13 +123,6 @@ const Wrapper = styled.section`
       grid-template-columns: 1fr 1fr;
       -moz-column-gap: 2rem;
       column-gap: 2rem;
-    }
-
-    .hero-btn-1,
-    .hero-btn-2 {
-      max-width: 13rem;
-      padding: 1rem 1.5rem;
-      font-size: 0.7em;
     }
   }
 

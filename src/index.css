@@ -166,35 +166,45 @@ p {
 
 .btn {
   text-transform: uppercase;
-  background: var(--clr-primary-5);
-  color: var(--clr-white);
+  background: var(--clr-yellow);
+  border: var(--clr-yellow);
+  color: var(--clr-primary-5);
   padding: 0.3rem 0.6rem;
+  max-width: 8rem;
   letter-spacing: var(--spacing);
   display: inline-block;
   font-weight: 700;
   transition: var(--transition);
-  font-size: 1rem;
-  border: 2px solid transparent;
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: var(--radius);
 }
 
-.btn:hover {
-  color: var(--clr-primary-1);
-  background: var(--clr-primary-7);
+.btn-lg {
+  padding: 1rem 1.5rem;
+  font-size: 0.8rem;
 }
 
-.hero-btn-1:hover,
-.hero-btn-2:hover {
+.btn-yellow {
+  background-color: var(--clr-yellow);
+}
+
+.btn:hover {
+  color: var(--clr-white);
+  background: var(--clr-red);
+}
+
+.btn-1:hover,
+.btn-2:hover {
   background-color: var(--clr-red);
   color: var(--clr-white);
 }
 
 /* section */
 .section {
-  min-height: calc(100vh - 5rem);
-  padding: 1.5rem 0;
+  min-height: 100vh;
+  /* border: 1px solid white; */
+  padding: 4rem 0;
 }
 
 .section-center {

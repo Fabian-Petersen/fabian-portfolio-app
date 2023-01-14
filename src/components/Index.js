@@ -1,6 +1,6 @@
 import About from "./About";
 import Navbar from "./Navbar";
-import Header from "./Header";
+import Home from "./Home";
 import SideBar from "./SideBar";
 import Contact from "./Contact";
 import Footer from "./Footer";
@@ -11,7 +11,7 @@ import SinglePage from "./SinglePage";
 export {
   About,
   Navbar,
-  Header,
+  Home,
   SideBar,
   Projects,
   Contact,

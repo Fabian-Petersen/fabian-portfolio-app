@@ -4,7 +4,7 @@ import AppProvider from "./ContextAPI";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   About,
-  Header,
+  Home,
   Projects,
   Contact,
   Footer,
@@ -19,7 +19,7 @@ const App = () => {
         <Router>
           <Navbar />
           <Routes>
-            <Route exact path='/' element={<Header />} />
+            <Route exact path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
             <Route path='/projects' element={<Projects />} />
             <Route path='/projects/:projectId' element={<SinglePage />} />

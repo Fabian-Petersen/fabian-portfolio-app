@@ -6,58 +6,55 @@ import projectImage1 from "../assets/images/project-1.jpeg";
 const Contact = () => {
   return (
     <Wrapper>
-      <section className="contact section" id="contact">
-        <div className="section-title">
+      <section className='contact section' id='contact'>
+        <div className='section-title'>
           <h2>Lets get in touch</h2>
-          <div className="underline"></div>
+          <div className='underline'></div>
         </div>
-        <div className="section-center contact-center">
+        <div className='section-center contact-center'>
           <form
-            id="fs-frm"
-            name="simple-contact-form"
-            acceptCharset="utf-8"
-            action="https://formspree.io/f/xgebwpge"
-            method="POST"
-          >
-            <fieldset id="fs-frm-inputs">
-              <h2 className="contact-form-title">Contact Me</h2>
-              <label htmlFor="full-name">Full Name</label>
+            id='fs-frm'
+            name='simple-contact-form'
+            acceptCharset='utf-8'
+            action='https://formspree.io/f/xgebwpge'
+            method='POST'>
+            <fieldset id='fs-frm-inputs'>
+              <h2 className='contact-form-title'>Contact Me</h2>
+              <label htmlFor='full-name'>Full Name</label>
               <input
-                type="text"
-                name="name"
-                id="full-name"
-                placeholder="First Name"
+                type='text'
+                name='name'
+                id='full-name'
+                placeholder='First Name'
                 required
               />
-              <label htmlFor="email-address">Email Address</label>
+              <label htmlFor='email-address'>Email Address</label>
               <input
-                type="email"
-                name="_replyto"
-                id="email-address"
-                placeholder="fabian@webmail.com"
+                type='email'
+                name='_replyto'
+                id='email-address'
+                placeholder='fabian@webmail.com'
                 required
               />
-              <label htmlFor="message">Message</label>
+              <label htmlFor='message'>Message</label>
               <textarea
-                rows="8"
-                name="message"
-                id="message"
-                placeholder="Enter your message"
-                required
-              ></textarea>
+                rows='8'
+                name='message'
+                id='message'
+                placeholder='Enter your message'
+                required></textarea>
               <input
-                type="hidden"
-                name="_subject"
-                id="email-subject"
-                value="Contact Form Submission"
+                type='hidden'
+                name='_subject'
+                id='email-subject'
+                value='Contact Form Submission'
               />
             </fieldset>
             <button
-              id="contact-btn"
-              type="submit"
-              value="Submit"
-              className="btn hero-btn-1 btn-contact"
-            >
+              id='contact-btn'
+              type='submit'
+              value='Submit'
+              className='btn btn-1 btn-contact btn-lg'>
               SUBMIT
             </button>
           </form>
@@ -132,12 +129,6 @@ const Wrapper = styled.section`
     margin-bottom: 20px;
     font-size: 0.9rem;
     border: none;
-  }
-
-  .btn-contact {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    font-size: 0.8rem;
   }
 
   input:focus,
