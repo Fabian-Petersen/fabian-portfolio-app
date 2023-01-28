@@ -2,20 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import skills from "../skillsData";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const About = () => {
   return (
     <Wrapper>
-      <section className='section about' id='about'>
-        <div className='section-title'>
+      <section className="section about" id="about">
+        <div className="section-title">
           <h2>About Me</h2>
-          <div className='underline'></div>
+          <div className="underline"></div>
         </div>
         {/* <!-- end of section title --> */}
-        <div className='section-center about-center'>
+        <div className="section-center about-center">
           {/* <!-- about info --> */}
-          <article className='about-info'>
+          <article className="about-info">
             <p>
               I'm a chemical engineer by trade and throughout my career I worked
               on various software implementation projects with TotalEnergies.
@@ -26,23 +26,23 @@ const About = () => {
               build exciting projects. Below is a list (and growing) of
               technologies I have worked with thus far.
             </p>
-            <h3 className='about-skills-heading'>My Skills</h3>
-            <div className='about-skills-container'>
+            <h3 className="about-skills-heading">My Skills</h3>
+            <div className="about-skills-container">
               <ul>
                 {skills.map((item) => {
                   const { id, name, icon } = item;
                   return (
                     <li key={id}>
-                      <FontAwesomeIcon icon={icon} className='fa-icons' />
+                      <FontAwesomeIcon icon={icon} className="fa-icons" />
                       {name}
                     </li>
                   );
                 })}
               </ul>
             </div>
-            <Link to='/contact'>
-              <button className='btn hero-btn-1 btn-about'>Contact ME</button>
-            </Link>
+            <a href="/#contact">
+              <button className="btn hero-btn-1 btn-about">Contact ME</button>
+            </a>
           </article>
         </div>
       </section>

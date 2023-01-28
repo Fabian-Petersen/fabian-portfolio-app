@@ -14,7 +14,8 @@ Variables
 
 :root {
   /*The colors of the bgjar background - Can use to toggle between themes */
-  --clr-bg-dark: hsl(223, 64%, 5%);
+  /* --clr-bg-dark: hsl(223, 64%, 5%); */
+  --clr-bg-dark: hsl(0, 0%, 5%);
   --clr-bg-middle: hsl(211, 67%, 17%);
   --clr-bg-light: hsl(211, 67%, 30%);
 

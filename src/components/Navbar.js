@@ -7,7 +7,8 @@ import ThemeSelector from "./ThemeSelector";
 import links from "../pageLinks";
 import { useGlobalContext } from "../ContextAPI";
 import "../index.css";
-import { Link } from "react-router-dom";
+// import { HashLink } from "react-router-hash-link";
+// import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { theme, setTheme, openSidebar, setOpenSidebar } = useGlobalContext();
@@ -16,9 +17,9 @@ const Navbar = () => {
     <Wrapper>
       <nav className="nav navbar-fixed" id="nav">
         <div className="nav-center">
-          <Link href="/">
+          <a href="/#home">
             <img src={logo} className="nav-logo" alt="nav-logo" />
-          </Link>
+          </a>
           <div className="nav-btns">
             <ThemeSelector
               theme={theme}
@@ -54,6 +55,10 @@ const Wrapper = styled.nav`
     transition: var(--transition);
     /* border: var(--border-white); */
     width: 100%;
+  }
+
+  .active {
+    color: yellow;
   }
 
   .nav-logo:hover {

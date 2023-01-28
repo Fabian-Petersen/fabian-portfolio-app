@@ -1,9 +1,7 @@
 import { projectImages } from "./assets/images/index.js";
-import skills from "./skillsData";
+// import skills from "./skillsData";
 
-const { icon } = skills;
-
-console.log(icon);
+// const { icon } = skills;
 
 const {
   projectCockTails,
@@ -12,13 +10,13 @@ const {
   projectTea,
   projectDemo3,
   projectDemo4,
-  html,
-  css,
-  javascript,
-  react,
-  sass,
-  github,
-  redux,
+  // html,
+  // css,
+  // javascript,
+  // react,
+  // sass,
+  // github,
+  // redux,
   // bootstrap,
 } = projectImages;
 
@@ -35,7 +33,7 @@ const projects = [
       description:
         "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
       images: "",
-      skills: [html, css, javascript, react, github],
+      // skills: [html, css, javascript, react, github],
     },
   },
   {
@@ -51,7 +49,7 @@ const projects = [
       description:
         "In this project i used the Github API to get the information of the users.",
       images: "",
-      skills: [html, css, javascript, react],
+      // skills: [html, css, javascript, react],
     },
   },
   {
@@ -67,22 +65,22 @@ const projects = [
       description:
         "The project does not use any framework e.g. React. The project was created in in my early stages as a developer to learn vanilla sematic HTML, CSS (with SCSS) and JavaScript.",
       images: "",
-      skills: [html, css, javascript, sass, github],
+      // skills: [html, css, javascript, sass, github],
     },
   },
   {
     id: 4,
-    name: "Tea Site Project",
+    name: "Tea Brewery Project",
     language: "react",
     description: "The most exquisite tea range in the world",
     image: projectTea,
-    url: "",
+    url: "https://tea-brewery.netlify.app/",
     code: "https://github.com/Fabian-Petersen/tea-shop-app",
     singlePage: {
       description:
-        "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
+        "This is the first and most basic website I have build with React. All the data is stored within array objects and mapped over to display the different sections based on the hardcoded data. The css are done with styled components with fairly basic animations e.g. text movement in the X directions, object scaling and background image tranisioning over the product cards. The section id's was used to navigate bewteen the pages",
       images: "",
-      skills: [html, css, javascript, react, github],
+      // skills: [html, css, javascript, react, github],
     },
   },
   {
@@ -97,7 +95,7 @@ const projects = [
       description:
         "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
       images: "",
-      skills: [html, css, javascript, react, github, redux],
+      // skills: [html, css, javascript, react, github, redux],
     },
   },
   {
@@ -112,54 +110,54 @@ const projects = [
       description:
         "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
       images: "",
-      skills: [html, css, javascript, react, github],
+      // skills: [html, css, javascript, react, github],
     },
   },
-  {
-    id: 7,
-    name: "Calculator",
-    language: "javascript",
-    description: "Build a calculator using Javascript",
-    image: projectDemo4,
-    url: "",
-    code: "",
-    singlePage: {
-      description:
-        "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
-      images: "",
-      skills: [html, css, javascript, github],
-    },
-  },
-  {
-    id: 8,
-    name: "Coming Soon",
-    language: "javascript",
-    description: "Random e-commerce store for your favourite items",
-    image: projectDemo3,
-    url: "",
-    code: "",
-    singlePage: {
-      description:
-        "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
-      images: "",
-      skills: [html, css, javascript, react, github],
-    },
-  },
-  {
-    id: 9,
-    name: "Coming Soon",
-    language: "javascript",
-    description: "",
-    image: projectDemo3,
-    url: "",
-    code: "",
-    singlePage: {
-      description:
-        "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
-      images: "",
-      skills: [html, css, javascript, react, github],
-    },
-  },
+  // {
+  //   id: 7,
+  //   name: "Calculator",
+  //   language: "javascript",
+  //   description: "Build a calculator using Javascript",
+  //   image: projectDemo4,
+  //   url: "",
+  //   code: "",
+  //   singlePage: {
+  //     description:
+  //       "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
+  //     images: "",
+  //     // skills: [html, css, javascript, github],
+  //   },
+  // },
+  // {
+  //   id: 8,
+  //   name: "Coming Soon",
+  //   language: "javascript",
+  //   description: "Random e-commerce store for your favourite items",
+  //   image: projectDemo3,
+  //   url: "",
+  //   code: "",
+  //   singlePage: {
+  //     description:
+  //       "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
+  //     images: "",
+  //     // skills: [html, css, javascript, react, github],
+  //   },
+  // },
+  // {
+  //   id: 9,
+  //   name: "Coming Soon",
+  //   language: "javascript",
+  //   description: "",
+  //   image: projectDemo3,
+  //   url: "",
+  //   code: "",
+  //   singlePage: {
+  //     description:
+  //       "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
+  //     images: "",
+  //     // skills: [html, css, javascript, react, github],
+  //   },
+  // },
 ];
 
 export default projects;

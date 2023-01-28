@@ -1,11 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import styled from "styled-components";
 import cv from "../assets/documents/fabian-petersen-12.2022-v1.pdf";
 import { useGlobalContext } from "../ContextAPI";
 import Navbar from "./Navbar";
 import SideBar from "./SideBar";
 import SocialsHover from "./SocialsHover";
+// import { Link } from "react-router-dom";
 
 // import bgImage from "../assets/images/hero-simple-shiny-bg.svg";
 
@@ -18,29 +19,30 @@ const Home = () => {
       ) : (
         <Navbar setOpenSidebar={setOpenSidebar} openSidebar={openSidebar} />
       )}
-      <header className='hero section' id='home'>
-        <div className='section-center hero-center'>
-          <article className='hero-info'>
-            <div className='underline'></div>
+      <header className="hero section" id="home">
+        <div className="section-center hero-center">
+          <article className="hero-info">
+            <div className="underline"></div>
             <h3>Hi, my name is</h3>
             <h1>
               <span>Fabian </span>Petersen.
             </h1>
-            <p className='hero-sub-heading'>
+            <p className="hero-sub-heading">
               Welcome to my official portfolio website showcasing my work as a
               <span> React Web Developer.</span>
             </p>
-            <div className='home-btns'>
+            <div className="home-btns">
               <a
                 href={cv}
-                target='_blank'
-                rel='noreferrer'
-                className='btn btn-1'>
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-1"
+              >
                 Download CV
               </a>
-              <Link to='/projects' className='btn btn-2'>
+              <a href={"/projects"} className="btn btn-2">
                 My Projects
-              </Link>
+              </a>
             </div>
             <SocialsHover />
           </article>
