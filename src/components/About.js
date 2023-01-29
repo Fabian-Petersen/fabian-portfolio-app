@@ -1,7 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import skills from "../skillsData";
+
+const uniqueSkill = [...new Set(skills.map((item) => item.node))];
+// console.log(skill);
+
+// import {
+//   faCss3,
+//   faFigma,
+//   faHtml5,
+//   faReact,
+// } from "@fortawesome/free-brands-svg-icons";
 // import { Link } from "react-router-dom";
 
 const About = () => {
@@ -26,23 +36,37 @@ const About = () => {
               build exciting projects. Below is a list (and growing) of
               technologies I have worked with thus far.
             </p>
-            <h3 className="about-skills-heading">My Skills</h3>
-            <div className="about-skills-container">
-              <ul>
-                {skills.map((item) => {
-                  const { id, name, icon } = item;
-                  return (
-                    <li key={id}>
-                      <FontAwesomeIcon icon={icon} className="fa-icons" />
-                      {name}
-                    </li>
-                  );
-                })}
-              </ul>
+            <h3 className="heading-mySkills">My Skills</h3>
+            <div className="skills-container">
+              {uniqueSkill.map((uniqueItem, index) => {
+                return (
+                  <>
+                    <div key={index} className="each-skill">
+                      <h3 className="each-skill-heading">{uniqueItem}</h3>
+                      <div className="each-skill-container">
+                        {skills
+                          .filter((item) => item.node === uniqueItem)
+                          .map((item) => {
+                            const { id, icon } = item;
+                            return (
+                              <div className="icon-container">
+                                <img
+                                  className="each-skill-icon"
+                                  key={id}
+                                  src={icon}
+                                  alt={id}
+                                />
+                                <p className="icon-name">{id}</p>
+                              </div>
+                            );
+                          })}
+                      </div>
+                      <hr className="divideLine" />
+                    </div>
+                  </>
+                );
+              })}
             </div>
-            <a href="/#contact">
-              <button className="btn hero-btn-1 btn-about">Contact ME</button>
-            </a>
           </article>
         </div>
       </section>
@@ -51,125 +75,133 @@ const About = () => {
 };
 
 const Wrapper = styled.section`
-  .about {
-    background-color: var(--clr-bg-dark);
-    padding-bottom: 10rem;
+  .section {
+    /* border: var(--border-white); */
   }
 
-  .about-title {
+  .section-title {
     margin-bottom: 2rem;
   }
 
-  .about-center {
-    color: var(--clr-white);
-    /* border: var(--border-red); */
-  }
+  .section-center {
+    article {
+      p {
+        font-size: 0.8rem;
+      }
+    }
 
-  .about-skills-heading {
-    /* border: var(--border-red); */
-    font-size: 1.5rem;
-    text-align: center;
+    .heading-mySkills {
+      /* border: var(--border-red); */
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: var(--clr-white);
+    }
   }
 
   .about-info p {
-    color: var(--clr-white);
-    font-size: 1rem;
     margin-bottom: 2rem;
-  }
-
-  .about-skills-container {
-    border: 3px solid var(--clr-red);
-    padding: 1.2rem;
-    max-width: 400px;
-    border-radius: var(--radius);
-    margin: 0 auto;
-  }
-
-  .about-skills-container ul {
-    display: grid;
-    column-gap: 3rem;
-    grid-template-columns: 1fr 1fr;
-    color: var(--clr-white);
-    width: 100%;
-  }
-
-  .about-skills-container ul li {
-    display: flex;
-    /* border: var(--border-white); */
-    align-items: center;
-    gap: 0.8rem;
-    color: var(--clr-white);
     font-size: 0.8rem;
-    padding: 0.5rem 0;
+    font-weight: normal;
   }
 
-  .fa-icons {
-    font-size: 2rem;
-    position: relative;
-    width: 2rem;
-    height: 2rem;
-    color: var(--clr-white);
+  .each-skill {
+    .each-skill-heading {
+      font-size: 0.8rem;
+      font-weight: normal;
+      margin-bottom: 1rem;
+      color: var(--clr-white);
+    }
+
+    .each-skill-container {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .each-skill-icon {
+      width: 2rem;
+      height: 2rem;
+      margin-bottom: 1rem;
+      /* border: var(--border-white); */
+    }
+  }
+  .icon-container {
+    .icon-name {
+      text-align: center;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+    }
   }
 
-  .about-skills-container ul li:not(li:last-child) {
-    margin-bottom: 15px;
-  }
-
-  .btn-about {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    max-width: 8rem;
-    padding: 0.75rem 0.8rem;
-    font-size: 0.5rem;
-    margin-top: 2rem;
-    /* border: var(--border-white); */
+  hr {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border: 0.2px solid rgba(255, 255, 255, 0.05);
   }
 
   @media screen and (min-width: 475px) {
-    .about-skills-heading {
-      font-size: 2rem;
-      margin-bottom: 1.8rem;
+    .section-center {
+      article {
+        p {
+          font-size: 0.9rem;
+        }
+      }
+
+      .heading-mySkills {
+        font-size: 1.6rem;
+      }
     }
 
-    .about-skills-container {
-      margin: 0 auto;
-      /* border: var(--border-white); */
-    }
+    .each-skill {
+      .each-skill-heading {
+        font-size: 1rem;
+      }
 
-    .about-skills-container ul li {
-      gap: 0.8rem;
-      font-size: 1rem;
-      padding: 0.5rem 0;
-      /* flex-direction: row; */
-      /* border: var(--border-red); */
+      .each-skill-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
     }
   }
 
   @media screen and (min-width: 760px) {
-    .about-info {
-      align-self: start;
+    .section-center {
+      article {
+        p {
+          font-size: 1rem;
+        }
+      }
+
+      .heading-mySkills {
+        font-size: 1.8rem;
+      }
     }
 
-    .hero-btn-1,
-    .hero-btn-2 {
-      max-width: 15rem;
-      width: 0 auto;
-      padding: 1rem 1.5rem;
-      font-size: 0.7em;
+    .each-skill {
+      .each-skill-heading {
+        font-size: 1.2rem;
+      }
+
+      .each-skill-icon {
+        width: 3rem;
+        height: 3rem;
+      }
     }
 
-    .about-details {
-      font-size: 1.3rem;
-      gap: 2rem;
-      max-width: 600px;
-      justify-content: space-between;
+    .icon-container {
+      .icon-name {
+        font-size: 0.75rem;
+      }
     }
+  }
 
-    .fa-icons {
-      font-size: 2.5rem;
-      color: var(--clr-white);
+  @media screen and (min-width: 992px) {
+    .each-skill {
+      .each-skill-icon {
+        width: 4.5rem;
+        height: 4.5rem;
+      }
     }
   }
 `;

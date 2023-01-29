@@ -57,9 +57,9 @@ Variables
   --clr-blue: #486bd6;
   /* --clr-nav: #102a42; */
 
-  --ff-primary: "Roboto", sans-serif, monospace;
+  /* --ff-primary: "Roboto", sans-serif, monospace; */
   --ff-secondary: "Open Sans", sans-serif;
-  --ff-tertiary: "Montserrat", sans-serif;
+  --ff-primary: "Montserrat", sans-serif;
   --transition: all 0.3s linear;
   --spacing: 0.25rem;
   --radius: 0.5rem;
@@ -81,7 +81,7 @@ Global Styles
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 3rem;
+  scroll-padding-top: 1rem;
 }
 *,
 ::after,
@@ -92,7 +92,7 @@ html {
 }
 
 body {
-  font-family: var(--ff-secondary);
+  font-family: var(--ff-primary);
   background: var(--clr-bg-dark);
   color: var(--white);
   line-height: 1.5;

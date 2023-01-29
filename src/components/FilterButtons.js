@@ -23,7 +23,7 @@ const FilterButtons = () => {
   const uniqueValues = [...new Set(projects.map((item) => item.language))];
   return (
     <Wrapper>
-      <div className='btn-container section-center'>
+      <div className="btn-container section-center">
         {uniqueValues.map((item, index) => {
           return (
             <button
@@ -33,12 +33,13 @@ const FilterButtons = () => {
                   ? "btn btn-1 project-btn active"
                   : "btn btn-1 project-btn"
               }
-              onClick={handleClick(item)}>
+              onClick={handleClick(item)}
+            >
               {item}
             </button>
           );
         })}
-        <button className='btn btn-1' id='project-btn-all' onClick={reset}>
+        <button className="btn btn-1" id="project-btn-all" onClick={reset}>
           All
         </button>
       </div>

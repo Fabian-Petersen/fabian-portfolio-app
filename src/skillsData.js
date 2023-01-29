@@ -1,53 +1,54 @@
 import { projectImages } from "./assets/images/index.js";
 
-const { html, css, javascript, react, sass, github, redux, bootstrap } =
+const { html, css, javascript, react, sass, github, redux, bootstrap, figma } =
   projectImages;
 
 const skills = [
   {
-    id: 1,
-    name: "hmtl",
+    id: "figma",
+    icon: figma,
+    node: "UI/UX Design",
+  },
+
+  {
+    id: "html",
     icon: html,
+    node: "frontEnd",
   },
   {
-    id: 2,
-    name: "CSS",
+    id: "css",
     icon: css,
+    node: "frontEnd",
   },
   {
-    id: 3,
-    name: "JavaScript",
+    id: "javaScript",
     icon: javascript,
+    node: "frontEnd",
   },
   {
-    id: 4,
-    name: "React",
+    id: "react",
     icon: react,
+    node: "frontEnd",
   },
   {
-    id: 5,
-    name: "Github",
+    id: "github",
     icon: github,
+    node: "Other",
   },
   {
-    id: 6,
-    name: "Bootstrap",
+    id: "bootstrap",
     icon: bootstrap,
+    node: "Other",
   },
   {
-    id: 7,
-    name: "Jquery",
-    icon: "",
-  },
-  {
-    id: 8,
-    name: "SCSS",
+    id: "sass",
     icon: sass,
+    node: "Other",
   },
   {
-    id: 9,
-    name: "Redux",
+    id: "redux",
     icon: redux,
+    node: "frontEnd",
   },
 ];
 
