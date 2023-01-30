@@ -67,7 +67,6 @@ const Contact = () => {
 const Wrapper = styled.section`
   .contact {
     min-height: 75vh;
-    background-image: url(${projectImage1});
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
