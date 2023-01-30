@@ -14,6 +14,13 @@ const sass = "https://img.icons8.com/color/96/null/sass.png";
 const redux = "https://img.icons8.com/color/96/null/redux.png";
 const github = "https://img.icons8.com/color/96/null/github.png";
 const bootstrap = "https://img.icons8.com/color/96/null/bootstrap.png";
+const responsive =
+  "https://img.icons8.com/external-vectorslab-flat-vectorslab/53/000000/external-Responsive-Design-cloud-computing-vectorslab-flat-vectorslab.png";
+const api = "https://img.icons8.com/clouds/100/null/services.png";
+
+const visualStudioCode =
+  "https://img.icons8.com/color/96/null/visual-studio-code-2019.png";
+const wordpress = "https://img.icons8.com/color/96/null/wordpress.png";
 
 // import html from "../images/html.png";
 
@@ -40,6 +47,10 @@ const projectImages = {
   redux,
   github,
   bootstrap,
+  responsive,
+  api,
+  visualStudioCode,
+  wordpress,
 };
 
 export { projectImages };

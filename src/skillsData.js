@@ -1,7 +1,19 @@
 import { projectImages } from "./assets/images/index.js";
 
-const { html, css, javascript, react, sass, github, redux, bootstrap, figma } =
-  projectImages;
+const {
+  html,
+  css,
+  javascript,
+  react,
+  sass,
+  github,
+  redux,
+  bootstrap,
+  figma,
+  visualStudioCode,
+  api,
+  responsive,
+} = projectImages;
 
 const skills = [
   {
@@ -33,22 +45,37 @@ const skills = [
   {
     id: "github",
     icon: github,
-    node: "Other",
+    node: "other",
   },
   {
     id: "bootstrap",
     icon: bootstrap,
-    node: "Other",
+    node: "other",
   },
   {
     id: "sass",
     icon: sass,
-    node: "Other",
+    node: "other",
   },
   {
     id: "redux",
     icon: redux,
     node: "frontEnd",
+  },
+  {
+    id: "Visual Studio Code",
+    icon: visualStudioCode,
+    node: "other",
+  },
+  {
+    id: "RESTful API",
+    icon: api,
+    node: "frontEnd",
+  },
+  {
+    id: "responsive",
+    icon: responsive,
+    node: "UI/UX Design",
   },
 ];
 
