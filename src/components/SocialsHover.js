@@ -7,25 +7,24 @@ const SocialsHover = () => {
   return (
     <Wrapper>
       <div>
-        <ul className="social-icons">
+        <ul className='social-icons'>
           {links.map((link) => {
             const { id, url, icon, name, color } = link;
             return (
               <li key={id}>
                 <a
                   href={url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="social-icon"
-                >
-                  <div className="icon-container">
-                    <div className="tooltip">
+                  target='_blank'
+                  rel='noreferrer'
+                  className='social-icon'>
+                  <div className='icon-container'>
+                    <div className='tooltip'>
                       {name}
-                      <div className="tooltip__point"></div>
+                      <div className='tooltip__point'></div>
                     </div>
                     <FontAwesomeIcon
                       icon={icon}
-                      className="icon"
+                      className='icon'
                       color={color}
                     />
                   </div>
@@ -50,6 +49,7 @@ const Wrapper = styled.div`
   .icon-container {
     display: flex;
     min-width: 5rem;
+    justify-content: left;
     flex-direction: column;
     justify-content: center;
   }
@@ -60,7 +60,7 @@ const Wrapper = styled.div`
 
   .tooltip {
     position: relative;
-    font-size: 1rem;
+    font-size: 0.8rem;
     top: 0;
     color: blue;
     opacity: 0;
@@ -86,7 +86,7 @@ const Wrapper = styled.div`
   }
 
   .icon {
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding-top: 0.5rem;
     position: relative;
     color: var(--clr-white);
@@ -96,6 +96,16 @@ const Wrapper = styled.div`
     transform: scale(1.1);
     transform: translateY(-2.5px);
     color: var(--clr-yellow);
+  }
+
+  @media screen and (min-width: 760px) {
+    .tooltip {
+      font-size: 1rem;
+    }
+
+    .icon {
+      font-size: 2rem;
+    }
   }
 
   @keyframes tooltipAnimation {
