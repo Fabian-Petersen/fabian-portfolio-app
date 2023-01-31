@@ -2,6 +2,13 @@
 //? npm i --save @fortawesome/free-brands-svg-icons
 
 import {
+  faHouse,
+  faUser,
+  faPhone,
+  faClipboard,
+} from "@fortawesome/free-solid-svg-icons";
+
+import {
   faHtml5,
   faBootstrap,
   faCss3,
@@ -27,6 +34,13 @@ const Icons = {
   faSass,
   faReact,
   faJs,
+};
+
+export const navIcons = {
+  house: faHouse,
+  user: faUser,
+  phone: faPhone,
+  clipboard: faClipboard,
 };
 
 export const themeIcons = { faSun, faMoon };

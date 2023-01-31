@@ -6,12 +6,15 @@ import { useGlobalContext } from "../ContextAPI";
 import Navbar from "./Navbar";
 import SideBar from "./SideBar";
 import SocialsHover from "./SocialsHover";
+import ScrollNav from "./ScrollNav";
 // import { Link } from "react-router-dom";
 
 // import bgImage from "../assets/images/hero-simple-shiny-bg.svg";
 
 const Home = () => {
-  const { openSidebar, setOpenSidebar } = useGlobalContext();
+  // handleScroll();
+  const { openSidebar, setOpenSidebar, showScrollNav, setShowScrollNav } =
+    useGlobalContext();
   return (
     <Wrapper>
       {openSidebar ? (
@@ -43,9 +46,15 @@ const Home = () => {
                 My Projects
               </a>
             </div>
-            <SocialsHover />
+            {/* <SocialsHover /> */}
           </article>
         </div>
+        {showScrollNav && (
+          <ScrollNav
+            setShowScrollNav={setShowScrollNav}
+            showScrollNav={showScrollNav}
+          />
+        )}
       </header>
     </Wrapper>
   );
@@ -74,7 +83,6 @@ const Wrapper = styled.header`
     position: relative;
     width: fit-content;
     align-items: left;
-    ${"" /* border: var(--border-white); */}
     color: var(--clr-white);
     text-transform: none;
     padding: 0.5rem 0;
