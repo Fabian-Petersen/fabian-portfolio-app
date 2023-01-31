@@ -1,20 +1,24 @@
-import React from "react";
-// import { Link } from "react-router-dom";
+import React, { useRef } from "react";
+import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import cv from "../assets/documents/fabian-petersen-12.2022-v1.pdf";
 import { useGlobalContext } from "../ContextAPI";
 import Navbar from "./Navbar";
 import SideBar from "./SideBar";
-import SocialsHover from "./SocialsHover";
+//import SocialsHover from "./SocialsHover";
 import ScrollNav from "./ScrollNav";
 // import { Link } from "react-router-dom";
 
 // import bgImage from "../assets/images/hero-simple-shiny-bg.svg";
 
 const Home = () => {
-  // handleScroll();
   const { openSidebar, setOpenSidebar, showScrollNav, setShowScrollNav } =
     useGlobalContext();
+
+  // const ref = useRef();
+  const { ref, inView, entry } = useInView();
+  console.log(inView);
+  console.log(entry);
   return (
     <Wrapper>
       {openSidebar ? (
@@ -22,7 +26,7 @@ const Home = () => {
       ) : (
         <Navbar setOpenSidebar={setOpenSidebar} openSidebar={openSidebar} />
       )}
-      <header className='hero section' id='home'>
+      <header className='hero section' id='home' ref={ref}>
         <div className='section-center hero-center'>
           <article className='hero-info'>
             <div className='underline'></div>
@@ -49,7 +53,7 @@ const Home = () => {
             {/* <SocialsHover /> */}
           </article>
         </div>
-        {showScrollNav && (
+        {!inView && (
           <ScrollNav
             setShowScrollNav={setShowScrollNav}
             showScrollNav={showScrollNav}
