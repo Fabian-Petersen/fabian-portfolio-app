@@ -1,40 +1,29 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../assets/images/fabian-logo-vivaldi.svg";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ThemeSelector from "./ThemeSelector";
 import links from "../pageLinks";
 import { useGlobalContext } from "../ContextAPI";
-import "../index.css";
-// import { HashLink } from "react-router-hash-link";
-// import { Link } from "react-router-dom";
+import BurgerMenuButton from "./BurgerMenuButton";
 
 const Navbar = () => {
-  const { theme, setTheme, openSidebar, setOpenSidebar } = useGlobalContext();
-
+  const { theme, setTheme } = useGlobalContext();
   return (
     <Wrapper>
-      <nav className="nav navbar-fixed" id="nav">
-        <div className="nav-center">
-          <a href="/#home">
-            <img src={logo} className="nav-logo" alt="nav-logo" />
+      <nav className='nav navbar-fixed' id='nav'>
+        <div className='nav-center'>
+          <a href='/#home'>
+            <img src={logo} className='nav-logo' alt='nav-logo' />
           </a>
-          <div className="nav-btns">
+          <div className='nav-btns'>
             <ThemeSelector
               theme={theme}
               setTheme={setTheme}
               className={theme ? "theme theme-dark" : "theme theme-light"}
             />
-            <button
-              className={openSidebar ? "show-sidebar" : "nav-btn hide-sidebar"}
-              id="nav-btn"
-              onClick={() => setOpenSidebar(true)}
-            >
-              <FontAwesomeIcon icon={faBars} />
-            </button>
+            <BurgerMenuButton />
           </div>
-          <ul className="nav-links">
+          <ul className='nav-links'>
             {links.map((link) => {
               const { id, name } = link;
               return (
@@ -50,6 +39,10 @@ const Navbar = () => {
   );
 };
 const Wrapper = styled.nav`
+  .hide-nav {
+    display: hidden;
+  }
+
   .nav {
     height: 5rem;
     transition: var(--transition);
@@ -80,7 +73,9 @@ const Wrapper = styled.nav`
     display: flex;
     gap: 2rem;
     margin-left: auto;
-    /* border: var(--border-white); */
+    border: var(--border-white);
+    align-items: center;
+    justify-content: center;
   }
 
   .theme {
@@ -91,15 +86,6 @@ const Wrapper = styled.nav`
     width: fit-content;
     height: 5rem;
     /* border: var(--border-red); */
-  }
-
-  .nav-btn {
-    background-color: transparent;
-    border-color: transparent;
-    color: var(--clr-white);
-    font-size: 2rem;
-    cursor: pointer;
-    padding-right: 2rem;
   }
 
   .show-sidebar {
@@ -122,7 +108,6 @@ const Wrapper = styled.nav`
 
     .nav-links {
       display: flex;
-      /* border: var(--border-red); */
       gap: 2rem;
       justify-content: space-around;
     }
@@ -131,7 +116,6 @@ const Wrapper = styled.nav`
       display: flex;
       margin-left: auto;
       gap: 2rem;
-      /* border: var(--border-white); */
       margin-right: 2rem;
     }
 
@@ -164,7 +148,6 @@ const Wrapper = styled.nav`
   }
 
   /* Fixed Navbar */
-
   .navbar-fixed {
     position: fixed;
     top: 0;

@@ -1,11 +1,9 @@
 import React, { useState, useContext, createContext } from "react";
 import projects from "./projectData";
-import { useInView } from "react-intersection-observer";
 
 export const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
-  const { ref, inView } = useInView();
   const [projectMenu, setProjectMenu] = useState(projects);
   const [buttonCategory, setButtonCategory] = useState([]);
   const [activeButton, setActiveButton] = useState(" ");
@@ -32,8 +30,6 @@ const AppProvider = ({ children }) => {
         setShowScrollNav,
         scrollPosition,
         setScrollPosition,
-        ref,
-        inView,
       }}>
       {children}
     </AppContext.Provider>

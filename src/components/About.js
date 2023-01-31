@@ -17,15 +17,15 @@ const uniqueSkill = [...new Set(skills.map((item) => item.node))];
 const About = () => {
   return (
     <Wrapper>
-      <section className="section about" id="about">
-        <div className="section-title">
+      <section className='section about' id='about'>
+        <div className='section-title'>
           <h2>About Me</h2>
-          <div className="underline"></div>
+          <div className='underline'></div>
         </div>
         {/* <!-- end of section title --> */}
-        <div className="section-center about-center">
+        <div className='section-center about-center'>
           {/* <!-- about info --> */}
-          <article className="about-info">
+          <article className='about-info'>
             <p>
               I'm a chemical engineer by trade and throughout my career I worked
               on various software implementation projects with TotalEnergies.
@@ -36,32 +36,32 @@ const About = () => {
               build exciting projects. Below is a list (and growing) of
               technologies I have worked with thus far.
             </p>
-            <h3 className="heading-mySkills">My Skills</h3>
-            <div className="skills-container">
+            <h3 className='heading-mySkills'>My Skills</h3>
+            <div className='skills-container'>
               {uniqueSkill.map((uniqueItem, index) => {
                 return (
                   <>
-                    <div key={index} className="each-skill">
-                      <h3 className="each-skill-heading">{uniqueItem}</h3>
-                      <div className="each-skill-container">
+                    <div key={index} className='each-skill'>
+                      <h3 className='each-skill-heading'>{uniqueItem}</h3>
+                      <div className='each-skill-container'>
                         {skills
                           .filter((item) => item.node === uniqueItem)
                           .map((item) => {
                             const { id, icon } = item;
                             return (
-                              <div className="icon-container">
+                              <div className='icon-container'>
                                 <img
-                                  className="each-skill-icon"
+                                  className='each-skill-icon'
                                   key={id}
                                   src={icon}
                                   alt={id}
                                 />
-                                <p className="icon-name">{id}</p>
+                                <p className='icon-name'>{id}</p>
                               </div>
                             );
                           })}
                       </div>
-                      <hr className="divideLine" />
+                      <hr className='divideLine' />
                     </div>
                   </>
                 );

@@ -9,14 +9,12 @@ import {
   Contact,
   Footer,
   // SinglePage,
-  Navbar,
 } from "./components/Index";
 
 const App = () => {
   return (
     <div>
       <AppProvider>
-        <Navbar />
         <Home />
         <About />
         <Projects />

@@ -1,19 +1,23 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
-import { navIcons } from "../assets/images/icons";
-
-const { house, user, clipboard, phone } = navIcons;
+import links from "../pageLinks";
 
 const ScrollNav = () => {
   return (
     <Wrapper>
       <div className='container'>
         <nav className='nav-container'>
-          <FontAwesomeIcon className='icon' icon={house} />
-          <FontAwesomeIcon className='icon' icon={user} />
-          <FontAwesomeIcon className='icon' icon={clipboard} />
-          <FontAwesomeIcon className='icon' icon={phone} />
+          {links.map((link) => {
+            const { id, name, icon } = link;
+            return (
+              <>
+                <a href={id}>
+                  <FontAwesomeIcon key={name} className='icon' icon={icon} />;
+                </a>
+              </>
+            );
+          })}
         </nav>
       </div>
     </Wrapper>
@@ -22,12 +26,7 @@ const ScrollNav = () => {
 
 const Wrapper = styled.nav`
   .container {
-    gap: 2rem;
-    top: 85%;
-    left: 50%;
-    position: fixed;
-    transform: translateX(-50%);
-    z-index: 1000;
+    opacity: 0;
   }
 
   .nav-container {
@@ -35,34 +34,30 @@ const Wrapper = styled.nav`
     display: flex;
     height: 15rem;
     gap: 4rem;
-    ${"" /* flex-direction: column; */}
+    flex-direction: column;
     padding: 1rem;
   }
 
   .icon {
     color: white;
-    opacity: 40%;
-    font-size: 2.5rem;
-    position: relative;
+    opacity: 50%;
+    font-size: 2rem;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
-  .icon:hover {
-    cursor: pointer;
-    scale: 1.1;
-    opacity: 100%;
-  }
-
-  .icon::before {
-    content: "";
-    position: absolute;
-    color: white;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 50%;
-    height: 100%;
-    width: 100%;
+  @media screen and (min-width: 768px) {
+    .container {
+      gap: 2rem;
+      top: 50%;
+      right: 2%;
+      position: fixed;
+      transform: translateY(-50%);
+      opacity: 1;
+      z-index: 1000;
+    }
   }
 `;
 
