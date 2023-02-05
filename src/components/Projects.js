@@ -3,28 +3,28 @@ import styled from "styled-components";
 import FilterButtons from "./FilterButtons";
 import PulseIcon from "./PulseIcon";
 import { useGlobalContext } from "../ContextAPI";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const Projects = () => {
   const { projectMenu } = useGlobalContext();
   return (
     <Wrapper>
-      <section className='section projects' id='projects'>
-        <div className='section-title'>
+      <section className="section projects" id="projects">
+        <div className="section-title">
           <h2>Projects</h2>
-          <div className='underline'></div>
+          <div className="underline"></div>
         </div>
-        <p className='projects-text'>My latest completed projects</p>
-        <FilterButtons className='filterButtons' />
-        <div className='section-center projects-center'>
+        <p className="projects-text">My latest completed projects</p>
+        <FilterButtons className="filterButtons" />
+        <div className="section-center projects-center">
           {projectMenu.map((item) => {
             const { id, name, language, image, code, url } = item;
             return (
-              <div className='project-card' key={id}>
-                <img src={image} alt={name} className='project-img' />
-                <div className='card-body'>
+              <div className="project-card" key={id}>
+                <img src={image} alt={name} className="project-img" />
+                <div className="card-body">
                   <a href={`/projects/${id}`}>
-                    <h4 className='project-title'>{name}</h4>
+                    <h4 className="project-title">{name}</h4>
                   </a>
                   <p>Designed with {language}</p>
                   <PulseIcon code={code} url={url} />

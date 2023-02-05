@@ -58,8 +58,8 @@ Variables
   /* --clr-nav: #102a42; */
 
   /* --ff-primary: "Roboto", sans-serif, monospace; */
-  --ff-secondary: "Open Sans", sans-serif;
   --ff-primary: "Montserrat", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
   --transition: all 0.3s linear;
   --spacing: 0.25rem;
   --radius: 0.5rem;

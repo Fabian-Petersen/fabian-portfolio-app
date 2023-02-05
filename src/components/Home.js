@@ -20,27 +20,28 @@ const Home = () => {
         <SideBar setOpenSidebar={setOpenSidebar} openSidebar={openSidebar} />
       )}
 
-      <header className='hero section' id='home'>
-        <div className='section-center hero-center'>
-          <article className='hero-info' ref={ref}>
-            <div className='underline'></div>
+      <header className="hero section" id="home">
+        <div className="section-center hero-center">
+          <article className="hero-info" ref={ref}>
+            <div className="underline"></div>
             <h3>Hi, my name is</h3>
             <h1>
               <span>Fabian </span>Petersen.
             </h1>
-            <p className='hero-sub-heading'>
+            <p className="hero-sub-heading">
               Welcome to my official portfolio website showcasing my work as a
               <span> Front End Developer.</span>
             </p>
-            <div className='home-btns'>
+            <div className="home-btns">
               <a
                 href={cv}
-                target='_blank'
-                rel='noreferrer'
-                className='btn btn-1'>
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-1"
+              >
                 Download CV
               </a>
-              <a href={"/projects"} className='btn btn-2'>
+              <a href={"/projects"} className="btn btn-2">
                 My Projects
               </a>
             </div>
