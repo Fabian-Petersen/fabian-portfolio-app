@@ -8,7 +8,7 @@ const {
   projectGithub,
   projectTours,
   projectTea,
-  projectDemo3,
+  //projectDemo3,
   projectDemo4,
   // html,
   // css,
