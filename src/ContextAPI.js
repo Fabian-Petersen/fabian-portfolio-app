@@ -9,8 +9,6 @@ const AppProvider = ({ children }) => {
   const [activeButton, setActiveButton] = useState(" ");
   const [openSidebar, setOpenSidebar] = useState(false);
   const [theme, setTheme] = useState(true);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [showScrollNav, setShowScrollNav] = useState(false);
 
   return (
     <AppContext.Provider
@@ -26,10 +24,6 @@ const AppProvider = ({ children }) => {
         setTheme,
         buttonCategory,
         setButtonCategory,
-        showScrollNav,
-        setShowScrollNav,
-        scrollPosition,
-        setScrollPosition,
       }}>
       {children}
     </AppContext.Provider>

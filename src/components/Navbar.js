@@ -10,7 +10,7 @@ const Navbar = () => {
   const { theme, setTheme } = useGlobalContext();
   return (
     <Wrapper>
-      <nav className='nav navbar-fixed' id='nav'>
+      <nav className='nav nav-fixed nav-fixed-active' id='nav'>
         <div className='nav-center'>
           <a href='/#home'>
             <img src={logo} className='nav-logo' alt='nav-logo' />
@@ -25,10 +25,10 @@ const Navbar = () => {
           </div>
           <ul className='nav-links'>
             {links.map((link) => {
-              const { id, name } = link;
+              const { id, section, href } = link;
               return (
                 <li key={id}>
-                  <a href={id}>{name}</a>
+                  <a href={href}>{section}</a>
                 </li>
               );
             })}
@@ -46,8 +46,9 @@ const Wrapper = styled.nav`
   .nav {
     height: 5rem;
     transition: var(--transition);
-    /* border: var(--border-white); */
+    box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.1);
     width: 100%;
+    /* border: 1px solid white; */
   }
 
   .active {
@@ -73,7 +74,6 @@ const Wrapper = styled.nav`
     display: flex;
     gap: 2rem;
     margin-left: auto;
-    border: var(--border-white);
     align-items: center;
     justify-content: center;
   }
@@ -150,6 +150,15 @@ const Wrapper = styled.nav`
   /* Fixed Navbar */
   .navbar-fixed {
     position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .nav-fixed-active {
+    position: fixed;
+    //background-color:;
     top: 0;
     left: 0;
     width: 100%;

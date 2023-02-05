@@ -33,7 +33,7 @@ const skills = [
     node: "frontEnd",
   },
   {
-    id: "javaScript",
+    id: "javascript",
     icon: javascript,
     node: "frontEnd",
   },
@@ -63,7 +63,7 @@ const skills = [
     node: "frontEnd",
   },
   {
-    id: "Visual Studio Code",
+    id: "visualstudiocode",
     icon: visualStudioCode,
     node: "other",
   },

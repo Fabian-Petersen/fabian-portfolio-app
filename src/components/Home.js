@@ -1,28 +1,28 @@
 import React from "react";
-import { useInView } from "react-intersection-observer";
+// import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import cv from "../assets/documents/fabian-petersen-12.2022-v1.pdf";
 import { useGlobalContext } from "../ContextAPI";
 import Navbar from "./Navbar";
 import SideBar from "./SideBar";
-import ScrollNav from "./ScrollNav";
+// import ScrollNav from "./ScrollNav";
 
 const Home = () => {
   const { openSidebar, setOpenSidebar } = useGlobalContext();
 
-  const { ref, inView } = useInView();
-
+  // const { ref, inView } = useInView();
   return (
     <Wrapper>
-      {inView ? <Navbar /> : <ScrollNav />}
+      {/* {inView ? <Navbar /> : <ScrollNav />} */}
 
+      <Navbar />
       {openSidebar && (
         <SideBar setOpenSidebar={setOpenSidebar} openSidebar={openSidebar} />
       )}
 
       <header className='hero section' id='home'>
         <div className='section-center hero-center'>
-          <article className='hero-info' ref={ref}>
+          <article className='hero-info'>
             <div className='underline'></div>
             <h3>Hi, my name is</h3>
             <h1>
