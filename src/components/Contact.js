@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import "../index.css";
-// import projectImage1 from "../assets/images/project-1.jpeg";
+import { useObserverContext } from "../ObserverAPI";
 
 const Contact = () => {
+  const { ref3 } = useObserverContext();
   return (
     <Wrapper>
       <section className="contact section" id="contact">

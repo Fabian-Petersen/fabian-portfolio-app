@@ -1,21 +1,35 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
+import { useObserverContext } from "../ObserverAPI";
 import links from "../pageLinks";
 
 const ScrollNav = () => {
+  const { activeSection } = useObserverContext();
+
+  const active = activeSection.filter((item) => item.active === true);
+  const test = active.forEach((item) => {
+    if (item.active === true) {
+      return item.section;
+    }
+  });
+  console.log(activeSection);
+  console.log(test);
+
   return (
     <Wrapper>
       <div className='container'>
         <nav className='nav-container'>
-          {links.map((link) => {
-            const { id, name, icon } = link;
+          {links.map((item, id, section) => {
+            const { href, icon } = item;
             return (
-              <>
-                <a href={id}>
-                  <FontAwesomeIcon key={name} className='icon' icon={icon} />;
-                </a>
-              </>
+              <a key={id} href={href}>
+                <FontAwesomeIcon
+                  className={active ? "icon-active" : "icon"}
+                  icon={icon}
+                />
+                ;
+              </a>
             );
           })}
         </nav>
@@ -46,6 +60,11 @@ const Wrapper = styled.nav`
     &:hover {
       opacity: 1;
     }
+  }
+
+  .icon-active {
+    color: var(--clr-yellow);
+    font-size: 2rem;
   }
 
   @media screen and (min-width: 768px) {

@@ -8,19 +8,21 @@ const BurgerMenuButton = () => {
   const { openSidebar, setOpenSidebar } = useGlobalContext();
   return (
     <Wrapper>
-      <button
-        className={
-          openSidebar ? "show-sidebar hide-nav" : "nav-btn hide-sidebar"
-        }
-        id='nav-btn'
-        onClick={() => setOpenSidebar(true)}>
-        <FontAwesomeIcon icon={faBars} />
-      </button>
+      <div>
+        <button
+          className={
+            openSidebar ? "show-sidebar hide-nav" : "nav-btn hide-sidebar"
+          }
+          id='nav-btn'
+          onClick={() => setOpenSidebar(true)}>
+          <FontAwesomeIcon icon={faBars} />
+        </button>
+      </div>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.button`
+const Wrapper = styled.div`
   .nav-btn {
     background-color: transparent;
     border-color: transparent;
