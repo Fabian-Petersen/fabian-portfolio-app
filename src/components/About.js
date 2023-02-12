@@ -1,24 +1,32 @@
 import React from "react";
 import styled from "styled-components";
-import { useObserverContext } from "../ObserverAPI";
+// import { useObserverContext } from "../ObserverAPI";
 import skills from "../skillsData";
+import { useActiveMenu } from "react-active-menu";
 
 const uniqueSkill = [...new Set(skills.map((item) => item.node))];
 
 const About = () => {
-  const { ref1 } = useObserverContext();
+  // const { ref1 } = useObserverContext();
+  const { registerSection } = useActiveMenu({
+    smooth: true,
+  });
 
   return (
     <Wrapper>
-      <section className='section about' id='about' ref={ref1}>
-        <div className='section-title'>
-          <h2 id='testing'>About Me</h2>
-          <div className='underline'></div>
+      <section
+        className="section about"
+        id="about"
+        ref={registerSection("about")}
+      >
+        <div className="section-title">
+          <h2 id="testing">About Me</h2>
+          <div className="underline"></div>
         </div>
         {/* <!-- end of section title --> */}
-        <div className='section-center about-center'>
+        <div className="section-center about-center">
           {/* <!-- about info --> */}
-          <article className='about-info'>
+          <article className="about-info">
             <p>
               I'm a chemical engineer by trade and throughout my career I worked
               on various software implementation projects with TotalEnergies.
@@ -29,30 +37,30 @@ const About = () => {
               build exciting projects. Below is a list (and growing) of
               technologies I have worked with thus far.
             </p>
-            <h3 className='heading-mySkills'>My Skills</h3>
-            <div className='skills-container'>
+            <h3 className="heading-mySkills">My Skills</h3>
+            <div className="skills-container">
               {uniqueSkill.map((skill, index) => {
                 return (
-                  <div key={index} className='each-skill'>
-                    <h3 className='each-skill-heading'>{skill}</h3>
-                    <div className='each-skill-container'>
+                  <div key={index} className="each-skill">
+                    <h3 className="each-skill-heading">{skill}</h3>
+                    <div className="each-skill-container">
                       {skills
                         .filter((item) => item.node === skill)
                         .map((item) => {
                           const { id, icon } = item;
                           return (
-                            <div key={id} className='icon-container'>
+                            <div key={id} className="icon-container">
                               <img
-                                className='each-skill-icon'
+                                className="each-skill-icon"
                                 src={icon}
                                 alt={id}
                               />
-                              <p className='icon-name'>{id}</p>
+                              <p className="icon-name">{id}</p>
                             </div>
                           );
                         })}
                     </div>
-                    <hr className='divideLine' />
+                    <hr className="divideLine" />
                   </div>
                 );
               })}
@@ -128,6 +136,10 @@ const Wrapper = styled.section`
     width: 100%;
     margin-bottom: 1.5rem;
     border: 0.2px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .active {
+    color: yellow;
   }
 
   @media screen and (min-width: 475px) {

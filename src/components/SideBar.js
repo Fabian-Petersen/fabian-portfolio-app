@@ -9,35 +9,44 @@ const SideBar = ({ openSidebar, setOpenSidebar }) => {
     setOpenSidebar(false);
   };
 
+  console.log(links);
+
   return (
     <Wrapper>
-      <aside
-        className={openSidebar ? "show__sidebar" : "hide__sidebar"}
-        id='sidebar'>
-        <div>
-          <button className='close-btn' onClick={handleClick}>
-            <FontAwesomeIcon icon={faClose} id='close-btn' />
-          </button>
-          <ul className='sidebar-links'>
-            {links.map((link) => {
-              const { id, name } = link;
-              return (
-                <li key={id}>
-                  <a href={id} onClick={handleClick}>
-                    {name}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </aside>
+      <div>
+        <aside
+          className={openSidebar ? "show-sidebar" : "hide-sidebar"}
+          id="sidebar"
+        >
+          <div>
+            <button className="close-btn" onClick={handleClick}>
+              <FontAwesomeIcon icon={faClose} id="close-btn" />
+            </button>
+            <ul className="sidebar-links">
+              {links.map((link) => {
+                const { id, href, section } = link;
+                return (
+                  <li key={id}>
+                    <a href={href} onClick={handleClick}>
+                      {section}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </aside>
+      </div>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.aside`
-  .show__sidebar {
+const Wrapper = styled.div`
+  aside {
+    transition: transform 100ms ease-in;
+  }
+
+  .show-sidebar {
     position: fixed;
     top: 0;
     left: 0;
@@ -52,26 +61,28 @@ const Wrapper = styled.aside`
   align-items: center;
   justify-content: center; */
     place-items: center;
-    transition: 1000ms ease-in;
-    transform: translateX(0);
+    transform: translateX(0%);
   }
 
-  .hide__sidebar {
-    transform: translateX(-100%);
+  .hide-sidebar {
+    transform: translateX(100%);
   }
 
   .sidebar-links {
     text-align: center;
+    position: relative;
   }
 
   .sidebar-links a {
+    position: abosolute;
     font-size: 2rem;
     text-transform: capitalize;
-    transition: var(--transition);
+    /* transition: var(--transition); */
     color: var(--clr-white);
     letter-spacing: var(--spacing);
     display: inline-block;
     margin-bottom: 1.5rem;
+    z-index: 1000;
   }
 
   .sidebar-links a:hover {
@@ -85,7 +96,6 @@ const Wrapper = styled.aside`
     background: transparent;
     font-size: 3rem;
     border: transparent;
-    transition: var(--transition);
     color: #bb2525;
     cursor: pointer;
     padding-right: 1rem;

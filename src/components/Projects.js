@@ -2,18 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import FilterButtons from "./FilterButtons";
 import PulseIcon from "./PulseIcon";
+import { useActiveMenu } from "react-active-menu";
 import { useGlobalContext } from "../ContextAPI";
-//import { useObserverContext } from "../ObserverAPI";
-// import { Link } from "react-router-dom";
 
 const Projects = () => {
+  const { registerSection } = useActiveMenu();
   const { projectMenu } = useGlobalContext();
-
-  //const { ref2 } = useObserverContext();
 
   return (
     <Wrapper>
-      <section className="section projects" id="projects">
+      <section
+        className="section projects"
+        id="projects"
+        ref={registerSection("projects")}
+      >
         <div className="section-title">
           <h2>Projects</h2>
           <div className="underline"></div>

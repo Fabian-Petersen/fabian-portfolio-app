@@ -1,7 +1,9 @@
 import React from "react";
 import "../src/index.css";
 import AppProvider from "./ContextAPI";
-import ObserverProvider from "./ObserverAPI";
+// import ObserverProvider from "./ObserverAPI";
+// import { useActiveMenu } from "react-active-menu";
+// import { useGlobalContext } from "./ContextAPI";
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   About,
@@ -13,17 +15,18 @@ import {
 } from "./components/Index";
 
 const App = () => {
+  // const { registerContainer } = useActiveMenu;
+  // const { theme } = useGlobalContext();
+  // console.log(theme);
   return (
-    <div>
+    <div className="dark">
       <AppProvider>
-        <ObserverProvider>
-          <Home />
-          <About />
-          <Projects />
-          {/* <Route path="/projects/:projectId" element={<SinglePage />} /> */}
-          <Contact />
-          <Footer />
-        </ObserverProvider>
+        <Home />
+        <About />
+        <Projects />
+        {/* <Route path="/projects/:projectId" element={<SinglePage />} /> */}
+        <Contact />
+        <Footer />
       </AppProvider>
     </div>
   );

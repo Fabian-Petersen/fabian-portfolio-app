@@ -24,7 +24,8 @@ const AppProvider = ({ children }) => {
         setTheme,
         buttonCategory,
         setButtonCategory,
-      }}>
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

@@ -13,8 +13,9 @@ const BurgerMenuButton = () => {
           className={
             openSidebar ? "show-sidebar hide-nav" : "nav-btn hide-sidebar"
           }
-          id='nav-btn'
-          onClick={() => setOpenSidebar(true)}>
+          id="nav-btn"
+          onClick={() => setOpenSidebar(!openSidebar)}
+        >
           <FontAwesomeIcon icon={faBars} />
         </button>
       </div>
@@ -30,7 +31,7 @@ const Wrapper = styled.div`
     font-size: 2rem;
     cursor: pointer;
     padding-right: 2rem;
-    border: var(--border-red);
+    /* border: var(--border-red); */
   }
 
   @media screen and (min-width: 768px) {

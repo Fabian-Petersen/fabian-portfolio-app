@@ -2,8 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { themeIcons } from "../assets/images/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useGlobalContext } from "../ContextAPI";
 
-const ThemeSelector = ({ theme, setTheme }) => {
+const ThemeSelector = () => {
+  const { theme, setTheme } = useGlobalContext();
   const handleClick = () => {
     setTheme(!theme);
   };
@@ -26,8 +28,6 @@ const Wrapper = styled.div`
   .theme {
     color: var(--clr-white);
     font-size: 1.8rem;
-    margin-left: auto;
-    /* border: var(--border-white); */
   }
 
   .theme:hover {

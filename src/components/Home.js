@@ -83,10 +83,12 @@ const Wrapper = styled.header`
 
   h3 {
     font-size: 1rem;
+    font-weight: var(--font-weight-400);
   }
 
   h1 {
     font-size: 2rem;
+    font-weight: var(--font-weight-400);
   }
 
   h1 span {
@@ -100,6 +102,7 @@ const Wrapper = styled.header`
     text-transform: none;
     animation: textAnimation 500ms ease 3400ms forwards;
     /* border: var(--border-white); */
+    font-weight: var(--font-weight-200);
     max-width: 80%;
     span {
       color: var(--clr-yellow);
@@ -251,7 +254,8 @@ const Wrapper = styled.header`
       .btn-2 {
         max-width: 15rem;
         padding: 0.8rem 1.3rem;
-        font-size: 0.6em;
+        font-size: 1rem;
+        font-weight: var(--font-weight-400);
       }
     }
     .hero-heading::after {

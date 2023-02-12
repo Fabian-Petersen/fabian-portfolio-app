@@ -14,6 +14,7 @@
     "@testing-library/user-event": "^13.5.0",
     "framer-motion": "^8.0.2",
     "react": "^18.2.0",
+    "react-active-menu": "^0.0.14",
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.4.1",
     "react-router-dom": "^6.8.0",

@@ -5,29 +5,29 @@ import ThemeSelector from "./ThemeSelector";
 import links from "../pageLinks";
 import { useGlobalContext } from "../ContextAPI";
 import BurgerMenuButton from "./BurgerMenuButton";
+import { useActiveMenu } from "react-active-menu";
 
 const Navbar = () => {
   const { theme, setTheme } = useGlobalContext();
+  const { registerTrigger } = useActiveMenu();
+  // console.log(theme);
+
   return (
     <Wrapper>
-      <nav className='nav nav-fixed nav-fixed-active' id='nav'>
-        <div className='nav-center'>
-          <a href='/#home'>
-            <img src={logo} className='nav-logo' alt='nav-logo' />
+      <nav className="nav nav-fixed nav-fixed-active" id="nav">
+        <div className="nav-center">
+          <a href="/#home">
+            <img src={logo} className="nav-logo" alt="nav-logo" />
           </a>
-          <div className='nav-btns'>
-            <ThemeSelector
-              theme={theme}
-              setTheme={setTheme}
-              className={theme ? "theme theme-dark" : "theme theme-light"}
-            />
+          <div className="nav-btns">
+            <ThemeSelector theme={theme} setTheme={setTheme} />
             <BurgerMenuButton />
           </div>
-          <ul className='nav-links'>
+          <ul className="nav-links triggers">
             {links.map((link) => {
               const { id, section, href } = link;
               return (
-                <li key={id}>
+                <li key={id} ref={registerTrigger({ section })}>
                   <a href={href}>{section}</a>
                 </li>
               );
@@ -51,7 +51,7 @@ const Wrapper = styled.nav`
     /* border: 1px solid white; */
   }
 
-  .active {
+  .triggers .active li {
     color: yellow;
   }
 
@@ -65,6 +65,7 @@ const Wrapper = styled.nav`
 
   .nav-center {
     display: flex;
+    color: white;
     width: 100%;
     /* border: var(--border-red); */
     align-items: center;
@@ -72,10 +73,10 @@ const Wrapper = styled.nav`
 
   .nav-btns {
     display: flex;
-    gap: 2rem;
     margin-left: auto;
     align-items: center;
     justify-content: center;
+    gap: 2rem;
   }
 
   .theme {
@@ -89,7 +90,11 @@ const Wrapper = styled.nav`
   }
 
   .show-sidebar {
-    transform: translateX(0);
+    /* transform: translateX(0); */
+  }
+
+  .hide-sidebar {
+    /* transform: translateX(20%); */
   }
 
   @media screen and (min-width: 768px) {
@@ -115,14 +120,12 @@ const Wrapper = styled.nav`
     .nav-btns {
       display: flex;
       margin-left: auto;
-      gap: 2rem;
-      margin-right: 2rem;
     }
 
     .nav-links a {
       position: relative;
       text-transform: capitalize;
-      font-weight: bold;
+      font-weight: var(--font-weight-400);
       color: var(--clr-white);
       letter-spacing: var(--spacing);
     }
@@ -144,6 +147,9 @@ const Wrapper = styled.nav`
 
     .nav-center {
       padding: 0 2.5rem;
+    }
+    .active {
+      color: yellow;
     }
   }
 

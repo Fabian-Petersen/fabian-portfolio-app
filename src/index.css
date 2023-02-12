@@ -3,8 +3,7 @@
 Fonts
 ===============
 */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400&display=swap");
 
 /*
 =============== 
@@ -60,6 +59,9 @@ Variables
   /* --ff-primary: "Roboto", sans-serif, monospace; */
   --ff-primary: "Montserrat", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
+  --font-weight-100: 100;
+  --font-weight-200: 200;
+  --font-weight-400: 400;
   --transition: all 0.3s linear;
   --spacing: 0.25rem;
   --radius: 0.5rem;
@@ -93,10 +95,18 @@ html {
 
 body {
   font-family: var(--ff-primary);
-  background: var(--clr-bg-dark);
+  /* background: var(--clr-bg-dark); */
   color: var(--white);
   line-height: 1.5;
   font-size: 0.875rem;
+}
+
+.light {
+  background: var(--clr-primary-3);
+}
+
+.dark {
+  background: var(--clr-bg-dark);
 }
 
 ul {
