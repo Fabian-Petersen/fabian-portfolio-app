@@ -4,6 +4,7 @@ Fonts
 ===============
 */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
 
 /*
 =============== 
@@ -59,6 +60,7 @@ Variables
   /* --ff-primary: "Roboto", sans-serif, monospace; */
   --ff-primary: "Montserrat", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
+  --ff-logo: "Great Vibes", cursive;
   --font-weight-100: 100;
   --font-weight-200: 200;
   --font-weight-400: 400;

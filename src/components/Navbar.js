@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../assets/images/fabian-logo-vivaldi.svg";
+// import logo from "../assets/images/fabian-logo-vivaldi.svg";
 import ThemeSelector from "./ThemeSelector";
 import links from "../pageLinks";
 import { useGlobalContext } from "../ContextAPI";
 import BurgerMenuButton from "./BurgerMenuButton";
 import { useActiveMenu } from "react-active-menu";
+import Logo from "./Logo";
 
 const Navbar = () => {
   const { theme, setTheme } = useGlobalContext();
@@ -17,7 +18,8 @@ const Navbar = () => {
       <nav className="nav nav-fixed nav-fixed-active" id="nav">
         <div className="nav-center">
           <a href="/#home">
-            <img src={logo} className="nav-logo" alt="nav-logo" />
+            {/* <img src={logo} className="nav-logo" alt="nav-logo" /> */}
+            <Logo />
           </a>
           <div className="nav-btns">
             <ThemeSelector theme={theme} setTheme={setTheme} />
