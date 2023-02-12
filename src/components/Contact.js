@@ -20,7 +20,7 @@ const Contact = () => {
             method="POST"
           >
             <fieldset id="fs-frm-inputs">
-              <h2 className="contact-form-title">Contact Me</h2>
+              {/* <h2 className="contact-form-title">Contact Me</h2> */}
               <label htmlFor="full-name">Full Name</label>
               <input
                 type="text"
@@ -81,12 +81,13 @@ const Wrapper = styled.section`
     max-width: 40rem;
     margin-bottom: 5rem;
     align-items: center;
-    -webkit-backdrop-filter: blur(10px);
+    /* -webkit-backdrop-filter: blur(10px); */
     border: 1px solid hsla(0, 0%, 0%, 0.1);
     border-radius: 10px;
     margin: 0 auto;
     padding: 10px 15px;
-    backdrop-filter: blur(10px);
+    /* border: 1px solid white; */
+    /* backdrop-filter: blur(10px); */
   }
 
   fieldset {
@@ -101,6 +102,16 @@ const Wrapper = styled.section`
 
   .contact-form-title {
     color: white;
+  }
+
+  button {
+    max-width: 40rem;
+    width: 100%;
+    /* flex-grow: 1; */
+    /* align-content: stretch; */
+    /* flex-basis: ; */
+    /* flex-grow: 1; */
+    /* border: 1px solid white; */
   }
 
   label,

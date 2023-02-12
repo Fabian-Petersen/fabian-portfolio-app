@@ -5,7 +5,11 @@ import cv from "../assets/documents/fabian-petersen-12.2022-v1.pdf";
 import { useGlobalContext } from "../ContextAPI";
 import Navbar from "./Navbar";
 import SideBar from "./SideBar";
+import { motion } from "framer-motion";
+import homeVariants from "../animations/homeAnimate";
 // import ScrollNav from "./ScrollNav";
+
+const [containerVariants, animateLine, buttonVariants] = homeVariants;
 
 const Home = () => {
   const { openSidebar, setOpenSidebar } = useGlobalContext();
@@ -20,10 +24,19 @@ const Home = () => {
         <SideBar setOpenSidebar={setOpenSidebar} openSidebar={openSidebar} />
       )}
 
-      <header className="hero section" id="home">
+      <motion.header
+        className="hero section"
+        id="home"
+        variants={containerVariants}
+        initial="initialState"
+        animate="animateState"
+      >
         <div className="section-center hero-center">
           <article className="hero-info">
-            <div className="underline"></div>
+            <motion.div
+              className="underline"
+              variants={animateLine}
+            ></motion.div>
             <h3>Hi, my name is</h3>
             <h1>
               <span>Fabian </span>Petersen.
@@ -32,7 +45,7 @@ const Home = () => {
               Welcome to my official portfolio website showcasing my work as a
               <span> Front End Developer.</span>
             </p>
-            <div className="home-btns">
+            <motion.div className="home-btns" variants={buttonVariants}>
               <a
                 href={cv}
                 target="_blank"
@@ -44,10 +57,10 @@ const Home = () => {
               <a href={"/projects"} className="btn btn-2">
                 My Projects
               </a>
-            </div>
+            </motion.div>
           </article>
         </div>
-      </header>
+      </motion.header>
     </Wrapper>
   );
 };
@@ -60,8 +73,8 @@ const Wrapper = styled.header`
   .underline {
     margin-bottom: 0.8rem;
     margin-left: 0;
-    opacity: 0;
-    animation: underlineAnimation 0.5s ease 3400ms forwards;
+    /* opacity: 0; */
+    /* animation: underlineAnimation 0.5s ease 3400ms forwards; */
   }
 
   .hero-center {
@@ -96,7 +109,7 @@ const Wrapper = styled.header`
   }
 
   .hero-sub-heading {
-    opacity: 0;
+    /* opacity: 0; */
     font-size: 0.8rem;
     line-height: 2rem;
     text-transform: none;
@@ -122,13 +135,13 @@ const Wrapper = styled.header`
   }
 
   h3::before {
-    background-color: var(--clr-bg-dark);
-    animation: typewriterAnimation 1500ms steps(14) 1s forwards;
+    /* background-color: var(--clr-bg-dark); */
+    /* animation: typewriterAnimation 1500ms steps(14) 1s forwards; */
   }
 
   h1::before {
-    background-color: var(--clr-bg-dark);
-    animation: typewriterAnimation 1500ms steps(16) 2.5s forwards;
+    /* background-color: var(--clr-bg-dark); */
+    /* animation: typewriterAnimation 1500ms steps(16) 2.5s forwards; */
   }
 
   //? ======================== End of the styles for the animation for the typewriter text and pointer ================= //
@@ -139,9 +152,9 @@ const Wrapper = styled.header`
     display: flex;
     gap: 1.5rem;
     padding: 1.2rem 0;
-    opacity: 0;
+    /* opacity: 0; */
     /* border: var(--border-white); */
-    animation: textAnimation 600ms ease 3500ms forwards;
+    /* animation: textAnimation 600ms ease 3500ms forwards; */
   }
 
   .home-btns :is(.btn-1, .btn-2) {
@@ -175,7 +188,7 @@ const Wrapper = styled.header`
 
   //$  ================================================= End Button Styles ============================================ //
 
-  @keyframes underlineAnimation {
+  /* @keyframes underlineAnimation {
     to {
       opacity: 1;
     }
@@ -197,7 +210,7 @@ const Wrapper = styled.header`
     to {
       left: 100%;
     }
-  }
+  } */
 
   @media screen and (min-width: 450px) {
     .hero-heading h1 {

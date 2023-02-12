@@ -1,35 +1,39 @@
 import React from "react";
 import styled from "styled-components";
-// import { useObserverContext } from "../ObserverAPI";
 import skills from "../skillsData";
 import { useActiveMenu } from "react-active-menu";
+import { motion } from "framer-motion";
+import aboutVariants from "../animations/aboutAnimate";
 
 const uniqueSkill = [...new Set(skills.map((item) => item.node))];
+const [container, item, skillsContainer] = aboutVariants;
 
 const About = () => {
-  // const { ref1 } = useObserverContext();
   const { registerSection } = useActiveMenu({
     smooth: true,
   });
 
   return (
     <Wrapper>
-      <section
+      <motion.section
         className="section about"
         id="about"
+        variants={container}
+        initial="initialState"
+        whileInView="animateState"
         ref={registerSection("about")}
       >
-        <div className="section-title">
+        <motion.div className="section-title" variants={item}>
           <h2 id="testing">About Me</h2>
           <div className="underline"></div>
-        </div>
+        </motion.div>
         {/* <!-- end of section title --> */}
-        <div className="section-center about-center">
+        <motion.div className="section-center about-center" variants={item}>
           {/* <!-- about info --> */}
           <article className="about-info">
             <p>
-              I'm a chemical engineer by trade and throughout my career I worked
-              on various software implementation projects with TotalEnergies.
+              I'm a chemical engineer and throughout my career I worked on
+              various software implementation projects with TotalEnergies.
               Through this exposure I fell in love with the development of apps
               myself and today I'm a passionate React Developer.
               <br />
@@ -41,33 +45,52 @@ const About = () => {
             <div className="skills-container">
               {uniqueSkill.map((skill, index) => {
                 return (
-                  <div key={index} className="each-skill">
+                  <div
+                    key={index}
+                    className="each-skill"
+                    variants={skillsContainer}
+                  >
                     <h3 className="each-skill-heading">{skill}</h3>
-                    <div className="each-skill-container">
+                    <motion.div
+                      className="each-skill-container"
+                      variants={skill}
+                    >
                       {skills
                         .filter((item) => item.node === skill)
-                        .map((item) => {
-                          const { id, icon } = item;
+                        .map((item, i) => {
+                          const { id, icon, styling } = item;
                           return (
-                            <div key={id} className="icon-container">
-                              <img
-                                className="each-skill-icon"
-                                src={icon}
-                                alt={id}
-                              />
+                            <motion.div
+                              key={id}
+                              className="container"
+                              initial={{ opacity: 0, y: "-200" }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{
+                                duration: 0.5,
+                                delay: i * 0.4,
+                                type: "spring",
+                              }}
+                            >
+                              <div className={`icon-container ${styling}`}>
+                                <img
+                                  className="each-skill-icon"
+                                  src={icon}
+                                  alt={id}
+                                />
+                              </div>
                               <p className="icon-name">{id}</p>
-                            </div>
+                            </motion.div>
                           );
                         })}
-                    </div>
+                    </motion.div>
                     <hr className="divideLine" />
                   </div>
                 );
               })}
             </div>
           </article>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
     </Wrapper>
   );
 };
@@ -116,15 +139,27 @@ const Wrapper = styled.section`
       gap: 2rem;
       flex-wrap: wrap;
     }
-
-    .each-skill-icon {
-      width: 2rem;
-      height: 2rem;
-      margin-bottom: 1rem;
-      /* border: var(--border-white); */
-    }
   }
+
   .icon-container {
+    position: relative;
+    border-radius: 10px;
+    width: 4rem;
+    height: 4rem;
+    background: linear-gradient(to bottom, #060606, rgba(255, 255, 255, 0.03));
+    margin-bottom: 1rem;
+  }
+
+  .each-skill-icon {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .container {
     .icon-name {
       text-align: center;
       font-size: 0.6rem;
@@ -153,6 +188,10 @@ const Wrapper = styled.section`
       .heading-mySkills {
         font-size: 1.6rem;
       }
+    }
+
+    .each-skill-container {
+      gap: 3rem;
     }
 
     .each-skill {
@@ -205,6 +244,60 @@ const Wrapper = styled.section`
         height: 4.5rem;
       }
     }
+
+    .icon-container {
+      width: 5rem;
+      height: 5rem;
+    }
+    .each-skill-icon {
+      position: absolute;
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
+  .figma {
+    box-shadow: 0px 4px 6px rgba(118, 73, 242, 0.25);
+  }
+
+  .html {
+    box-shadow: 0px 4px 6px rgba(219, 77, 0, 0.25);
+  }
+
+  .css {
+    box-shadow: 0px 4px 6px rgba(2, 119, 189, 0.25);
+  }
+
+  .javascript {
+    box-shadow: 0px 4px 6px rgba(255, 214, 0, 0.25);
+  }
+
+  .react {
+    box-shadow: 0px 4px 6px rgba(121, 211, 222, 0.25);
+  }
+
+  .github {
+    box-shadow: 0px 4px 6px rgba(2, 119, 189, 0.25);
+  }
+
+  .bootstrap {
+    box-shadow: 0px 4px 6px rgba(103, 58, 180, 0.25);
+  }
+
+  .sass {
+    box-shadow: 0px 4px 6px rgba(228, 93, 139, 0.25);
+  }
+
+  .vsc {
+    box-shadow: 0px 4px 6px rgba(41, 179, 243, 0.25);
+  }
+
+  .api {
+    box-shadow: 0px 4px 6px rgba(196, 234, 227, 0.25);
+  }
+
+  .responsive {
+    box-shadow: 0px 4px 6px rgba(234, 84, 80, 0.25);
   }
 `;
 
