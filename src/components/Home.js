@@ -13,12 +13,8 @@ const [containerVariants, animateLine, buttonVariants] = homeVariants;
 
 const Home = () => {
   const { openSidebar, setOpenSidebar } = useGlobalContext();
-
-  // const { ref, inView } = useInView();
   return (
     <Wrapper>
-      {/* {inView ? <Navbar /> : <ScrollNav />} */}
-
       <Navbar />
       {openSidebar && (
         <SideBar setOpenSidebar={setOpenSidebar} openSidebar={openSidebar} />
@@ -88,7 +84,7 @@ const Wrapper = styled.header`
     position: relative;
     width: fit-content;
     align-items: left;
-    color: var(--clr-white);
+    color: var(--clr-font);
     text-transform: none;
     padding: 0.5rem 0;
     margin: 0;
@@ -105,7 +101,7 @@ const Wrapper = styled.header`
   }
 
   h1 span {
-    color: var(--clr-yellow);
+    color: var(--clr-primary);
   }
 
   .hero-sub-heading {
@@ -115,10 +111,9 @@ const Wrapper = styled.header`
     text-transform: none;
     animation: textAnimation 500ms ease 3400ms forwards;
     /* border: var(--border-white); */
-    font-weight: var(--font-weight-200);
     max-width: 80%;
     span {
-      color: var(--clr-yellow);
+      color: var(--clr-primary);
     }
   }
 
@@ -165,25 +160,28 @@ const Wrapper = styled.header`
   }
 
   .btn-1 {
-    background-color: var(--clr-yellow);
-    color: var(--clr-primary-5);
+    background-color: var(--clr-primary);
+    color: var(--clr-bg);
   }
 
   .btn-2 {
-    background-color: transparent;
-    color: var(--clr-white);
-    border: 1px solid yellow;
+    background-color: white;
+    color: var(--clr-bg);
+    border: 1px solid var(--clr-primary);
   }
 
   .btn-1:hover {
     background-color: white;
     color: var(--clr-red);
+    outline: 1px solid var(--clr-primary);
+    font-weight: var(--font-weight-400);
   }
 
   .btn-2:hover {
     background-color: white;
     border: 1px solid var(--clr-white);
     color: var(--clr-red);
+    font-weight: var(--font-weight-400);
   }
 
   //$  ================================================= End Button Styles ============================================ //

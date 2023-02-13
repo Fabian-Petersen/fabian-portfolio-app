@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import skills from "../skillsData";
-import { useActiveMenu } from "react-active-menu";
+// import { useActiveMenu } from "react-active-menu";
 import { motion } from "framer-motion";
 import aboutVariants from "../animations/aboutAnimate";
 
@@ -9,9 +9,9 @@ const uniqueSkill = [...new Set(skills.map((item) => item.node))];
 const [container, item, skillsContainer] = aboutVariants;
 
 const About = () => {
-  const { registerSection } = useActiveMenu({
-    smooth: true,
-  });
+  // const { registerSection } = useActiveMenu({
+  //   smooth: true,
+  // });
 
   return (
     <Wrapper>
@@ -21,7 +21,7 @@ const About = () => {
         variants={container}
         initial="initialState"
         whileInView="animateState"
-        ref={registerSection("about")}
+        // ref={registerSection("about")}
       >
         <motion.div className="section-title" variants={item}>
           <h2 id="testing">About Me</h2>
@@ -116,7 +116,6 @@ const Wrapper = styled.section`
       font-size: 1.5rem;
       text-align: center;
       margin-bottom: 1.5rem;
-      color: var(--clr-white);
     }
   }
 
@@ -131,7 +130,6 @@ const Wrapper = styled.section`
       font-size: 0.8rem;
       font-weight: normal;
       margin-bottom: 1rem;
-      color: var(--clr-white);
     }
 
     .each-skill-container {
@@ -170,7 +168,7 @@ const Wrapper = styled.section`
   hr {
     width: 100%;
     margin-bottom: 1.5rem;
-    border: 0.2px solid rgba(255, 255, 255, 0.05);
+    border: 0.2px solid var(--clr-about-lines);
   }
 
   .active {

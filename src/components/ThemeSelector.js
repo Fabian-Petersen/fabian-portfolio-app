@@ -1,23 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { themeIcons } from "../assets/images/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useGlobalContext } from "../ContextAPI";
 
 const ThemeSelector = () => {
-  const { theme, setTheme } = useGlobalContext();
+  const { theme, setTheme, toggleTheme, setToggleTheme } = useGlobalContext();
+
   const handleClick = () => {
-    setTheme(!theme);
+    setToggleTheme(!toggleTheme);
+    if (theme === "dark-theme") {
+      setTheme("light-theme");
+    } else {
+      setTheme("dark-theme");
+    }
   };
+
+  useEffect(() => {
+    document.documentElement.className = theme;
+  }, [theme]);
 
   const { faSun, faMoon } = themeIcons;
   return (
     <Wrapper>
       <div className="theme">
-        {theme ? (
-          <FontAwesomeIcon icon={faSun} onClick={handleClick} />
-        ) : (
+        {toggleTheme ? (
           <FontAwesomeIcon icon={faMoon} onClick={handleClick} />
+        ) : (
+          <FontAwesomeIcon icon={faSun} onClick={handleClick} />
         )}
       </div>
     </Wrapper>

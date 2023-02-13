@@ -82,7 +82,7 @@ const Wrapper = styled.section`
     margin-bottom: 5rem;
     align-items: center;
     /* -webkit-backdrop-filter: blur(10px); */
-    border: 1px solid hsla(0, 0%, 0%, 0.1);
+    border: var(--border);
     border-radius: 10px;
     margin: 0 auto;
     padding: 10px 15px;
@@ -100,18 +100,9 @@ const Wrapper = styled.section`
     margin-bottom: 0.5rem;
   }
 
-  .contact-form-title {
-    color: white;
-  }
-
   button {
     max-width: 40rem;
     width: 100%;
-    /* flex-grow: 1; */
-    /* align-content: stretch; */
-    /* flex-basis: ; */
-    /* flex-grow: 1; */
-    /* border: 1px solid white; */
   }
 
   label,

@@ -79,6 +79,27 @@ Variables
 
 /*
 =============== 
+Theme Styles
+===============
+*/
+.dark-theme {
+  --clr-bg: hsl(0, 0%, 5%);
+  --clr-primary: #ffd700;
+  --clr-font: #fff;
+  --clr-about-lines: rgba(255, 255, 255, 0.05);
+  --border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.light-theme {
+  --clr-bg: hsl(216, 10%, 75%);
+  --clr-primary: #e43f5a;
+  --clr-font: hsl(217, 10%, 25%);
+  --clr-about-lines: rgba(0, 0, 0, 0.05);
+  --border: 1px solid rgba(250, 240, 240, 0.8);
+}
+
+/*
+=============== 
 Global Styles
 ===============
 */
@@ -87,6 +108,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 1rem;
 }
+
 *,
 ::after,
 ::before {
@@ -96,19 +118,12 @@ html {
 }
 
 body {
+  background-color: var(--clr-bg);
   font-family: var(--ff-primary);
-  /* background: var(--clr-bg-dark); */
-  color: var(--white);
+  color: var(--clr-font);
   line-height: 1.5;
   font-size: 0.875rem;
-}
-
-.light {
-  background: var(--clr-primary-3);
-}
-
-.dark {
-  background: var(--clr-bg-dark);
+  font-weight: var(--font-weight-400);
 }
 
 ul {
@@ -135,7 +150,6 @@ h4 {
 }
 h1 {
   font-size: 3rem;
-  color: var(--clr-white);
 }
 h2 {
   font-size: 2rem;
@@ -148,7 +162,6 @@ h4 {
 }
 p {
   margin-bottom: 1.25rem;
-  color: var(--clr-white);
 }
 
 @media screen and (min-width: 800px) {
@@ -179,9 +192,9 @@ p {
 
 .btn {
   text-transform: uppercase;
-  background: var(--clr-yellow);
-  border: var(--clr-yellow);
-  color: var(--clr-primary-5);
+  background: var(--clr-primary);
+  border: var(--clr-primary);
+  color: (--clr-font);
   padding: 0.3rem 0.6rem;
   max-width: 8rem;
   letter-spacing: var(--spacing);
@@ -237,7 +250,7 @@ p {
   width: 5rem;
   height: 0.25rem;
   margin-bottom: 1.3rem;
-  background: var(--clr-red);
+  background: var(--clr-primary);
   margin-left: auto;
   margin-right: auto;
 }
@@ -246,7 +259,6 @@ p {
   margin: 2rem;
   margin-bottom: 4rem;
   text-align: center;
-  color: var(--clr-white);
 }
 
 /* Services Section Background Color */

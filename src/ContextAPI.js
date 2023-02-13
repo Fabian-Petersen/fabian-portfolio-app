@@ -8,7 +8,8 @@ const AppProvider = ({ children }) => {
   const [buttonCategory, setButtonCategory] = useState([]);
   const [activeButton, setActiveButton] = useState(" ");
   const [openSidebar, setOpenSidebar] = useState(false);
-  const [theme, setTheme] = useState(true);
+  const [theme, setTheme] = useState("dark-theme");
+  const [toggleTheme, setToggleTheme] = useState(true);
 
   return (
     <AppContext.Provider
@@ -22,6 +23,8 @@ const AppProvider = ({ children }) => {
         setOpenSidebar,
         theme,
         setTheme,
+        toggleTheme,
+        setToggleTheme,
         buttonCategory,
         setButtonCategory,
       }}
