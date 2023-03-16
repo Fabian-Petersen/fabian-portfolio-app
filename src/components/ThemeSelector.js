@@ -25,7 +25,11 @@ const ThemeSelector = () => {
     <Wrapper>
       <div className="theme">
         {toggleTheme ? (
-          <FontAwesomeIcon icon={faMoon} onClick={handleClick} />
+          <FontAwesomeIcon
+            className="icon"
+            icon={faMoon}
+            onClick={handleClick}
+          />
         ) : (
           <FontAwesomeIcon icon={faSun} onClick={handleClick} />
         )}
@@ -36,8 +40,17 @@ const ThemeSelector = () => {
 
 const Wrapper = styled.div`
   .theme {
-    color: var(--clr-white);
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-radius: 50%;
+    text-align: center;
+    background-color: var(--clr-primary-2);
+  }
+
+  .icon {
+    justify-content: center;
   }
 
   .theme:hover {
@@ -45,7 +58,11 @@ const Wrapper = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    margin: auto;
+    .theme {
+      top: 1.5%;
+      position: fixed;
+      right: 1.5%;
+    }
   }
 `;
 

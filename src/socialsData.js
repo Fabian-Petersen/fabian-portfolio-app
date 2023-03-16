@@ -15,6 +15,7 @@ const socialData = [
     url: "#facebook",
     icon: faFacebook,
     color: "#3B5999",
+    className: "facebook",
   },
   {
     id: 3,
@@ -22,6 +23,7 @@ const socialData = [
     url: "#twitter",
     icon: faTwitter,
     color: "#46C1F6",
+    className: "twitter",
   },
   { id: 4, name: "linkedin", url: "#linked", icon: faLinkedin, color: "" },
 ];

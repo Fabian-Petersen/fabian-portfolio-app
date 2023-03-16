@@ -7,6 +7,7 @@ import { useGlobalContext } from "../ContextAPI";
 import BurgerMenuButton from "./BurgerMenuButton";
 import { useActiveMenu } from "react-active-menu";
 import Logo from "./Logo";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Navbar = () => {
   const { theme, setTheme } = useGlobalContext();
@@ -27,10 +28,16 @@ const Navbar = () => {
           </div>
           <ul className="nav-links triggers">
             {links.map((link) => {
-              const { id, section, href } = link;
+              const { id, section, href, icon, className } = link;
               return (
-                <li key={id} ref={registerTrigger({ section })}>
-                  <a href={href}>{section}</a>
+                <li
+                  className={className}
+                  key={id}
+                  ref={registerTrigger({ section })}
+                >
+                  <a href={href}>
+                    <FontAwesomeIcon icon={icon} className="icon" />
+                  </a>
                 </li>
               );
             })}
@@ -53,8 +60,14 @@ const Wrapper = styled.nav`
     /* border: 1px solid white; */
   }
 
-  .triggers .active li {
-    color: yellow;
+  ul li:hover {
+    .facebook {
+      color: #3b5999;
+    }
+
+    .twitter {
+      color: #46c1f6;
+    }
   }
 
   .nav-logo:hover {
@@ -114,14 +127,30 @@ const Wrapper = styled.nav`
     }
 
     .nav-links {
+      position: fixed;
+      top: 45%;
+      right: 1%;
       display: flex;
-      gap: 2rem;
+      flex-direction: column;
+      gap: 2.5rem;
       justify-content: space-around;
+      justify-content: center;
+      text-align: center;
     }
 
     .nav-btns {
       display: flex;
       margin-left: auto;
+    }
+
+    ul li {
+      background-color: var(--clr-primary-2);
+      display: block;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
     }
 
     .nav-links a {
@@ -132,7 +161,7 @@ const Wrapper = styled.nav`
       letter-spacing: var(--spacing);
     }
 
-    .nav-links a::after {
+    /* .nav-links a::after {
       content: " ";
       position: absolute;
       background-color: var(--clr-red);
@@ -141,7 +170,7 @@ const Wrapper = styled.nav`
       left: 0;
       bottom: -10px;
       transition: var(--transition);
-    }
+    } */
 
     .nav-links a:hover::after {
       width: 100%;

@@ -9,7 +9,7 @@ import {
   Contact,
   Footer,
   // SinglePage,
-} from "./components/Index";
+} from "./components";
 
 const App = () => {
   return (

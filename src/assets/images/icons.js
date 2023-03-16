@@ -6,6 +6,9 @@ import {
   faUser,
   faPhone,
   faClipboard,
+  faGlobe,
+  faChevronCircleUp,
+  faPalette,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -34,6 +37,9 @@ const Icons = {
   faSass,
   faReact,
   faJs,
+  faGlobe,
+  faChevronCircleUp,
+  faPalette,
 };
 
 export const navIcons = {

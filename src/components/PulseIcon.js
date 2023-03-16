@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const PulseIcon = ({ code, url }) => {
@@ -14,7 +15,14 @@ const PulseIcon = ({ code, url }) => {
             rel="noreferrer"
             className="project-code-link"
           >
-            <button className="demo-btn">Demo</button>
+            <div className="pulse">
+              <FontAwesomeIcon
+                icon={faGlobe}
+                className="code-icon"
+                onClick={() => console.log({ url })}
+              />
+            </div>
+            {/* <button className="demo-btn">Demo</button> */}
           </a>
           <a
             href={code}

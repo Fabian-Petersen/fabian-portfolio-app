@@ -1,13 +1,11 @@
-import React from "react";
 // import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import cv from "../assets/documents/fabian-petersen-12.2022-v1.pdf";
 import { useGlobalContext } from "../ContextAPI";
-import Navbar from "./Navbar";
-import SideBar from "./SideBar";
 import { motion } from "framer-motion";
 import homeVariants from "../animations/homeAnimate";
-// import ScrollNav from "./ScrollNav";
+import { Navbar, SideBar, SocialsHover } from "../components";
+import ScrollToTop from "./ScrollToTop";
 
 const [containerVariants, animateLine, buttonVariants] = homeVariants;
 
@@ -19,7 +17,6 @@ const Home = () => {
       {openSidebar && (
         <SideBar setOpenSidebar={setOpenSidebar} openSidebar={openSidebar} />
       )}
-
       <motion.header
         className="hero section"
         id="home"
@@ -54,9 +51,11 @@ const Home = () => {
                 My Projects
               </a>
             </motion.div>
+            <SocialsHover />
           </article>
         </div>
       </motion.header>
+      <ScrollToTop />
     </Wrapper>
   );
 };

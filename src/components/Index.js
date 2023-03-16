@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import Projects from "./Projects";
 import Modal from "./SocialsHover";
 import SinglePage from "./SinglePage";
+import SocialsHover from "./SocialsHover";
 
 export {
   About,
@@ -18,4 +19,5 @@ export {
   Footer,
   Modal,
   SinglePage,
+  SocialsHover,
 };
