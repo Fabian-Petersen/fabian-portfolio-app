@@ -14,7 +14,6 @@ const Wrapper = styled.ul`
 
     li {
       position: relative;
-      /* font-size: 1.5rem; */
       width: 2.5rem;
       height: 2.5rem;
       background-color: var(--clr-primary);
@@ -23,13 +22,13 @@ const Wrapper = styled.ul`
       display: flex;
     }
 
-    li:before {
+    li::before {
       content: "";
+      position: absolute;
       top: 0;
       left: 0;
-      height: 100%;
       width: 100%;
-      position: absolute;
+      height: 100%;
       border-radius: 50%;
       background-color: var(--clr-primary);
       transform: scale(0.9);

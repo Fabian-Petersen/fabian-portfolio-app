@@ -83,7 +83,7 @@ Theme Styles
 ===============
 */
 .dark-theme {
-  --clr-bg: #040303;
+  --clr-bg: hsl(211, 68%, 6%);
   --clr-primary: #ffd700;
   --clr-font: #eff5f5;
   --clr-about-lines: rgba(255, 255, 255, 0.05);
@@ -119,6 +119,7 @@ html {
 
 body {
   background-color: var(--clr-bg);
+  /* background-image: linear-gradient(to right); */
   font-family: var(--ff-primary);
   color: var(--clr-font);
   line-height: 1.5;

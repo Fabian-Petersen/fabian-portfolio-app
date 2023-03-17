@@ -19,16 +19,18 @@ const Wrapper = styled.div`
     left: 40%;
     top: 65%;
     transform: translate(-50%, -50%);
-    font-size: 2em;
+    font-size: 1.5em;
+    font-weight: 700;
   }
 
   .letter-p {
-    color: var(--clr-yellow);
+    color: var(--clr-primary);
     position: absolute;
     left: 65%;
     top: 100%;
     transform: translate(-50%, -50%);
-    font-size: 2em;
+    font-size: 1.5em;
+    font-weight: 700;
   }
 `;
 

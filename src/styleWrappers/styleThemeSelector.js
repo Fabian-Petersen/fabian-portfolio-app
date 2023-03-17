@@ -2,17 +2,32 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   .theme {
-    font-size: 1.5rem;
     width: 2.5rem;
     height: 2.5rem;
-    line-height: 2.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
-    text-align: center;
-    background-color: var(--clr-primary-2);
+    background-color: var(--clr-primary);
+    outline: 2.5px solid var(--clr-white);
   }
 
   .icon {
-    justify-content: center;
+    color: var(--clr-black);
+    position: relative;
+  }
+
+  .icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--clr-black);
+    background-color: var(--clr-black);
+    z-index: -1;
   }
 
   .theme:hover {
@@ -23,7 +38,7 @@ const Wrapper = styled.div`
     .theme {
       top: 1.5%;
       position: fixed;
-      right: 1.5%;
+      right: 1%;
     }
   }
 `;

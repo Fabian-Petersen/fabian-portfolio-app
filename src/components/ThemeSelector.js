@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Wrapper from "../styleWrappers/styleThemeSelector";
-import { themeIcons } from "../assets/icons";
+import Icons from "../assets/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useGlobalContext } from "../ContextAPI";
 
@@ -20,7 +20,8 @@ const ThemeSelector = () => {
     document.documentElement.className = theme;
   }, [theme]);
 
-  const { faSun, faMoon } = themeIcons;
+  const { faMoon, faSun } = Icons;
+
   return (
     <Wrapper>
       <div className="theme">

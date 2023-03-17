@@ -9,6 +9,8 @@ import {
   faGlobe,
   faChevronCircleUp,
   faPalette,
+  faMoon,
+  faSun,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -24,8 +26,6 @@ import {
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 
-import { faSun, faMoon } from "@fortawesome/free-regular-svg-icons";
-
 const Icons = {
   faFacebook,
   faTwitter,
@@ -40,6 +40,8 @@ const Icons = {
   faGlobe,
   faChevronCircleUp,
   faPalette,
+  faMoon,
+  faSun,
 };
 
 export const navIcons = {
@@ -47,9 +49,10 @@ export const navIcons = {
   user: faUser,
   phone: faPhone,
   clipboard: faClipboard,
+  moon: faMoon,
 };
 
-export const themeIcons = { faSun, faMoon };
+// export const themeIcons = { faSun, faMoon };
 
 export const brandNames = ["Facebook", "Twitter", "Github", "Instagram"];
 
