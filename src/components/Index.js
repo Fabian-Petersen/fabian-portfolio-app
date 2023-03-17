@@ -8,6 +8,13 @@ import Projects from "./Projects";
 import Modal from "./SocialsHover";
 import SinglePage from "./SinglePage";
 import SocialsHover from "./SocialsHover";
+import ScrollToTop from "./ScrollToTop";
+import Logo from "./Logo";
+import BurgerMenuButton from "./BurgerMenuButton";
+import ThemeSelector from "./ThemeSelector";
+import FilterButtons from "./FilterButtons";
+import PulseIcon from "./PulseIcon";
+import IconPageLinks from "./IconPageLinks";
 
 export {
   About,
@@ -20,4 +27,11 @@ export {
   Modal,
   SinglePage,
   SocialsHover,
+  ScrollToTop,
+  Logo,
+  BurgerMenuButton,
+  ThemeSelector,
+  FilterButtons,
+  PulseIcon,
+  IconPageLinks,
 };

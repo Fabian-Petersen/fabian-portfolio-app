@@ -1,4 +1,4 @@
-import Icons from "./assets/images/icons";
+import Icons from "./assets/icons";
 
 const { faGithub, faFacebook, faTwitter, faLinkedin } = Icons;
 const socialData = [

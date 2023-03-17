@@ -1,6 +1,5 @@
-import React from "react";
 import { useGlobalContext } from "../ContextAPI";
-import styled from "styled-components";
+import Wrapper from "../styleWrappers/styleSinglePage";
 import { Link, useParams } from "react-router-dom";
 import SkillsIcons from "./SkillsIcons";
 
@@ -12,16 +11,16 @@ const SinglePage = () => {
   return (
     <Wrapper>
       <main>
-        <section className='section'>
-          <div className='section-center'>
-            <div className='section-title'>
+        <section className="section">
+          <div className="section-center">
+            <div className="section-title">
               <h2>{name}</h2>
-              <div className='underline'></div>
-              <p className='desc'>{singlePage.description}</p>
-              <h3 className='skills-title'>Tools Used</h3>
+              <div className="underline"></div>
+              <p className="desc">{singlePage.description}</p>
+              <h3 className="skills-title">Tools Used</h3>
               <SkillsIcons name={name} singlePage={singlePage} />
-              <Link to='/projects'>
-                <button className='btn hero-btn-2'>Back</button>
+              <Link to="/projects">
+                <button className="btn hero-btn-2">Back</button>
               </Link>
             </div>
           </div>
@@ -30,15 +29,5 @@ const SinglePage = () => {
     </Wrapper>
   );
 };
-
-const Wrapper = styled.main`
-  .desc {
-    margin-bottom: 3rem;
-  }
-
-  .hero-btn-2 {
-    padding: 1rem 2.5rem;
-  }
-`;
 
 export default SinglePage;

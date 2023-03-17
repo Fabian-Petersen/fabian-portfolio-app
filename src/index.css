@@ -83,9 +83,9 @@ Theme Styles
 ===============
 */
 .dark-theme {
-  --clr-bg: hsl(0, 0%, 5%);
+  --clr-bg: #040303;
   --clr-primary: #ffd700;
-  --clr-font: #fff;
+  --clr-font: #eff5f5;
   --clr-about-lines: rgba(255, 255, 255, 0.05);
   --border: 1px solid rgba(255, 255, 255, 0.2);
 }

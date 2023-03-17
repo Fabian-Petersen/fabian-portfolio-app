@@ -1,5 +1,5 @@
 // { id: "https://fabian-portfolio.netlify.app/", name: "Home" }
-import { navIcons } from "./assets/images/icons";
+import { navIcons } from "./assets/icons";
 const { house, user, clipboard, phone } = navIcons;
 
 const links = [
