@@ -5,10 +5,10 @@ import SideBar from "./SideBar";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import Projects from "./Projects";
-// import Modal from "./SocialsHover";
 import SinglePage from "./SinglePage";
 import SocialsHover from "./SocialsHover";
 import ScrollToTop from "./ScrollToTop";
+import ScrollNav from "./ScrollNav";
 import Logo from "./Logo";
 import BurgerMenuButton from "./BurgerMenuButton";
 import ThemeSelector from "./ThemeSelector";
@@ -24,7 +24,6 @@ export {
   Projects,
   Contact,
   Footer,
-  // Modal,
   SinglePage,
   SocialsHover,
   ScrollToTop,
@@ -34,4 +33,5 @@ export {
   FilterButtons,
   PulseIcon,
   IconPageLinks,
+  ScrollNav,
 };
