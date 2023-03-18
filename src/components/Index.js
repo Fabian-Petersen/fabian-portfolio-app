@@ -5,7 +5,7 @@ import SideBar from "./SideBar";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import Projects from "./Projects";
-import Modal from "./SocialsHover";
+// import Modal from "./SocialsHover";
 import SinglePage from "./SinglePage";
 import SocialsHover from "./SocialsHover";
 import ScrollToTop from "./ScrollToTop";
@@ -24,7 +24,7 @@ export {
   Projects,
   Contact,
   Footer,
-  Modal,
+  // Modal,
   SinglePage,
   SocialsHover,
   ScrollToTop,
