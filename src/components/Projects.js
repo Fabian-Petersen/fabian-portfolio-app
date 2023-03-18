@@ -1,5 +1,5 @@
 import Wrapper from "../styleWrappers/styleProjects";
-import { FilterButtons, PulseIcon } from "../components";
+import { FilterButtons, PulseIcon } from "../components/index.js";
 import { useActiveMenu } from "react-active-menu";
 import { useGlobalContext } from "../ContextAPI";
 

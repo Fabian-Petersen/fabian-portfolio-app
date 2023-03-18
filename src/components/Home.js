@@ -4,7 +4,12 @@ import cv from "../assets/documents/fabian-petersen-12.2022-v1.pdf";
 import { useGlobalContext } from "../ContextAPI";
 import { motion } from "framer-motion";
 import homeVariants from "../animations/homeAnimate";
-import { Navbar, SideBar, SocialsHover, ScrollToTop } from "../components";
+import {
+  Navbar,
+  SideBar,
+  SocialsHover,
+  ScrollToTop,
+} from "../components/index.js";
 
 const [containerVariants, animateLine, buttonVariants] = homeVariants;
 

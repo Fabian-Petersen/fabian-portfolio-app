@@ -4,7 +4,7 @@ import {
   BurgerMenuButton,
   Logo,
   IconPageLinks,
-} from "../components";
+} from "../components/index.js";
 
 import { useGlobalContext } from "../ContextAPI";
 
