@@ -1,6 +1,7 @@
-import React from "react";
 import "../src/index.css";
 import AppProvider from "./ContextAPI";
+// import { InView } from "react-intersection-observer";
+// import ObserverProvider from "./ObserverAPI";
 
 import {
   About,

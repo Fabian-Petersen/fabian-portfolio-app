@@ -13,17 +13,18 @@ const Wrapper = styled.div`
     flex: 1 1 0;
     width: max-content;
     padding: 0.8rem 0rem;
+    color: var(--clr-font);
   }
 
   button.active {
-    background-color: var(--clr-red);
-    color: white;
+    background-color: var(--clr-primary);
+    outline: 2.5px solid var(--clr-font);
   }
 
   @media screen and (min-width: 450px) {
     .btn-container {
       gap: 1rem;
-      padding: 0.7rem 1rem;
+      padding: 0.7em 1em;
       font-size: 0.7rem;
     }
 

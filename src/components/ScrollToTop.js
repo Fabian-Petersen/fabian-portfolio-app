@@ -14,7 +14,7 @@ const ScrollToTop = () => {
       () => {
         if (window.scrollY > 100) {
           setVisible(true);
-          console.log(visible);
+          // console.log(visible);
         } else {
           setVisible(false);
         }
@@ -29,15 +29,13 @@ const ScrollToTop = () => {
 
   return (
     <Wrapper>
-      {visible && (
-        <div>
-          <FontAwesomeIcon
-            className="scrollToTop"
-            onClick={handleClick}
-            icon={faChevronCircleUp}
-          />
-        </div>
-      )}
+      <div className={visible ? "scrollToTop" : "hide"}>
+        <FontAwesomeIcon
+          className="icon"
+          onClick={handleClick}
+          icon={faChevronCircleUp}
+        />
+      </div>
     </Wrapper>
   );
 };

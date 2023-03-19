@@ -10,6 +10,7 @@ const Wrapper = styled.ul`
     gap: 2.5rem;
     justify-content: space-around;
     justify-content: center;
+    opacity: 0;
     /* border: 1.5px solid red; */
 
     li {
@@ -49,9 +50,16 @@ const Wrapper = styled.ul`
 
     li a {
       /* border: 1px solid blue; */
-      color: var(--clr-black);
+      color: var(--clr-font);
       margin: auto;
       font-size: 1.4em;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .nav-links {
+      animation: showIcons 0.5s ease-in forwards;
+      /* opacity: 1; */
     }
   }
 
@@ -64,6 +72,12 @@ const Wrapper = styled.ul`
   @keyframes iconScale {
     to {
       transform: scale(1.2);
+    }
+  }
+
+  @keyframes showIcons {
+    to {
+      opacity: 1;
     }
   }
 `;

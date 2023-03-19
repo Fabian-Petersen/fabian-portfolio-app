@@ -1,19 +1,18 @@
 import Wrapper from "../styleWrappers/styleProjects";
 import { FilterButtons, PulseIcon } from "../components/index.js";
-import { useActiveMenu } from "react-active-menu";
+// import { useActiveMenu } from "react-active-menu";
 import { useGlobalContext } from "../ContextAPI";
+// import { useObserverContext } from "../ObserverAPI";
 
 const Projects = () => {
-  const { registerSection } = useActiveMenu();
+  // const { registerSection } = useActiveMenu();
   const { projectMenu } = useGlobalContext();
+  // const { inView } = useObserverContext();
+  // console.log("inView:", inView);
 
   return (
     <Wrapper>
-      <section
-        className="section projects"
-        id="projects"
-        ref={registerSection("projects")}
-      >
+      <section className="section projects" id="projects">
         <div className="section-title">
           <h2>Projects</h2>
           <div className="underline"></div>

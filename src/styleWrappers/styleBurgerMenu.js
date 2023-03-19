@@ -3,12 +3,13 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   .nav-btn {
     background-color: transparent;
+    position: fixed;
+    right: 1%;
+    top: 2%;
     border-color: transparent;
     color: var(--clr-white);
-    font-size: 2rem;
+    font-size: 2.5rem;
     cursor: pointer;
-    padding-right: 2rem;
-    /* border: var(--border-red); */
   }
 
   @media screen and (min-width: 768px) {

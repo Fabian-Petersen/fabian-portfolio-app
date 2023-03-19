@@ -84,10 +84,11 @@ Theme Styles
 */
 .dark-theme {
   --clr-bg: #050f1a;
-  --clr-primary: #ffd700;
+  /* --clr-primary: #ffd700; */
+  --clr-primary: #e43f5a;
   --clr-font: #eff5f5;
   --clr-about-lines: rgba(255, 255, 255, 0.05);
-  --border: 1px solid rgba(255, 255, 255, 0.2);
+  --clr-border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .light-theme {
@@ -95,7 +96,7 @@ Theme Styles
   --clr-primary: #e43f5a;
   --clr-font: hsl(217, 10%, 25%);
   --clr-about-lines: rgba(0, 0, 0, 0.05);
-  --border: 1px solid rgba(250, 240, 240, 0.8);
+  --clr-border: 1px solid rgba(250, 240, 240, 0.8);
 }
 
 /*

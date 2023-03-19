@@ -33,9 +33,14 @@ const Wrapper = styled.section`
     margin-bottom: 0.5rem;
   }
 
-  button {
+  .btn-contact {
     max-width: 40rem;
     width: 100%;
+    color: var(--clr-font);
+  }
+
+  .btn-contact:hover {
+    outline: 2px solid var(--clr-font);
   }
 
   label,
@@ -44,7 +49,7 @@ const Wrapper = styled.section`
   }
 
   label {
-    color: var(--clr-white);
+    color: var(--clr-font);
     font-weight: 500;
     margin-bottom: 5px;
   }
@@ -54,7 +59,7 @@ const Wrapper = styled.section`
     background-color: hsl(0, 0%, 100%);
     padding: 0 5px;
     border: none;
-    color: var(--clr-black);
+    color: var(--clr-font);
     font-size: 0.9rem;
     margin-bottom: 20px;
   }
@@ -80,8 +85,8 @@ const Wrapper = styled.section`
   }
 
   .contact-form-invalid:required:invalid {
-    border: 1.8px solid var(--clr-red);
-    color: black;
+    border: 1.8px solid var(--clr-primary);
+    color: var(--clr-font);
     background: url("https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg")
       no-repeat 95% 50% rgba(255, 255, 255, 0.75);
     background-size: 2rem;
