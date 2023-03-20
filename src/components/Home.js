@@ -1,6 +1,6 @@
 // import { useInView } from "react-intersection-observer";
 import Wrapper from "../styleWrappers/styleHome";
-import cv from "../assets/documents/fabian-petersen-12.2022-v1.pdf";
+// import cv from "../assets/documents/fabian-petersen-12.2022-v1.pdf";
 import { useGlobalContext } from "../ContextAPI";
 import { motion } from "framer-motion";
 import homeVariants from "../animations/homeAnimate";
@@ -9,6 +9,7 @@ import {
   SideBar,
   SocialsHover,
   ScrollToTop,
+  SocialGroup,
 } from "../components/index.js";
 
 const [containerVariants, animateLine, buttonVariants] = homeVariants;
@@ -21,6 +22,7 @@ const Home = () => {
       {openSidebar && (
         <SideBar setOpenSidebar={setOpenSidebar} openSidebar={openSidebar} />
       )}
+      <SocialGroup />
       <motion.header
         className="hero section"
         id="home"
@@ -43,15 +45,15 @@ const Home = () => {
               <span> Front End Developer.</span>
             </p>
             <motion.div className="home-btns" variants={buttonVariants}>
-              <a
+              {/* <a
                 href={cv}
                 target="_blank"
                 rel="noreferrer"
                 className="btn btn-1"
               >
                 Download CV
-              </a>
-              <a href={"/projects"} className="btn btn-2">
+              </a> */}
+              <a href={"/projects"} className="btn-projects">
                 My Projects
               </a>
             </motion.div>

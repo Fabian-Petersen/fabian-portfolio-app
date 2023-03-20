@@ -18,7 +18,7 @@ const Wrapper = styled.ul`
   }
 
   .icon {
-    color: var(--clr-white);
+    color: var(--clr-font);
   }
 
   .tooltip {
@@ -31,10 +31,9 @@ const Wrapper = styled.ul`
       height: 5rem;
       align-content: flex-end;
       li {
-        width: 3rem;
-        height: 3rem;
-        line-height: 3rem;
-        font-size: 2rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.7rem;
       }
     }
 

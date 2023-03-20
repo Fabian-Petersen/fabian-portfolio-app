@@ -15,6 +15,7 @@ import ThemeSelector from "./ThemeSelector";
 import FilterButtons from "./FilterButtons";
 import PulseIcon from "./PulseIcon";
 import IconPageLinks from "./IconPageLinks";
+import SocialGroup from "./SocialGroup";
 
 export {
   About,
@@ -26,6 +27,7 @@ export {
   Footer,
   SinglePage,
   SocialsHover,
+  SocialGroup,
   ScrollToTop,
   Logo,
   BurgerMenuButton,

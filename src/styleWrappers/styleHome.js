@@ -83,44 +83,27 @@ const Wrapper = styled.header`
   //$  ================================================= Start Button Styles ============================================ //
 
   .home-btns {
-    display: flex;
-    gap: 1.5rem;
-    padding: 1.2rem 0;
-    /* opacity: 0; */
-    /* border: var(--border-white); */
-    /* animation: textAnimation 600ms ease 3500ms forwards; */
-  }
-
-  .home-btns :is(.btn-1, .btn-2) {
     max-width: 10rem;
-    border-radius: 0px;
-    font-size: 0.5rem;
-    padding: 0.7rem 1rem;
-  }
-
-  .btn-1 {
+    font-size: 1em;
+    padding: 0.8em;
+    margin: 2rem 0;
+    border-radius: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    /* border: 1px solid white; */
+    color: white;
+    transition: var(--transition);
     background-color: var(--clr-primary);
-    color: var(--clr-bg);
   }
 
-  .btn-2 {
-    background-color: white;
-    color: var(--clr-bg);
-    border: 1px solid var(--clr-primary);
+  .btn-projects {
   }
 
-  .btn-1:hover {
-    background-color: white;
-    color: var(--clr-red);
-    outline: 1px solid var(--clr-primary);
-    font-weight: var(--font-weight-400);
-  }
-
-  .btn-2:hover {
-    background-color: white;
-    border: 1px solid var(--clr-white);
-    color: var(--clr-red);
-    font-weight: var(--font-weight-400);
+  .home-btns:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 5px var(--clr-font);
+    transform: translateY(-5px);
   }
 
   //$  ================================================= End Button Styles ============================================ //
@@ -159,18 +142,18 @@ const Wrapper = styled.header`
     }
 
     .home-btns {
-      display: flex;
-      flex-direction: row;
-      gap: 1rem;
-      padding: 1.2rem 0;
+      /* display: flex; */
+      /* flex-direction: row; */
+      /* gap: 1rem; */
+      /* padding: 1.2rem 0; */
     }
 
-    .btn-1,
+    /* .btn-1,
     .btn-2 {
       max-width: 10rem;
       padding: 0.8rem 1rem;
       font-size: 0.7rem;
-    }
+    } */
 
     .hero-icons {
       font-size: 1.8rem;
@@ -231,9 +214,9 @@ const Wrapper = styled.header`
       padding: 1.5rem 0;
     }
 
-    .home-btns :is(.btn-1, .btn-2) {
+    /* .home-btns :is(.btn-1, .btn-2) {
       max-width: 25rem;
-    }
+    } */
 
     .social-icon {
       font-size: 2rem;
