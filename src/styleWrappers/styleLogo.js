@@ -4,32 +4,34 @@ const Wrapper = styled.div`
   .container {
     position: relative;
     /* border: 1px solid white; */
-    width: 4rem;
-    height: 4rem;
-    font-size: 2rem;
+    width: 6rem;
+    height: 6rem;
+    font-size: var(--fs-logo);
   }
 
   span {
     font-family: var(--ff-logo);
-    color: white;
+    color: var(--clr-font);
   }
 
-  .letter-f {
+  .container .letter-f {
     position: absolute;
-    left: 40%;
-    top: 65%;
-    transform: translate(-50%, -50%);
-    font-size: 1.5em;
-    font-weight: 700;
+    width: 100%;
+    /* left: 10%;
+    top: 5%; */
+    /* transform: translate(-50%, -50%); */
+    /* font-size: 0.8em; */
+    font-weight: var(--font-weight-800);
   }
 
   .letter-p {
     color: var(--clr-primary);
     position: absolute;
-    left: 65%;
-    top: 100%;
-    transform: translate(-50%, -50%);
-    font-size: 1.5em;
+    width: 100%;
+    left: 15%;
+    top: 15%;
+    /* transform: translate(-50%, -50%); */
+    /* font-size: 0.8em; */
     font-weight: 700;
   }
 `;

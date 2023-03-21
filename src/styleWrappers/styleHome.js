@@ -5,17 +5,17 @@ const Wrapper = styled.header`
     position: realtive;
   }
 
+  .section-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border: var(--border-white); */
+    min-height: calc(100vh - 3rem);
+  }
+
   .underline {
     margin-bottom: 0.8rem;
     margin-left: 0;
-    /* opacity: 0; */
-    /* animation: underlineAnimation 0.5s ease 3400ms forwards; */
-  }
-
-  .hero-center {
-    min-height: calc(100vh - 3rem);
-    display: grid;
-    place-items: center;
   }
 
   h1,
@@ -30,13 +30,11 @@ const Wrapper = styled.header`
   }
 
   h3 {
-    font-size: 1rem;
     font-weight: var(--font-weight-400);
   }
 
   h1 {
-    font-size: 2rem;
-    font-weight: var(--font-weight-400);
+    font-weight: var(--font-weight-800);
   }
 
   h1 span {
@@ -44,8 +42,7 @@ const Wrapper = styled.header`
   }
 
   .hero-sub-heading {
-    /* opacity: 0; */
-    font-size: 0.8rem;
+    font-size: var(--fs-text);
     line-height: 2rem;
     text-transform: none;
     animation: textAnimation 500ms ease 3400ms forwards;
@@ -55,30 +52,6 @@ const Wrapper = styled.header`
       color: var(--clr-primary);
     }
   }
-
-  //? ======================== Start of the styles for the animation for the typewriter text and pointer ================= //
-
-  h1::before,
-  h3::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-
-  h3::before {
-    /* background-color: var(--clr-bg-dark); */
-    /* animation: typewriterAnimation 1500ms steps(14) 1s forwards; */
-  }
-
-  h1::before {
-    /* background-color: var(--clr-bg-dark); */
-    /* animation: typewriterAnimation 1500ms steps(16) 2.5s forwards; */
-  }
-
-  //? ======================== End of the styles for the animation for the typewriter text and pointer ================= //
 
   //$  ================================================= Start Button Styles ============================================ //
 
@@ -91,8 +64,7 @@ const Wrapper = styled.header`
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1.3px;
-    /* border: 1px solid white; */
-    color: white;
+    color: #fff;
     transition: var(--transition);
     background-color: var(--clr-primary);
   }
@@ -106,55 +78,30 @@ const Wrapper = styled.header`
     transform: translateY(-5px);
   }
 
+  //? Button Styles from Linkedin Site
+  /* element.style {
+    height: min-content;
+    border-radius: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration-line: none;
+    background-color: #0a66c2;
+    color: #ffffff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #0a66c2;
+    line-height: 1.25;
+    min-height: auto!important;
+} */
+
   //$  ================================================= End Button Styles ============================================ //
 
-  /* @keyframes underlineAnimation {
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes textAnimation {
-    0% {
-      opacity: 0;
-      transform: translateY(2.5rem);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes typewriterAnimation {
-    to {
-      left: 100%;
-    }
-  } */
-
   @media screen and (min-width: 450px) {
-    .hero-heading h1 {
-      font-size: 1.8rem;
-    }
-
-    .hero-sub-heading {
-      font-size: 1.2em;
-    }
-
-    .home-btns {
-      /* display: flex; */
-      /* flex-direction: row; */
-      /* gap: 1rem; */
-      /* padding: 1.2rem 0; */
-    }
-
-    /* .btn-1,
-    .btn-2 {
-      max-width: 10rem;
-      padding: 0.8rem 1rem;
-      font-size: 0.7rem;
-    } */
-
     .hero-icons {
       font-size: 1.8rem;
     }
@@ -165,17 +112,11 @@ const Wrapper = styled.header`
   }
 
   @media screen and (min-width: 720px) {
-    h3 {
-      font-size: 1.5rem;
-    }
-
     h1 {
-      font-size: 4rem;
       margin-bottom: 1.5rem;
     }
 
     .hero-sub-heading {
-      font-size: 1.2rem;
       line-height: 2.5rem;
     }
 
@@ -197,10 +138,6 @@ const Wrapper = styled.header`
   }
 
   @media screen and (min-width: 992px) {
-    h1 {
-      font-size: 4.5rem;
-    }
-
     .hero .underline {
       margin-bottom: 1.5rem;
     }
@@ -213,10 +150,6 @@ const Wrapper = styled.header`
       gap: 2rem;
       padding: 1.5rem 0;
     }
-
-    /* .home-btns :is(.btn-1, .btn-2) {
-      max-width: 25rem;
-    } */
 
     .social-icon {
       font-size: 2rem;

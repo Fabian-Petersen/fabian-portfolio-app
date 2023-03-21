@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
 const Wrapper = styled.section`
-  .section {
-    /* border: var(--border-white); */
-  }
-
   .section-title {
     margin-bottom: 2rem;
   }
@@ -12,13 +8,12 @@ const Wrapper = styled.section`
   .section-center {
     article {
       p {
-        font-size: 0.8rem;
+        font-size: var(--fs-p-text);
       }
     }
 
     .heading-mySkills {
-      /* border: var(--border-red); */
-      font-size: 1.5rem;
+      font-size: var(--fs-heading-h3);
       text-align: center;
       margin-bottom: 1.5rem;
     }
@@ -26,20 +21,19 @@ const Wrapper = styled.section`
 
   .about-info p {
     margin-bottom: 2rem;
-    font-size: 0.8rem;
     font-weight: normal;
   }
 
   .each-skill {
     .each-skill-heading {
-      font-size: 0.8rem;
+      font-size: var(--fs-text);
       font-weight: normal;
       margin-bottom: 1rem;
     }
 
     .each-skill-container {
       display: flex;
-      gap: 2rem;
+      gap: 3rem;
       flex-wrap: wrap;
     }
   }
@@ -47,16 +41,15 @@ const Wrapper = styled.section`
   .icon-container {
     position: relative;
     border-radius: 10px;
-    width: 4rem;
-    height: 4rem;
+    width: 5rem;
+    height: 5rem;
     background: linear-gradient(to bottom, #060606, rgba(255, 255, 255, 0.03));
     margin-bottom: 1rem;
   }
 
   .each-skill-icon {
     position: absolute;
-    width: 3rem;
-    height: 3rem;
+    width: 90%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -65,7 +58,7 @@ const Wrapper = styled.section`
   .container {
     .icon-name {
       text-align: center;
-      font-size: 0.6rem;
+      font-size: var(--fs-text-sm);
       text-transform: uppercase;
     }
   }
@@ -80,82 +73,24 @@ const Wrapper = styled.section`
     color: yellow;
   }
 
-  @media screen and (min-width: 475px) {
-    .section-center {
-      article {
-        p {
-          font-size: 0.9rem;
-        }
-      }
-
-      .heading-mySkills {
-        font-size: 1.6rem;
-      }
-    }
-
-    .each-skill-container {
-      gap: 3rem;
-    }
-
-    .each-skill {
-      .each-skill-heading {
-        font-size: 1rem;
-      }
-
-      .each-skill-icon {
-        width: 2.5rem;
-        height: 2.5rem;
-      }
-    }
-  }
+  //* ============= Start of Media Queries for larger screens =============
 
   @media screen and (min-width: 760px) {
-    .section-center {
-      article {
-        p {
-          font-size: 1rem;
-        }
-      }
-
-      .heading-mySkills {
-        font-size: 1.8rem;
-      }
-    }
-
-    .each-skill {
-      .each-skill-heading {
-        font-size: 1.2rem;
-      }
-
-      .each-skill-icon {
-        width: 3rem;
-        height: 3rem;
-      }
-    }
-
     .icon-container {
-      .icon-name {
-        font-size: 0.75rem;
-      }
+      width: 6rem;
+      height: 6rem;
     }
   }
 
   @media screen and (min-width: 992px) {
-    .each-skill {
-      .each-skill-icon {
-        width: 4.5rem;
-        height: 4.5rem;
-      }
+    .icon-container {
+      width: 8rem;
+      height: 8rem;
     }
 
-    .icon-container {
-      width: 5rem;
-      height: 5rem;
-    }
-    .each-skill-icon {
-      position: absolute;
-      width: 4rem;
-      height: 4rem;
+    .each-skill-container {
+      gap: 4rem;
+      margin: 2.5rem 0;
     }
   }
 

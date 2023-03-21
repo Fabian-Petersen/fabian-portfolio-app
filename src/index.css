@@ -3,79 +3,8 @@
 Fonts
 ===============
 */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
-
-/*
-=============== 
-Variables
-===============
-*/
-
-:root {
-  /*The colors of the bgjar background - Can use to toggle between themes */
-  /* --clr-bg-dark: hsl(223, 64%, 5%); */
-  --clr-bg-dark: hsl(0, 0%, 5%);
-  --clr-bg-middle: hsl(211, 67%, 17%);
-  --clr-bg-light: hsl(211, 67%, 30%);
-
-  /* lighter shades of primary color */
-  --clr-primary-1: hsl(216, 10%, 87%);
-  --clr-primary-2: hsl(216, 10%, 75%);
-  --clr-primary-3: hsl(216, 10%, 62%);
-  --clr-primary-4: hsl(217, 10%, 25%);
-
-  /* primary/main color */
-  --clr-primary-5: hsl(216, 18%, 20%);
-
-  /* dark shades of primary color*/
-  --clr-primary-6: hsl(216, 18%, 16%);
-  --clr-primary-7: hsl(216, 100%, 12%);
-  --clr-primary-8: hsl(216, 18%, 10%);
-  --clr-primary-9: hsl(216, 18%, 7%);
-
-  /* darkest grey - used for headings */
-  --clr-grey-head-1: #102a42;
-  --clr-grey-head-2: #243a52;
-  --clr-grey-head-3: #324d67;
-  --clr-grey-head-4: hsl(209, 28%, 39%);
-
-  /* grey used for paragraphs */
-  --clr-grey-par-5: hsl(210, 22%, 49%);
-  --clr-grey-par-6: hsl(209, 23%, 60%);
-  --clr-grey-par-7: hsl(211, 27%, 70%);
-  --clr-grey-par-8: hsl(210, 31%, 80%);
-  --clr-grey-par-9: hsl(212, 33%, 89%);
-  --clr-grey-par-10: hsl(210, 36%, 96%);
-
-  /* ad-hoc colors  */
-
-  --clr-black: #000000;
-  --clr-white: #fff;
-  --clr-red: #e43f5a;
-  --clr-yellow: #ffd700;
-  --clr-blue: #486bd6;
-  /* --clr-nav: #102a42; */
-
-  /* --ff-primary: "Roboto", sans-serif, monospace; */
-  --ff-primary: "Montserrat", sans-serif;
-  --ff-secondary: "Open Sans", sans-serif;
-  --ff-logo: "Great Vibes", cursive;
-  --font-weight-100: 100;
-  --font-weight-200: 200;
-  --font-weight-400: 400;
-  --transition: all 0.3s linear;
-  --spacing: 0.25rem;
-  --radius: 0.5rem;
-  --scale-up: 1.1;
-  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  --max-width: 1170px;
-
-  /* borders */
-  --border-white: 1px solid var(--clr-white);
-  --border-red: 1px solid var(--clr-red);
-}
 
 /*
 =============== 
@@ -92,11 +21,57 @@ Theme Styles
 }
 
 .light-theme {
-  --clr-bg: hsl(216, 10%, 75%);
+  --clr-bg: #eff5f5;
   --clr-primary: #e43f5a;
   --clr-font: hsl(217, 10%, 25%);
   --clr-about-lines: rgba(0, 0, 0, 0.05);
   --clr-border: 1px solid rgba(250, 240, 240, 0.8);
+}
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* ad-hoc colors  */
+  --clr-black: #000000;
+  --clr-white: #fff;
+  --clr-red: #e43f5a;
+  --clr-yellow: #ffd700;
+  --clr-blue: #486bd6;
+  /* --clr-nav: #102a42; */
+
+  /* --ff-primary: "Roboto", sans-serif, monospace; */
+  --ff-primary: "Montserrat", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  --ff-logo: "Great Vibes", cursive;
+  --font-weight-100: 100;
+  --font-weight-200: 200;
+  --font-weight-400: 400;
+  /* 800: logo & Main Heading */
+  --font-weight-800: 800;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --scale-up: 1.1;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+
+  /* borders */
+  --border-white: 1px solid var(--clr-white);
+  --border-primary: 1px solid var(--clr-primary);
+
+  /* Typography */
+  --fs-heading-h1: clamp(3rem, 5vw + 1rem, 8rem);
+  --fs-heading-h2: clamp(2rem, 3vw + 0.5rem, 4rem);
+  --fs-heading-h3: clamp(1.2rem, 2vw + 0.5rem, 3rem);
+  --fs-text: clamp(1rem, 1.6vw + 0.5rem, 2rem);
+  --fs-text-sm: clamp(0.8rem, 0.5vw + 0.1rem, 1.2rem);
+  --fs-p-text: clamp(1rem, 1.2vw + 0.5rem, 1.8rem);
+  --fs-logo: clamp(3rem, 3vw + 0.5rem, 5rem);
 }
 
 /*
@@ -108,6 +83,7 @@ Global Styles
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 1rem;
+  font-size: 62.5%;
 }
 
 *,
@@ -120,11 +96,9 @@ html {
 
 body {
   background-color: var(--clr-bg);
-  /* background-image: linear-gradient(to right); */
   font-family: var(--ff-primary);
   color: var(--clr-font);
   line-height: 1.5;
-  font-size: 0.875rem;
   font-weight: var(--font-weight-400);
 }
 
@@ -150,38 +124,33 @@ h4 {
   margin-bottom: 0.75rem;
   font-family: var(--ff-primary);
 }
+
 h1 {
-  font-size: 3rem;
+  font-size: var(--fs-heading-h1);
 }
+
 h2 {
-  font-size: 2rem;
+  font-size: var(--fs-heading-h2);
 }
+
 h3 {
-  font-size: 1.25rem;
+  font-size: var(--fs-heading-h3);
 }
+
 h4 {
   font-size: 0.875rem;
 }
+
 p {
   margin-bottom: 1.25rem;
+  font-size: var(--fs-text);
 }
 
 @media screen and (min-width: 800px) {
-  h1 {
-    font-size: 4rem;
-  }
-  h2 {
-    font-size: 2.5rem;
-  }
-  h3 {
-    font-size: 1.75rem;
-  }
   h4 {
     font-size: 1rem;
   }
-  body {
-    font-size: 1rem;
-  }
+
   h1,
   h2,
   h3,
@@ -239,7 +208,6 @@ p {
   width: 90vw;
   margin: 0 auto;
   max-width: 1170px;
-  /* border: var(--border-red); */
 }
 
 @media screen and (min-width: 992px) {
@@ -249,12 +217,11 @@ p {
 }
 
 .underline {
-  width: 5rem;
-  height: 0.25rem;
+  width: 10rem;
+  height: 0.5rem;
   margin-bottom: 1.3rem;
   background: var(--clr-primary);
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
 }
 
 .section-title {

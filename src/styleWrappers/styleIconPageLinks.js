@@ -7,7 +7,7 @@ const Wrapper = styled.ul`
     right: 1%;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 3.5rem;
     justify-content: space-around;
     justify-content: center;
     opacity: 0;
@@ -17,7 +17,7 @@ const Wrapper = styled.ul`
       position: relative;
       width: 2.5rem;
       height: 2.5rem;
-      background-color: var(--clr-primary);
+      background-color: var(--clr-bg);
       outline: 2.5px solid var(--clr-white);
       border-radius: 50%;
       display: flex;
@@ -38,14 +38,15 @@ const Wrapper = styled.ul`
 
     li:hover::before {
       background-color: var(--clr-primary);
-      box-shadow: 0 0 20px var(--clr-primary);
+      box-shadow: 0 0 25px var(--clr-primary);
       filter: blur(1.5px);
-      animation: pulse 1s ease-in alternate infinite;
+      /* animation: pulse 1s ease-in alternate infinite; */
     }
 
     li:hover {
       box-shadow: 0 0 20px var(--clr-primary);
-      animation: iconScale 1s ease-in alternate infinite;
+      /* animation: iconScale 1s ease-in alternate infinite; */
+      outline: 2.5px solid var(--clr-primary);
     }
 
     li a {
@@ -60,6 +61,11 @@ const Wrapper = styled.ul`
     .nav-links {
       animation: showIcons 0.5s ease-in forwards;
       /* opacity: 1; */
+    }
+
+    li {
+      width: 5rem;
+      height: 5rem;
     }
   }
 
