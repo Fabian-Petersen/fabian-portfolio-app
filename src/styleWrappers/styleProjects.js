@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.section`
   .projects-text {
-    font-size: 1.5rem;
+    font-size: var(--fs-text);
     text-align: center;
   }
 
@@ -15,7 +15,7 @@ const Wrapper = styled.section`
     background: var(--clr-primary-5);
     border-radius: var(--radius);
     margin-bottom: 2rem;
-    width: 100%;
+    width: 65%;
     height: 20rem;
     align-items: center;
     background-size: cover;
@@ -23,10 +23,17 @@ const Wrapper = styled.section`
     overflow: hidden;
   }
 
+  .project-title {
+    font-size: var(--fs-heading-h3);
+    color: var(--clr-font);
+    text-align: center;
+  }
+
   .project-title:hover {
+    opacity: 1;
     cursor: pointer;
-    color: var(--clr-yellow);
     transform: scale(1.05);
+    color: var(--clr-primary);
   }
 
   .project-img {
@@ -38,7 +45,7 @@ const Wrapper = styled.section`
   }
 
   .project-img:hover {
-    opacity: 0.3;
+    opacity: 0.8;
   }
 
   .card-body {
@@ -51,35 +58,35 @@ const Wrapper = styled.section`
     bottom: -100%;
     border-radius: var(--radius);
     transition: var(--transition);
-    background-color: var(--clr-black);
-    opacity: 0.1;
+    background-color: var(--clr-blue);
+    opacity: 1;
   }
 
   .project-card:hover .card-body {
     transform: translateY(0);
     opacity: 0.8;
     bottom: 0;
-    /* visibility: visible; */
-  }
-
-  .project-title {
-    font-size: 1.8rem;
-    text-align: center;
-    color: white;
+    height: 101%;
+    width: 101%;
   }
 
   .project-card p {
     text-transform: capitalize;
-    font-size: 1.2rem;
+    font-size: var(--fs-text);
     color: var(--clr-white);
     text-align: center;
   }
 
   .project:hover .project-info {
-    opacity: 1;
+    /* opacity: 0.1; */
   }
 
   @media screen and (min-width: 676px) {
+    .project-card {
+      width: 100%;
+      height: 30rem;
+    }
+
     .projects-center {
       display: grid;
       grid-template-columns: 1fr 1fr;

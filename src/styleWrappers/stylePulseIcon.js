@@ -4,7 +4,6 @@ const Wrapper = styled.div`
   .project-container {
     display: flex;
     justify-content: center;
-    /* border: var(--border-red); */
   }
 
   .container {
@@ -15,7 +14,7 @@ const Wrapper = styled.div`
   }
 
   .project-container:hover .project-code-link {
-    color: yellow;
+    color: var(--clr-primary);
     cursor: pointer;
   }
 
@@ -28,28 +27,28 @@ const Wrapper = styled.div`
 
   .code-icon {
     position: relative;
-    color: white;
+    color: var(--clr-font);
     font-size: 2rem;
-    color: var(--clr-white);
-    /* transform: translateX(1px); */
+    color: var(--clr-font);
   }
 
   .demo-btn {
     padding: 0.4rem 0.8rem;
-    background-color: var(--clr-white);
-    color: var(--clr-red);
+    background-color: var(--clr-font);
+    color: var(--clr-primary);
     border-radius: 20px;
     position: relative;
-    border: 1px solid var(--clr-red);
+    border: 1px solid var(--clr-primary);
   }
 
   .demo-btn:hover {
     cursor: pointer;
-    background-color: var(--clr-red);
-    color: var(--clr-white);
+    background-color: var(--clr-primary);
+    color: var(--clr-font);
   }
 
-  /* .demo-btn :is(::before, ::after) {
+  /* 
+  .demo-btn :is(::before, ::after) {
     content: "";
     position: absolute;
     width: 100%;
@@ -92,8 +91,16 @@ const Wrapper = styled.div`
 
   .code-icon:hover {
     cursor: pointer;
-    color: var(--clr-yellow);
+    position: absolute;
+    /* color: var(--clr-primary); */
     opacity: 1;
+  }
+
+  .code-icon::before:hover {
+    position: absolute;
+    border-radius: 100%;
+    background-color: var(--clr-primary);
+    z-index: -100;
   }
 
   .pulse:hover::after {
@@ -108,13 +115,13 @@ const Wrapper = styled.div`
     0% {
       opacity: 1;
       transform: scale(0.8);
-      outline: 5px solid var(--clr-yellow);
+      outline: 5px solid var(--clr-primary);
     }
 
     100% {
       opacity: 0;
       transform: scale(1.5);
-      outline: 0px solid yellow;
+      outline: 0px solid var(--clr-primary);
     }
   }
 
@@ -122,13 +129,13 @@ const Wrapper = styled.div`
     0% {
       opacity: 1;
       transform: scale(0.8);
-      outline: 8px solid var(--clr-red);
+      outline: 8px solid var(--clr-primary);
     }
 
     100% {
       opacity: 0;
       transform: scale(1.5);
-      outline: 0px solid var(--clr-red);
+      outline: 0px solid var(--clr-primary);
     }
   }
 `;

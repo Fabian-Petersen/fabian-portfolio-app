@@ -55,49 +55,52 @@ const Wrapper = styled.header`
 
   //$  ================================================= Start Button Styles ============================================ //
 
-  .home-btns {
-    max-width: 10rem;
-    font-size: 1em;
-    padding: 0.8em;
-    margin: 2rem 0;
-    border-radius: 20px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1.3px;
-    color: #fff;
-    transition: var(--transition);
-    background-color: var(--clr-primary);
+  .btn-container {
+    position: relative;
+    margin: 2.5rem 0;
+    /* border: 1px solid white; */
+    max-width: 15rem;
+    height: 5rem;
+    display: flex;
+    /* height: 10rem; */
   }
 
   .btn-projects {
-  }
-
-  .home-btns:hover {
-    cursor: pointer;
-    box-shadow: 2px 2px 5px var(--clr-font);
-    transform: translateY(-5px);
-  }
-
-  //? Button Styles from Linkedin Site
-  /* element.style {
-    height: min-content;
-    border-radius: 24px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 24px;
-    padding-right: 24px;
+    /* position: relative; */
+    font-size: 1em;
+    border-radius: 50px;
     text-align: center;
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration-line: none;
-    background-color: #0a66c2;
-    color: #ffffff;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #0a66c2;
-    line-height: 1.25;
-    min-height: auto!important;
-} */
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    padding: 1.2em;
+    color: var(--clr-font);
+    transition: transform 0.1s ease-in;
+    background-color: var(--clr-primary);
+    width: 100%;
+    height: 100%;
+  }
+
+  .btn-projects:hover {
+    background-clip: padding-box;
+    cursor: pointer;
+    transform: scale(0.95);
+  }
+
+  .btn-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    z-index: -1;
+    border: 1px solid var(--clr-primary);
+  }
+
+  .btn-container:hover::before {
+    animation: pulse 850ms infinite;
+  }
 
   //$  ================================================= End Button Styles ============================================ //
 
@@ -109,9 +112,17 @@ const Wrapper = styled.header`
     .hero-heading::after {
       height: 1.8rem;
     }
+
+    .btn-projects {
+      padding: 1.8em 2em;
+    }
   }
 
   @media screen and (min-width: 720px) {
+    .btn-container {
+      margin: 5rem 0;
+    }
+
     h1 {
       margin-bottom: 1.5rem;
     }
@@ -120,18 +131,6 @@ const Wrapper = styled.header`
       line-height: 2.5rem;
     }
 
-    .home-btns {
-      gap: 1.5rem;
-      padding: 1rem 0;
-
-      .btn-1,
-      .btn-2 {
-        max-width: 15rem;
-        padding: 0.8rem 1.3rem;
-        font-size: 1rem;
-        font-weight: var(--font-weight-400);
-      }
-    }
     .hero-heading::after {
       height: 4rem;
     }
@@ -146,13 +145,8 @@ const Wrapper = styled.header`
       grid-template-columns: 50rem;
     }
 
-    .home-btns {
-      gap: 2rem;
-      padding: 1.5rem 0;
-    }
-
     .social-icon {
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
 
     .social-icon:hover {
@@ -161,6 +155,20 @@ const Wrapper = styled.header`
 
     .hero {
       background-size: cover;
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+      transform: scale(0.8);
+      outline: 5px solid var(--clr-primary);
+    }
+
+    100% {
+      opacity: 0;
+      transform: scale(1.2);
+      outline: 0px solid var(--clr-primary);
     }
   }
 `;

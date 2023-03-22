@@ -44,7 +44,7 @@ const Home = () => {
               Welcome to my official portfolio website showcasing my work as a
               <span> Front End Developer.</span>
             </p>
-            <motion.div className="home-btns" variants={buttonVariants}>
+            <motion.div className="btn-container" variants={buttonVariants}>
               {/* <a
                 href={cv}
                 target="_blank"
@@ -53,7 +53,7 @@ const Home = () => {
               >
                 Download CV
               </a> */}
-              <a href={"/projects"} className="btn-projects">
+              <a href={"/projects"} className="btn btn-projects">
                 My Projects
               </a>
             </motion.div>

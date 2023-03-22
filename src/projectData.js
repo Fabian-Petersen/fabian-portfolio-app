@@ -23,7 +23,7 @@ const {
 const projects = [
   {
     id: 1,
-    name: "cocktail project",
+    name: "cocktail library",
     language: "react",
     description: "Everything you need to know about your favourite cocktail",
     image: projectCockTails,
@@ -38,7 +38,7 @@ const projects = [
   },
   {
     id: 2,
-    name: "Github Users Project",
+    name: "Github Users",
     language: "react",
     description:
       "Search for your favoutrite user on the github site. The app make use of the github API to search the users in the database",
@@ -54,7 +54,7 @@ const projects = [
   },
   {
     id: 3,
-    name: "Tours Project",
+    name: "Creative Tours",
     language: "javascript",
     description:
       "Search for your favoutrite destination and book with us for a memorable holiday.",
@@ -70,7 +70,7 @@ const projects = [
   },
   {
     id: 4,
-    name: "Tea Brewery Project",
+    name: "Tea Brewery",
     language: "react",
     description: "The most exquisite tea range in the world",
     image: projectTea,

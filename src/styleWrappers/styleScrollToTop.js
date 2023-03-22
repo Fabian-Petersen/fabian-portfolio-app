@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   .scrollToTop {
     position: fixed;
-    right: 1.5%;
+    right: 1%;
     font-size: 2rem;
     top: 90%;
     width: 2rem;
