@@ -3,15 +3,15 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   .container {
     position: relative;
-    /* border: 1px solid white; */
-    width: 6rem;
-    height: 6rem;
+    width: 3rem;
+    height: 3rem;
     font-size: var(--fs-logo);
-  }
-
-  span {
     font-family: var(--ff-logo);
     color: var(--clr-font);
+  }
+
+  .point {
+    color: var(--clr-primary);
   }
 
   .container .letter-f {

@@ -18,10 +18,9 @@ const ScrollToTop = () => {
         } else {
           setVisible(false);
         }
-      },
-      []
+      }
     );
-  });
+  },[]);
 
   const handleClick = () => {
     window.scrollTo({ top: 0, behaviour: "smooth" });

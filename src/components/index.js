@@ -16,6 +16,8 @@ import FilterButtons from "./FilterButtons";
 import PulseIcon from "./PulseIcon";
 import IconPageLinks from "./IconPageLinks";
 import SocialGroup from "./SocialGroup";
+import Motivation from "./Motivation";
+import SocialsAnimation from "./SocialsAnimation";
 
 export {
   About,
@@ -36,4 +38,6 @@ export {
   PulseIcon,
   IconPageLinks,
   ScrollNav,
+  Motivation,
+  SocialsAnimation,
 };

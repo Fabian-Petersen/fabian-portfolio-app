@@ -11,6 +11,8 @@ const AppProvider = ({ children }) => {
   const [theme, setTheme] = useState("dark-theme");
   const [toggleTheme, setToggleTheme] = useState(true);
   const [visible, setVisible] = useState(false);
+  const [motivationPosition, setMotivationPosition] = useState(0);
+  const [motivationVisible, setMotivationVisible] = useState(true);
 
   return (
     <AppContext.Provider
@@ -30,6 +32,10 @@ const AppProvider = ({ children }) => {
         setButtonCategory,
         visible,
         setVisible,
+        motivationPosition,
+        setMotivationPosition,
+        motivationVisible,
+        setMotivationVisible,
       }}
     >
       {children}

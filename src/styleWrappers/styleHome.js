@@ -59,28 +59,27 @@ const Wrapper = styled.header`
     position: relative;
     margin: 2.5rem 0;
     /* border: 1px solid white; */
-    max-width: 15rem;
+    max-width: 14rem;
     height: 5rem;
     display: flex;
-    /* height: 10rem; */
   }
 
   .btn-projects {
-    /* position: relative; */
     font-size: 1em;
     border-radius: 50px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1.3px;
     padding: 1.2em;
-    color: var(--clr-font);
+    color: var(--clr-white);
     transition: transform 0.1s ease-in;
     background-color: var(--clr-primary);
     width: 100%;
     height: 100%;
+    z-index: 1;
   }
 
-  .btn-projects:hover {
+  .btn-container:hover {
     background-clip: padding-box;
     cursor: pointer;
     transform: scale(0.95);
@@ -95,13 +94,30 @@ const Wrapper = styled.header`
     height: 100%;
     border-radius: 50px;
     z-index: -1;
-    border: 1px solid var(--clr-primary);
+    border: 3px solid var(--clr-primary);
+    opacity: -1;
+  }
+
+  .btn-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    z-index: 1;
+    border: 3px solid var(--clr-primary);
+    opacity: -1;
   }
 
   .btn-container:hover::before {
-    animation: pulse 850ms infinite;
+    animation: pulse 850ms ease-in-out infinite;
   }
 
+  .btn-container:hover::after {
+    animation: pulse 850ms ease-in infinite;
+  }
   //$  ================================================= End Button Styles ============================================ //
 
   @media screen and (min-width: 450px) {
@@ -161,8 +177,8 @@ const Wrapper = styled.header`
   @keyframes pulse {
     0% {
       opacity: 1;
-      transform: scale(0.8);
-      outline: 5px solid var(--clr-primary);
+      transform: scale(0.9);
+      outline: 2.5px solid var(--clr-primary);
     }
 
     100% {

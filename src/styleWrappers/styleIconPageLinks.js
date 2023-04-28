@@ -18,7 +18,7 @@ const Wrapper = styled.ul`
       width: 2.5rem;
       height: 2.5rem;
       background-color: var(--clr-bg);
-      outline: 2.5px solid var(--clr-white);
+      outline: 2.5px solid var(--clr-font);
       border-radius: 50%;
       display: flex;
     }
@@ -31,7 +31,7 @@ const Wrapper = styled.ul`
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background-color: var(--clr-primary);
+      background: var(--clr-primary);
       transform: scale(0.9);
       z-index: -1;
     }

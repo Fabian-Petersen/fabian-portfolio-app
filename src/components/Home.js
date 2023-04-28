@@ -7,15 +7,17 @@ import homeVariants from "../animations/homeAnimate";
 import {
   Navbar,
   SideBar,
-  SocialsHover,
+  //SocialsHover,
   ScrollToTop,
   SocialGroup,
+  Motivation,
+  SocialsAnimation,
 } from "../components/index.js";
 
 const [containerVariants, animateLine, buttonVariants] = homeVariants;
 
 const Home = () => {
-  const { openSidebar, setOpenSidebar } = useGlobalContext();
+  const { openSidebar, setOpenSidebar, scrollPosition, setScrollPosition } = useGlobalContext();
   return (
     <Wrapper>
       <Navbar />
@@ -57,7 +59,8 @@ const Home = () => {
                 My Projects
               </a>
             </motion.div>
-            <SocialsHover />
+            <SocialsAnimation />
+            <Motivation />
           </article>
         </div>
       </motion.header>
