@@ -3,24 +3,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Wrapper from "../styleWrappers/styleScrollToTop";
 import { useGlobalContext } from "../ContextAPI";
 import { useEffect } from "react";
+import { useCallback } from "react";
 
 const { faChevronCircleUp } = Icons;
 
 const ScrollToTop = () => {
   const { visible, setVisible } = useGlobalContext();
-  useEffect(() => {
-    window.addEventListener(
-      "scroll",
-      () => {
-        if (window.scrollY > 100) {
-          setVisible(true);
-          // console.log(visible);
-        } else {
-          setVisible(false);
-        }
+
+  const handleScroll = useCallback(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        setVisible(true);
+      } else {
+        setVisible(false);
       }
-    );
-  },[]);
+    });
+  }, [setVisible]);
+
+  useEffect(() => {
+    handleScroll();
+  }, [handleScroll]);
 
   const handleClick = () => {
     window.scrollTo({ top: 0, behaviour: "smooth" });

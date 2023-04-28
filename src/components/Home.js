@@ -17,7 +17,7 @@ import {
 const [containerVariants, animateLine, buttonVariants] = homeVariants;
 
 const Home = () => {
-  const { openSidebar, setOpenSidebar, scrollPosition, setScrollPosition } = useGlobalContext();
+  const { openSidebar, setOpenSidebar } = useGlobalContext();
   return (
     <Wrapper>
       <Navbar />
