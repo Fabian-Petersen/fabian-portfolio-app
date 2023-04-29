@@ -1,10 +1,9 @@
 // import styled from "styled-components";
 import Wrapper from "../styleWrappers/styleAbout";
 import skills from "../skillsData";
-// import { useActiveMenu } from "react-active-menu";
 import { motion } from "framer-motion";
 import aboutVariants from "../animations/aboutAnimate";
-
+// import { useActiveMenu } from "react-active-menu";
 const uniqueSkill = [...new Set(skills.map((item) => item.node))];
 const [container, item, skillsContainer] = aboutVariants;
 

@@ -39,13 +39,20 @@ const Wrapper = styled.ul`
     li:hover::before {
       background-color: var(--clr-primary);
       box-shadow: 0 0 25px var(--clr-primary);
-      filter: blur(1.5px);
       /* animation: pulse 1s ease-in alternate infinite; */
     }
 
     li:hover {
       box-shadow: 0 0 20px var(--clr-primary);
       /* animation: iconScale 1s ease-in alternate infinite; */
+      outline: 2.5px solid var(--clr-primary);
+    }
+
+    .isActive {
+      color: var(--clr-primary);
+    }
+
+    .isActive:has(li) {
       outline: 2.5px solid var(--clr-primary);
     }
 

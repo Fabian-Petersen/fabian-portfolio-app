@@ -4,11 +4,11 @@ import Wrapper from "../styleWrappers/styleHome";
 import { useGlobalContext } from "../ContextAPI";
 import { motion } from "framer-motion";
 import homeVariants from "../animations/homeAnimate";
+import { Outlet } from "react-router-dom";
 import {
-  Navbar,
   SideBar,
   //SocialsHover,
-  ScrollToTop,
+  // ScrollToTop,
   SocialGroup,
   Motivation,
   SocialsAnimation,
@@ -20,7 +20,6 @@ const Home = () => {
   const { openSidebar, setOpenSidebar } = useGlobalContext();
   return (
     <Wrapper>
-      <Navbar />
       {openSidebar && (
         <SideBar setOpenSidebar={setOpenSidebar} openSidebar={openSidebar} />
       )}
@@ -47,24 +46,16 @@ const Home = () => {
               <span> Front End Developer.</span>
             </p>
             <motion.div className="btn-container" variants={buttonVariants}>
-              {/* <a
-                href={cv}
-                target="_blank"
-                rel="noreferrer"
-                className="btn btn-1"
-              >
-                Download CV
-              </a> */}
               <a href={"/projects"} className="btn btn-projects">
                 My Projects
               </a>
             </motion.div>
             <SocialsAnimation />
             <Motivation />
+            <Outlet />
           </article>
         </div>
       </motion.header>
-      <ScrollToTop />
     </Wrapper>
   );
 };

@@ -1,6 +1,7 @@
 import links from "../pageLinks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Wrapper from "../styleWrappers/styleIconPageLinks";
+import { NavLink } from "react-router-dom";
 
 const IconPageLinks = () => {
   return (
@@ -10,9 +11,12 @@ const IconPageLinks = () => {
           const { id, href, icon, className } = link;
           return (
             <li className={className} key={id}>
-              <a href={href}>
+              <NavLink
+                to={href}
+                className={({ isActive }) => (isActive ? "isActive" : "")}
+              >
                 <FontAwesomeIcon icon={icon} />
-              </a>
+              </NavLink>
             </li>
           );
         })}

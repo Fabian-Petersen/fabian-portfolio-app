@@ -1,14 +1,10 @@
 import Wrapper from "../styleWrappers/styleProjects";
 import { FilterButtons, PulseIcon } from "../components/index.js";
-// import { useActiveMenu } from "react-active-menu";
+import { Link } from "react-router-dom";
 import { useGlobalContext } from "../ContextAPI";
-// import { useObserverContext } from "../ObserverAPI";
 
 const Projects = () => {
-  // const { registerSection } = useActiveMenu();
   const { projectMenu } = useGlobalContext();
-  // const { inView } = useObserverContext();
-  // console.log("inView:", inView);
 
   return (
     <Wrapper>
@@ -26,9 +22,9 @@ const Projects = () => {
               <div className="project-card" key={id}>
                 <img src={image} alt={name} className="project-img" />
                 <div className="card-body">
-                  <a href={`/projects/${id}`}>
+                  <Link to={`/projects/${id}`}>
                     <h4 className="project-title">{name}</h4>
-                  </a>
+                  </Link>
                   <p>Designed with {language}</p>
                   <PulseIcon code={code} url={url} />
                 </div>

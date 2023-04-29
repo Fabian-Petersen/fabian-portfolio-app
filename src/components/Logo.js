@@ -1,15 +1,16 @@
 import Wrapper from "../styleWrappers/styleLogo";
+import { Link } from "react-router-dom";
 
 const Logo = () => {
   return (
     <Wrapper>
-      <div className="container">
-        <div className="logo">
-          Fabian<span className="point">.</span>
+      <Link to="/home">
+        <div className="container">
+          <div className="logo">
+            Fabian<span className="point">.</span>
+          </div>
         </div>
-
-        {/* <span className="letter-p">P</span> */}
-      </div>
+      </Link>
     </Wrapper>
   );
 };

@@ -1,7 +1,7 @@
 import { projectImages } from "./assets/images/index.js";
-// import skills from "./skillsData";
+//import skills from "./skillsData";
 
-// const { icon } = skills;
+//const { icon } = skills;
 
 const {
   projectCockTails,
@@ -10,14 +10,14 @@ const {
   projectTea,
   //projectDemo3,
   projectDemo4,
-  // html,
-  // css,
-  // javascript,
-  // react,
-  // sass,
-  // github,
-  // redux,
-  // bootstrap,
+  html,
+  css,
+  javascript,
+  react,
+  sass,
+  github,
+  //redux,
+  //bootstrap,
 } = projectImages;
 
 const projects = [
@@ -33,7 +33,7 @@ const projects = [
       description:
         "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
       images: "",
-      // skills: [html, css, javascript, react, github],
+      skills: [html, css, javascript, react, github],
     },
   },
   {
@@ -49,7 +49,7 @@ const projects = [
       description:
         "In this project i used the Github API to get the information of the users.",
       images: "",
-      // skills: [html, css, javascript, react],
+      skills: [html, css, javascript, react],
     },
   },
   {
@@ -65,7 +65,7 @@ const projects = [
       description:
         "The project does not use any framework e.g. React. The project was created in in my early stages as a developer to learn vanilla sematic HTML, CSS (with SCSS) and JavaScript.",
       images: "",
-      // skills: [html, css, javascript, sass, github],
+      skills: [html, css, javascript, sass, github],
     },
   },
   {
@@ -80,7 +80,7 @@ const projects = [
       description:
         "This is the first and most basic website I have build with React. All the data is stored within array objects and mapped over to display the different sections based on the hardcoded data. The css are done with styled components with fairly basic animations e.g. text movement in the X directions, object scaling and background image tranisioning over the product cards. The section id's was used to navigate bewteen the pages",
       images: "",
-      // skills: [html, css, javascript, react, github],
+      skills: [html, css, javascript, react, github],
     },
   },
   {
@@ -110,7 +110,7 @@ const projects = [
       description:
         "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
       images: "",
-      // skills: [html, css, javascript, react, github],
+      skills: [html, css, javascript, react, github],
     },
   },
   // {

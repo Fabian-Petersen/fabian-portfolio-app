@@ -13,12 +13,18 @@ const Wrapper = styled.div`
     flex: 1 1 0;
     width: max-content;
     padding: 0.8rem 0rem;
-    color: var(--clr-font);
+    color: var(--clr-white);
+    background-color: var(--clr-primary);
+    border: none;
   }
 
   button.active {
-    background-color: var(--clr-primary);
-    outline: 2.5px solid var(--clr-font);
+    background-color: var(--clr-font);
+    color: var(--clr-primary);
+  }
+
+  button:hover {
+    cursor: pointer;
   }
 
   @media screen and (min-width: 450px) {
