@@ -5,29 +5,50 @@ const Wrapper = styled.main`
     margin-bottom: 3rem;
   }
 
+  h1 {
+    font-size: var(--fs-heading-h2);
+    font-weight: var(--font-weight-800);
+  }
+
+  h3 {
+    font-size: var(--fs-heading-h3);
+    font-weight: var(--font-weight-400);
+  }
+
   .hero-btn-2 {
     padding: 1rem 2.5rem;
   }
 
-  button {
-    width: max-content;
-    padding: 0.8rem 0rem;
-    color: var(--clr-white);
-    background-color: var(--clr-primary);
-    border-radius: 5px;
-    border: none;
-    transition: all 0.25s ease-in;
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 3rem 0rem;
   }
 
-  button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px var(--clr-primary);
-    background-color: var(--clr-white);
-    color: var(--clr-primary);
+  .content-container p {
+    text-align: left;
+  }
+
+  .btn-singlePage {
+    transition: all 0.25s ease-in;
+    padding: 1.5rem 5rem;
+    color: var(--clr-font);
+    text-align: center;
+    font-size: var(--fs-heading-h4);
   }
 
   button:hover {
     cursor: pointer;
+    color: var(--clr-primary);
+  }
+
+  hr {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border: 0.2px solid var(--clr-about-lines);
   }
 `;
 

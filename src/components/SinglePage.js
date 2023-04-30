@@ -14,13 +14,25 @@ const SinglePage = () => {
         <section className="section">
           <div className="section-center">
             <div className="section-title">
-              <h2>{name}</h2>
+              <h1>{name}</h1>
               <div className="underline"></div>
-              <p className="desc">{singlePage.description}</p>
-              <h3 className="skills-title">Tools Used</h3>
-              <SkillsIcons name={name} singlePage={singlePage} />
+              <div className="content-container">
+                <h3>Summary</h3>
+                <p className="desc">{singlePage.description}</p>
+                <h3 className="skills-title">Technologies Used</h3>
+                <SkillsIcons name={name} singlePage={singlePage} />
+                <hr />
+                <h3>Learning Experience</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Ipsum quisquam aut nostrum nemo animi illo similique aperiam
+                  repellat cupiditate cum maxime rem molestiae, accusantium
+                  fugiat autem laboriosam voluptatibus sequi eos.
+                </p>
+              </div>
+              <hr />
               <Link to="/projects">
-                <button className="btn hero-btn-2">Back</button>
+                <button className="btn btn-singlePage">Back</button>
               </Link>
             </div>
           </div>
