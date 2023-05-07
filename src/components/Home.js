@@ -51,10 +51,10 @@ const Home = () => {
               </a>
             </motion.div>
             <SocialsAnimation />
-            <Motivation />
             <Outlet />
           </article>
         </div>
+        <Motivation />
       </motion.header>
     </Wrapper>
   );

@@ -2,25 +2,33 @@ import links from "../pageLinks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Wrapper from "../styleWrappers/styleIconPageLinks";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
+import iconPageLinksVariants from "../animations/iconPageLinksAnimate";
 
 const IconPageLinks = () => {
+  const [parentContainer, childContainer] = iconPageLinksVariants;
   return (
     <Wrapper>
-      <ul className="nav-links">
+      <motion.ul
+        className="nav-links"
+        variants={parentContainer}
+        initial="initialState"
+        animate="animateState"
+      >
         {links.map((link) => {
           const { id, href, icon, className } = link;
           return (
-            <li className={className} key={id}>
+            <motion.li className={className} key={id} variants={childContainer}>
               <NavLink
                 to={href}
                 className={({ isActive }) => (isActive ? "isActive" : "")}
               >
                 <FontAwesomeIcon icon={icon} />
               </NavLink>
-            </li>
+            </motion.li>
           );
         })}
-      </ul>
+      </motion.ul>
     </Wrapper>
   );
 };

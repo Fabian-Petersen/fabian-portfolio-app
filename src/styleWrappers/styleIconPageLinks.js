@@ -17,7 +17,7 @@ const Wrapper = styled.ul`
       position: relative;
       width: 2.5rem;
       height: 2.5rem;
-      background-color: var(--clr-bg);
+      /* background-color: var(--clr-bg); */
       outline: 2.5px solid var(--clr-font);
       border-radius: 50%;
       display: flex;
@@ -39,25 +39,27 @@ const Wrapper = styled.ul`
     li:hover::before {
       background-color: var(--clr-primary);
       box-shadow: 0 0 25px var(--clr-primary);
-      /* animation: pulse 1s ease-in alternate infinite; */
     }
 
     li:hover {
       box-shadow: 0 0 20px var(--clr-primary);
-      /* animation: iconScale 1s ease-in alternate infinite; */
       outline: 2.5px solid var(--clr-primary);
+      cursor: pointer;
     }
 
-    .isActive {
-      color: var(--clr-primary);
-    }
+    /* li::before:has(.isActive) {
+      color: var(--clr-red);
+    } */
 
-    .isActive:has(li) {
+    /* li::before .isActive {
+      background-color: none;
+    } */
+
+    /* .isActive:has(li) {
       outline: 2.5px solid var(--clr-primary);
-    }
+    } */
 
     li a {
-      /* border: 1px solid blue; */
       color: var(--clr-font);
       margin: auto;
       font-size: 1.4em;

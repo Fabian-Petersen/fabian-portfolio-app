@@ -1,9 +1,12 @@
 import Wrapper from "../styleWrappers/styleFilterButtons";
 import { useGlobalContext } from "../ContextAPI";
 import projects from "../projectData";
+import { motion } from "framer-motion";
+import buttonVariants from "../animations/projectPage/filterButtonsAnimate";
 
 const FilterButtons = () => {
   const { setProjectMenu, activeButton, setActiveButton } = useGlobalContext();
+  const [parentContainer, childContainer] = buttonVariants;
 
   const handleClick = (lang) => () => {
     setActiveButton(lang);
@@ -22,10 +25,16 @@ const FilterButtons = () => {
   const uniqueValues = [...new Set(projects.map((item) => item.language))];
   return (
     <Wrapper>
-      <div className="btn-container section-center">
+      <motion.div
+        className="btn-container section-center"
+        variants={parentContainer}
+        initial="initialState"
+        animate="animateState"
+      >
         {uniqueValues.map((item, index) => {
           return (
-            <button
+            <motion.button
+              variants={childContainer}
               key={index}
               className={
                 activeButton === item
@@ -35,13 +44,18 @@ const FilterButtons = () => {
               onClick={handleClick(item)}
             >
               {item}
-            </button>
+            </motion.button>
           );
         })}
-        <button className="btn btn-1" id="project-btn-all" onClick={reset}>
+        <motion.button
+          className="btn btn-1"
+          id="project-btn-all"
+          onClick={reset}
+          variants={childContainer}
+        >
           All
-        </button>
-      </div>
+        </motion.button>
+      </motion.div>
     </Wrapper>
   );
 };

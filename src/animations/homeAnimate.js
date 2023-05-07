@@ -1,17 +1,16 @@
 const containerVariants = {
   initialState: {
     opacity: 0,
-    scale: 0,
-    rotate: "90deg",
+    x: "-20vw",
   },
 
   animateState: {
+    x: 0,
     opacity: 1,
-    scale: 1,
-    rotate: "0deg",
-
     transition: {
-      duration: 1,
+      duration: 2,
+      type: "spring",
+      when: "beforeChildren",
     },
   },
 };
@@ -26,9 +25,10 @@ const animateLine = {
     x: 0,
     opacity: 1,
     transition: {
-      duration: 0.5,
-      delay: 1.01,
+      duration: 1.5,
+      // delay: 1.1,
       type: "spring",
+      stiffness: 70,
     },
   },
 };
@@ -45,7 +45,7 @@ const buttonVariants = {
 
     transition: {
       duration: 0.6,
-      delay: 1.01,
+      // delay: 1,
     },
   },
 };

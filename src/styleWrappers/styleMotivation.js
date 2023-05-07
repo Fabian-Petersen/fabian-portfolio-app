@@ -1,14 +1,9 @@
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  .container-motivation {
-    opacity: 1;
-    transition: all 0.2s ease-in;
-  }
-
   .container {
     position: absolute;
-    top: 90%;
+    top: 95%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: var(---clr-font);
@@ -17,13 +12,12 @@ const Wrapper = styled.div`
     width: 100%;
     flex-direction: column;
     gap: 1rem;
-    /* border: 1px solid white; */
-    line-height: 15px;
     letter-spacing: 2px;
     text-align: center;
   }
 
   .quote {
+    line-height: 15px;
     font-size: 0.8em;
   }
 

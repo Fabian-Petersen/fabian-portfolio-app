@@ -82,7 +82,7 @@ const Wrapper = styled.header`
   .btn-container:hover {
     background-clip: padding-box;
     cursor: pointer;
-    transform: scale(0.95);
+    /* transform: scale(1); */
   }
 
   .btn-container::before {
@@ -94,8 +94,9 @@ const Wrapper = styled.header`
     height: 100%;
     border-radius: 50px;
     z-index: -1;
-    border: 3px solid var(--clr-primary);
+    border: 1px solid var(--clr-primary);
     opacity: -1;
+    padding: 10px 20px;
   }
 
   .btn-container::after {
@@ -107,16 +108,17 @@ const Wrapper = styled.header`
     height: 100%;
     border-radius: 50px;
     z-index: 1;
-    border: 3px solid var(--clr-primary);
+    border: 1px solid var(--clr-primary);
     opacity: -1;
+    padding: 10px 20px;
   }
 
   .btn-container:hover::before {
-    animation: pulse 850ms ease-in-out infinite;
+    animation: pulse 750ms ease-in-out infinite;
   }
 
   .btn-container:hover::after {
-    animation: pulse 850ms ease-in infinite;
+    animation: pulse 750ms ease-in infinite;
   }
   //$  ================================================= End Button Styles ============================================ //
 
@@ -177,14 +179,18 @@ const Wrapper = styled.header`
   @keyframes pulse {
     0% {
       opacity: 1;
-      transform: scale(0.9);
-      outline: 2.5px solid var(--clr-primary);
+      transform: scale(1);
+      outline: 2px solid var(--clr-primary);
+      filter: blur(2px);
+      scale: 0.95;
     }
 
     100% {
       opacity: 0;
       transform: scale(1.2);
-      outline: 0px solid var(--clr-primary);
+      outline: 0.1px solid var(--clr-primary);
+      filter: blur(5px);
+      scale: 1.1;
     }
   }
 `;

@@ -1,6 +1,9 @@
 import { useEffect, useState, useCallback } from "react";
 import { useInView } from "react-intersection-observer";
 import Wrapper from "../styleWrappers/styleMotivation";
+import { motion } from "framer-motion";
+import motivateVariants from "../animations/motivateAnimate";
+const [motivate] = motivateVariants;
 
 const defaultQuote = {
   text: "I am not afraid of tomorrow, for I have seen yesterday and I love today.",
@@ -33,7 +36,14 @@ const Motivation = () => {
   console.log(window.scrollY, inView);
   return (
     <Wrapper>
-      <div ref={ref} className="container-motivation">
+      <motion.div
+        ref={ref}
+        className="container-motivation"
+        variants={motivate}
+        initial="initialState"
+        animate="animateState"
+        // transition="transition"
+      >
         {inView ? (
           <div className="container">
             <h2 className="quote">{data.text}</h2>
@@ -42,7 +52,7 @@ const Motivation = () => {
         ) : (
           ""
         )}
-      </div>
+      </motion.div>
     </Wrapper>
   );
 };

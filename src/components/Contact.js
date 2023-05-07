@@ -1,15 +1,29 @@
 import Wrapper from "../styleWrappers/styleContact";
+import { motion } from "framer-motion";
+import headingVariants from "../animations/pageHeadingAnimate";
+
 //import { useObserverContext } from "../ObserverAPI";
 
 const Contact = () => {
+  const [parentContainerHeading, childContainerHeading] = headingVariants;
   //const { ref3 } = useObserverContext();
   return (
     <Wrapper>
       <section className="contact section" id="contact">
-        <div className="section-title">
-          <h2>Lets get in touch</h2>
-          <div className="underline"></div>
-        </div>
+        <motion.div
+          className="section-title"
+          variants={parentContainerHeading}
+          initial="initialState"
+          animate="animateState"
+        >
+          <motion.h2 variants={childContainerHeading}>
+            Lets get in touch
+          </motion.h2>
+          <motion.div
+            className="underline"
+            variants={childContainerHeading}
+          ></motion.div>
+        </motion.div>
         <div className="section-center contact-center">
           <form
             id="fs-frm"
