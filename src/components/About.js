@@ -12,7 +12,7 @@ const [
   skillsChildContainer,
   skillsHeading,
   headingMySkills,
-  skillsIconName,
+  // skillsIconName,
   aboutInfo,
   lineVariant,
 ] = aboutVariants;

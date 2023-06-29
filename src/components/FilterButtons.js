@@ -8,6 +8,7 @@ const FilterButtons = () => {
   const { setProjectMenu, activeButton, setActiveButton } = useGlobalContext();
   const [parentContainer, childContainer] = buttonVariants;
 
+  // Filter out the projects that match the language of the button and set the active class to higlight the button
   const handleClick = (lang) => () => {
     setActiveButton(lang);
     const filteredProjects = projects.filter(
@@ -17,12 +18,17 @@ const FilterButtons = () => {
     setProjectMenu(filteredProjects);
   };
 
+  // Display all the projects once ALL button clicked
   const reset = () => {
     setProjectMenu(projects);
     setActiveButton(" ");
   };
 
-  const uniqueValues = [...new Set(projects.map((item) => item.language))];
+  // Filter out the program languages returned from the projects data that was used in projects.
+  const usedLanguages = [
+    ...new Set(projects.map((project) => project.language)),
+  ];
+
   return (
     <Wrapper>
       <motion.div
@@ -31,24 +37,24 @@ const FilterButtons = () => {
         initial="initialState"
         animate="animateState"
       >
-        {uniqueValues.map((item, index) => {
+        {usedLanguages.map((language, index) => {
           return (
             <motion.button
               variants={childContainer}
               key={index}
               className={
-                activeButton === item
+                activeButton === language
                   ? "btn btn-1 project-btn active"
                   : "btn btn-1 project-btn"
               }
-              onClick={handleClick(item)}
+              onClick={handleClick(language)}
             >
-              {item}
+              {language}
             </motion.button>
           );
         })}
         <motion.button
-          className="btn btn-1"
+          className="btn btn-1 project-btn"
           id="project-btn-all"
           onClick={reset}
           variants={childContainer}

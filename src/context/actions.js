@@ -1,0 +1,3 @@
+export const OPEN_SIDEBAR = "OPEN_SIDEBAR";
+export const TOGGLE_THEME = "TOGGLE_THEME";
+export const FILTER_PROJECTS = "FILTER_PROJECTS";

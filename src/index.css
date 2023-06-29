@@ -13,7 +13,7 @@ Theme Styles
 */
 .dark-theme {
   --clr-bg: #050f1a;
-  /* --clr-primary: #ffd700; */
+  --clr-primary: #ffd700;
   --clr-primary: #e43f5a;
   --clr-font: #eff5f5;
   --clr-about-lines: rgba(255, 255, 255, 0.05);
@@ -93,9 +93,11 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  content: "";
 }
 
 body {
+  position: relative;
   background-color: var(--clr-bg);
   font-family: var(--ff-primary);
   color: var(--clr-font);
@@ -113,6 +115,27 @@ a {
 img:not(.nav-logo) {
   width: 100%;
   display: block;
+}
+
+body::before,
+body::after {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  width: 20rem;
+  aspect-ratio: 1/1;
+  filter: blur(180px);
+  background: var(--clr-primary);
+}
+
+body::before {
+  top: 10%;
+  left: 5%;
+}
+
+body::after {
+  top: 70%;
+  right: 5%;
 }
 
 h1,
