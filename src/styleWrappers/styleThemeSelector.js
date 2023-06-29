@@ -4,7 +4,7 @@ const Wrapper = styled.div`
   .theme {
     position: fixed;
     right: 1%;
-    top: 12%;
+    top: 15%;
     width: 2rem;
     height: 2rem;
     font-size: 1.5rem;

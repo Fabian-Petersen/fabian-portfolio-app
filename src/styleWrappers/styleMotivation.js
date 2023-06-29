@@ -3,16 +3,22 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   .container {
     position: absolute;
-    top: 95%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(---clr-font);
-    font-size: clamp(1rem, 0.6vw + 0.2rem, 1.3rem);
-    display: flex;
+    top: calc(100% - 6rem);
+    left: 0;
     width: 100%;
+    transform: translate(-50%, -50%);
+    /* border: 1px solid green; */
+    height: 5rem;
+    font-size: clamp(1.5rem, 0.8vw + 0.2rem, 2rem);
+  }
+
+  .text-container {
+    color: var(---clr-font);
+    display: flex;
     flex-direction: column;
     gap: 1rem;
     letter-spacing: 2px;
+    /* border: 1px solid orange; */
     text-align: center;
   }
 

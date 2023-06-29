@@ -4,7 +4,8 @@ const Wrapper = styled.div`
   ul {
     position: fixed;
     list-style: none;
-    top: 38%;
+    top: 50%;
+    transform: translateY(-50%);
     left: 1%;
     width: 10rem;
     height: 25rem;

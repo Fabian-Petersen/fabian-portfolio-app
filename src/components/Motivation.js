@@ -14,7 +14,7 @@ const Motivation = () => {
   const [data, setData] = useState(defaultQuote);
   const { ref, inView } = useInView({
     /* Optional options */
-    threshold: 0.7,
+    // threshold: 0,
   });
 
   const url = "https://type.fit/api/quotes";
@@ -32,20 +32,19 @@ const Motivation = () => {
   useEffect(() => {
     fetchData(url);
   }, [fetchData]);
-
-  console.log(window.scrollY, inView);
+  console.log(inView);
+  // console.log(window.scrollY, inView);
   return (
     <Wrapper>
       <motion.div
         ref={ref}
-        className="container-motivation"
+        className="container"
         variants={motivate}
         initial="initialState"
         animate="animateState"
-        // transition="transition"
       >
-        {inView ? (
-          <div className="container">
+        {!inView ? (
+          <div ref={ref} className="text-container">
             <h2 className="quote">{data.text}</h2>
             <p className="author">{data.author}</p>
           </div>

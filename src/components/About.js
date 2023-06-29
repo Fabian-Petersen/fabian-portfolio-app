@@ -23,7 +23,7 @@ const About = () => {
   return (
     <Wrapper>
       <section
-        className="section about"
+        className="section section-center about"
         id="about"
         // variants={""}
         // initial="initialState"

@@ -2,15 +2,18 @@ import styled from "styled-components";
 
 const Wrapper = styled.header`
   header {
-    position: realtive;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    /* border: 1px solid white; */
   }
 
   .section-center {
+    position: realtive;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* border: var(--border-white); */
-    min-height: calc(100vh - 3rem);
+    /* border: 1px solid orangered; */
   }
 
   .underline {

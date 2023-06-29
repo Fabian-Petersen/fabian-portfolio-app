@@ -16,7 +16,6 @@ const Wrapper = styled.section`
     border-radius: var(--radius);
     margin-bottom: 2rem;
     width: 65%;
-    height: 20rem;
     align-items: center;
     background-size: cover;
     transition: all 200ms ease;
@@ -97,8 +96,8 @@ const Wrapper = styled.section`
 
   @media screen and (min-width: 992px) {
     .projects-center {
-      grid-template-columns: repeat(3, 1fr);
-    }
+      grid-template-columns: repeat(4, 1fr);
+
   }
 `;
 

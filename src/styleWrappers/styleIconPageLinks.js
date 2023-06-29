@@ -3,7 +3,8 @@ import styled from "styled-components";
 const Wrapper = styled.ul`
   .nav-links {
     position: fixed;
-    top: 45%;
+    top: 50%;
+    transform: translateY(-50%);
     right: 1%;
     display: flex;
     flex-direction: column;

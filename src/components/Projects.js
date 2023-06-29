@@ -12,7 +12,7 @@ const Projects = () => {
   const [parentContainerHeading, childContainerHeading] = headingVariants;
   return (
     <Wrapper>
-      <section className="section projects" id="projects">
+      <section className="section-center" id="projects">
         <motion.div
           className="section-title"
           variants={parentContainerHeading}
@@ -43,7 +43,7 @@ const Projects = () => {
         </motion.p>
         <FilterButtons className="filterButtons" />
         <motion.div
-          className="section-center projects-center"
+          className="projects-center"
           variants={parentContainer}
           initial="initialState"
           animate="animateState"

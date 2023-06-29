@@ -25,7 +25,7 @@ const Home = () => {
       )}
       <SocialGroup />
       <motion.header
-        className="hero section"
+        className="hero"
         id="home"
         variants={containerVariants}
         initial="initialState"
@@ -50,11 +50,11 @@ const Home = () => {
                 My Projects
               </a>
             </motion.div>
-            <SocialsAnimation />
             <Outlet />
           </article>
+          <Motivation />
         </div>
-        <Motivation />
+        <SocialsAnimation />
       </motion.header>
     </Wrapper>
   );

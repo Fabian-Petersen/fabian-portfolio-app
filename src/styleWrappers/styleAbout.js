@@ -41,8 +41,8 @@ const Wrapper = styled.section`
   .icon-container {
     position: relative;
     border-radius: 10px;
-    width: 5rem;
-    height: 5rem;
+    width: 4.5rem;
+    aspect-ratio: 1/1;
     background: linear-gradient(to bottom, #060606, rgba(255, 255, 255, 0.03));
     margin-bottom: 1rem;
   }

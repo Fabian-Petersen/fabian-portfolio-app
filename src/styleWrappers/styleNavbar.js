@@ -6,11 +6,10 @@ const Wrapper = styled.nav`
   }
 
   .nav {
-    height: 5rem;
+    height: 6rem;
     transition: var(--transition);
     /* box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.1); */
     width: 100%;
-    /* border: 1px solid white; */
   }
 
   ul li:hover {
@@ -31,7 +30,7 @@ const Wrapper = styled.nav`
     display: flex;
     color: white;
     width: 100%;
-    /* border: var(--border-red); */
+    /* border: 1px solid yellow; */
     align-items: center;
   }
 
@@ -49,8 +48,7 @@ const Wrapper = styled.nav`
 
   .nav-logo {
     width: fit-content;
-    height: 5rem;
-    /* border: var(--border-red); */
+    height: 10rem;
   }
 
   @media screen and (min-width: 768px) {
@@ -91,11 +89,12 @@ const Wrapper = styled.nav`
 
   .nav-fixed-active {
     position: fixed;
-    //background-color:;
+    background-color: transparent;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 2;
+    padding-top: 1rem;
   }
 `;
 
