@@ -32,7 +32,6 @@ const Motivation = () => {
   useEffect(() => {
     fetchData(url);
   }, [fetchData]);
-  console.log(inView);
   // console.log(window.scrollY, inView);
   return (
     <Wrapper>
