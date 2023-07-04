@@ -12,6 +12,8 @@ import {
   faMoon,
   faSun,
   faShareNodes,
+  faEnvelope,
+  faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -44,6 +46,8 @@ const Icons = {
   faMoon,
   faSun,
   faShareNodes,
+  faEnvelope,
+  faLocationDot,
 };
 
 export const navIcons = {

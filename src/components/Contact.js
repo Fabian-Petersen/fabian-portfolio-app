@@ -1,6 +1,12 @@
 import Wrapper from "../styleWrappers/styleContact";
 import { motion } from "framer-motion";
 import headingVariants from "../animations/pageHeadingAnimate";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faEnvelope,
+  faLocationDot,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
 
 //import { useObserverContext } from "../ObserverAPI";
 
@@ -9,7 +15,8 @@ const Contact = () => {
   //const { ref3 } = useObserverContext();
   return (
     <Wrapper>
-      <section className="contact section" id="contact">
+      {/* <section className="contact" id="contact"> */}
+      <div className="section-center">
         <motion.div
           className="section-title"
           variants={parentContainerHeading}
@@ -24,7 +31,37 @@ const Contact = () => {
             variants={childContainerHeading}
           ></motion.div>
         </motion.div>
-        <div className="section-center contact-center">
+        <div className="contact-container">
+          <div className="contact-detail-cards">
+            <div className="contact-detail-card">
+              <div className="contact-detail-heading">
+                <span>
+                  <FontAwesomeIcon icon={faEnvelope} />
+                </span>
+                <h3>Email</h3>
+              </div>
+              <p>fpetersen2@gmail.com</p>
+            </div>
+            <div className="contact-detail-card">
+              <div className="contact-detail-heading">
+                <span>
+                  <FontAwesomeIcon icon={faPhone} />
+                </span>
+
+                <h3>Mobile</h3>
+              </div>
+              <p>071 386 0827</p>
+            </div>
+            <div className="contact-detail-card">
+              <div className="contact-detail-heading">
+                <span>
+                  <FontAwesomeIcon icon={faLocationDot} />
+                </span>
+                <h3>Location</h3>
+              </div>
+              <p>Cape Town</p>
+            </div>
+          </div>
           <form
             id="fs-frm"
             name="simple-contact-form"
@@ -32,50 +69,35 @@ const Contact = () => {
             action="https://formspree.io/f/xgebwpge"
             method="POST"
           >
-            <fieldset id="fs-frm-inputs">
-              {/* <h2 className="contact-form-title">Contact Me</h2> */}
-              <label htmlFor="full-name">Full Name</label>
-              <input
-                type="text"
-                name="name"
-                id="full-name"
-                placeholder="First Name"
-                required
-              />
-              <label htmlFor="email-address">Email Address</label>
-              <input
-                type="email"
-                name="_replyto"
-                id="email-address"
-                placeholder="fabian@webmail.com"
-                required
-              />
-              <label htmlFor="message">Message</label>
-              <textarea
-                rows="8"
-                name="message"
-                id="message"
-                placeholder="Enter your message"
-                required
-              ></textarea>
-              <input
-                type="hidden"
-                name="_subject"
-                id="email-subject"
-                value="Contact Form Submission"
-              />
-            </fieldset>
-            <button
-              id="contact-btn"
-              type="submit"
-              value="Submit"
-              className="btn btn-1 btn-contact btn-lg"
-            >
+            <input type="text" name="name" placeholder="Name" required />
+
+            <input
+              type="email"
+              name="_replyto"
+              id="email-address"
+              placeholder="Email"
+              required
+            />
+            <textarea
+              rows="5"
+              name="message"
+              id="message"
+              placeholder="Enter your message"
+              required
+            ></textarea>
+            <input
+              type="hidden"
+              name="_subject"
+              id="email-subject"
+              value="Contact Form Submission"
+            />
+            <button type="submit" className="btn btn-contact">
               SUBMIT
             </button>
           </form>
         </div>
-      </section>
+      </div>
+      {/* </section> */}
     </Wrapper>
   );
 };

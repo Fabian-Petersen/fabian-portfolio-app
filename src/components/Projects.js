@@ -10,6 +10,7 @@ const Projects = () => {
   const { projectMenu } = useGlobalContext();
   const [parentContainer, childContainer] = projectVariants;
   const [parentContainerHeading, childContainerHeading] = headingVariants;
+  console.log(projectMenu);
   return (
     <Wrapper>
       <section className="section-center" id="projects">

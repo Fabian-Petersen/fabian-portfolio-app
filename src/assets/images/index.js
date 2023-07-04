@@ -1,9 +1,12 @@
+// ===================================== Project Pictures on Projects Page  ===================================== //
 import projectTea from "./tea.jpeg";
 import projectGithub from "./github-users-project.svg";
 import projectCockTails from "./cocktail-project-screenshot.jpg";
 import projectTours from "./tours.jpg";
 import projectDemo3 from "./project-3.jpeg";
 import projectDemo4 from "./project-4.jpeg";
+import comingSoon from "./comingSoon.jpg";
+
 // import figma from "../images/figma.png";
 const html = "https://img.icons8.com/color/96/null/html-5--v1.png";
 const figma = "https://img.icons8.com/color/96/000000/figma--v1.png";
@@ -17,12 +20,12 @@ const bootstrap = "https://img.icons8.com/color/96/null/bootstrap.png";
 const responsive =
   "https://img.icons8.com/external-vectorslab-flat-vectorslab/53/000000/external-Responsive-Design-cloud-computing-vectorslab-flat-vectorslab.png";
 const api = "https://img.icons8.com/clouds/100/null/services.png";
+const supabase =
+  "https://github.com/Fabian-Petersen/fabian-portfolio-app/blob/master/src/assets/images/supabase-logo-icon.svg";
 
 const visualStudioCode =
   "https://img.icons8.com/color/96/null/visual-studio-code-2019.png";
 const wordpress = "https://img.icons8.com/color/96/null/wordpress.png";
-
-// import html from "../images/html.png";
 
 // import css from "../images/css.png";
 // import javascript from "../images/javascript.png";
@@ -51,6 +54,8 @@ const projectImages = {
   api,
   visualStudioCode,
   wordpress,
+  supabase,
+  comingSoon,
 };
 
 export { projectImages };

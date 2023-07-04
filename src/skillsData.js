@@ -11,7 +11,7 @@ const {
   bootstrap,
   figma,
   visualStudioCode,
-  api,
+  supabase,
   responsive,
 } = projectImages;
 
@@ -78,9 +78,9 @@ const skills = [
     styling: "vsc",
   },
   {
-    id: "RESTful API",
-    icon: api,
-    node: "frontEnd",
+    id: "Supabase",
+    icon: supabase,
+    node: "other",
     styling: "api",
   },
   {

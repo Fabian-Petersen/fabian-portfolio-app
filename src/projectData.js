@@ -18,6 +18,7 @@ const {
   github,
   //redux,
   //bootstrap,
+  comingSoon,
 } = projectImages;
 
 const projects = [
@@ -113,51 +114,37 @@ const projects = [
       skills: [html, css, javascript, react, github],
     },
   },
-  // {
-  //   id: 7,
-  //   name: "Calculator",
-  //   language: "javascript",
-  //   description: "Build a calculator using Javascript",
-  //   image: projectDemo4,
-  //   url: "",
-  //   code: "",
-  //   singlePage: {
-  //     description:
-  //       "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
-  //     images: "",
-  //     // skills: [html, css, javascript, github],
-  //   },
-  // },
-  // {
-  //   id: 8,
-  //   name: "Coming Soon",
-  //   language: "javascript",
-  //   description: "Random e-commerce store for your favourite items",
-  //   image: projectDemo3,
-  //   url: "",
-  //   code: "",
-  //   singlePage: {
-  //     description:
-  //       "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
-  //     images: "",
-  //     // skills: [html, css, javascript, react, github],
-  //   },
-  // },
-  // {
-  //   id: 9,
-  //   name: "Coming Soon",
-  //   language: "javascript",
-  //   description: "",
-  //   image: projectDemo3,
-  //   url: "",
-  //   code: "",
-  //   singlePage: {
-  //     description:
-  //       "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
-  //     images: "",
-  //     // skills: [html, css, javascript, react, github],
-  //   },
-  // },
+  {
+    id: 7,
+    name: "Calculator",
+    language: "javascript",
+    description: "Build a calculator using Javascript",
+    image: projectDemo4,
+    url: "",
+    code: "",
+    singlePage: {
+      description:
+        "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
+      images: "",
+      skills: [html, css, javascript, github],
+    },
+  },
+  {
+    id: 8,
+    name: "Vehicle Booking App",
+    language: "react",
+    description:
+      "Booking App for the department of transport - University of the Western Cape",
+    image: comingSoon,
+    url: "",
+    code: "",
+    singlePage: {
+      description:
+        "In this project i used the Supabase Backend API with a PostgresSQL Database",
+      images: "",
+      skills: [html, css, javascript, react, github],
+    },
+  },
 ];
 
 export default projects;

@@ -39,8 +39,9 @@ const Wrapper = styled.section`
     width: 100%;
     height: 100%;
     border-radius: var(--radius);
-    -o-object-fit: cover;
-    object-fit: cover;
+    /* -o-object-fit: cover; */
+    /* object-fit: contain; */
+    background-position: center;
   }
 
   .project-img:hover {
@@ -97,7 +98,7 @@ const Wrapper = styled.section`
   @media screen and (min-width: 992px) {
     .projects-center {
       grid-template-columns: repeat(4, 1fr);
-
+    }
   }
 `;
 
