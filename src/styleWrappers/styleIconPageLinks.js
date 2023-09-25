@@ -10,6 +10,7 @@ const Wrapper = styled.ul`
     flex-direction: column;
     gap: 3.5rem;
     opacity: 0;
+    z-index: 100;
     /* border: 1px solid yellow; */
 
     li {
@@ -49,13 +50,13 @@ const Wrapper = styled.ul`
 
     /* li::before:has(.isActive) {
       color: var(--clr-red);
-    } */
+    }
 
-    /* li::before .isActive {
+    li::before .isActive {
       background-color: none;
-    } */
+    }
 
-    /* .isActive:has(li) {
+    .isActive:has(li) {
       outline: 2.5px solid var(--clr-primary);
     } */
 

@@ -22,12 +22,16 @@ const Wrapper = styled.section`
   }
 
   .section-center {
-    border: 1px solid red;
-    background-image: url("../assets/images/hideout.svg");
+    /* border: 1px solid red; */
+    overflow-y: scroll;
+    /* background-image: linear-gradient(
+      rgba(0, 0, 255, 0.5),
+        rgba(255, 255, 0, 0.5)
+      ),
+      url("../../media/examples/lizard.png"); */
     background-size: cover;
     background-position: center;
-
-    article {
+    ba article {
       p {
         font-size: var(--fs-p-text);
       }
@@ -38,6 +42,10 @@ const Wrapper = styled.section`
       text-align: center;
       margin-bottom: 1.5rem;
     }
+  }
+
+  .section-center::-webkit-scrollbar {
+    display: none;
   }
 
   .about-info p {

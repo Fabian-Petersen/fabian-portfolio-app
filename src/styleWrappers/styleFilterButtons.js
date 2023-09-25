@@ -5,7 +5,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin: 3rem auto 5rem;
     gap: 0.5rem;
   }
 

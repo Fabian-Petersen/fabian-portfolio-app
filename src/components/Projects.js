@@ -13,7 +13,7 @@ const Projects = () => {
   console.log(projectMenu);
   return (
     <Wrapper>
-      <section className="section-center" id="projects">
+      <section className="section-center section" id="projects">
         <motion.div
           className="section-title"
           variants={parentContainerHeading}

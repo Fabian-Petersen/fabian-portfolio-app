@@ -10,7 +10,7 @@ const Wrapper = styled.nav`
     transition: var(--transition);
     color: white;
     align-items: center;
-    height: 7rem;
+    height: var(--nav-height);
   }
 
   ul li:hover {
@@ -55,7 +55,7 @@ const Wrapper = styled.nav`
       padding-left: 2.5rem;
     }
     .nav-logo {
-      height: 5rem;
+      height: var(--nav-height);
       padding-left: 2rem;
     }
 

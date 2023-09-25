@@ -4,6 +4,8 @@ const Wrapper = styled.div`
   .project-container {
     display: flex;
     justify-content: center;
+    z-index: 100;
+    /* border: 1px solid yellow; */
   }
 
   .container {
@@ -104,23 +106,23 @@ const Wrapper = styled.div`
   }
 
   .pulse:hover::after {
-    animation: pulse 850ms infinite;
+    animation: pulse 750ms infinite;
   }
 
   .demo-btn:hover::after {
-    animation: pulseBtn 850ms infinite;
+    animation: pulseBtn 750ms infinite;
   }
 
   @keyframes pulse {
     0% {
       opacity: 1;
       transform: scale(0.8);
-      outline: 5px solid var(--clr-primary);
+      outline: 8px solid var(--clr-primary);
     }
 
     100% {
       opacity: 0;
-      transform: scale(1.5);
+      transform: scale(1.8);
       outline: 0px solid var(--clr-primary);
     }
   }
@@ -134,7 +136,7 @@ const Wrapper = styled.div`
 
     100% {
       opacity: 0;
-      transform: scale(1.5);
+      transform: scale(1.8);
       outline: 0px solid var(--clr-primary);
     }
   }

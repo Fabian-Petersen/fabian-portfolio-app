@@ -13,7 +13,7 @@ import {
   // SocialGroup,
   Motivation,
   SocialsAnimation,
-  IconPageLinks,
+  // IconPageLinks,
   HomeMainContent,
 } from "../components/index.js";
 
@@ -38,7 +38,6 @@ const Home = () => {
           animateLine={animateLine}
           buttonVariants={buttonVariants}
         />
-        <IconPageLinks />
       </motion.header>
       <Motivation />
     </Wrapper>

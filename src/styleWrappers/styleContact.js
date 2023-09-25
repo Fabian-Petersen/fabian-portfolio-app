@@ -1,16 +1,8 @@
 import styled from "styled-components";
 
 const Wrapper = styled.section`
-  .contact {
-    height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    /* position: relative; */
-  }
-
   .section-center {
-    /* border: var(--border-primary); */
-    height: 100%;
+    border: 1px solid yellow;
   }
 
   .contact-container {
@@ -18,8 +10,8 @@ const Wrapper = styled.section`
     display: grid;
     height: 100%;
     grid-template-columns: 40% 60%;
-    /* border: 1px solid yellow; */
     max-height: 40rem;
+    border: 1px solid white;
   }
 
   .contact-detail-cards {
@@ -27,10 +19,11 @@ const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
     margin-left: auto;
+    border: 1px solid teal;
   }
 
   .contact-detail-card {
-    height: 30%;
+    /* height: 30%; */
     font-size: 2rem;
   }
 
@@ -91,13 +84,15 @@ const Wrapper = styled.section`
 
   @media screen and (min-width: 676px) {
     .contact-container {
-      margin-top: 10rem;
-      max-height: 70rem;
-      grid-column-gap: 5rem;
+      grid-column-gap: 2rem;
+      max-width: 80%;
+      margin: 0 auto;
+      margin-top: 5%;
     }
 
     form {
-      /* border: 1px solid red; */
+      padding: 2rem;
+      border: 1px solid red;
     }
 
     .contact-detail-cards {

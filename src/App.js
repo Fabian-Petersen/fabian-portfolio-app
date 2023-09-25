@@ -13,6 +13,7 @@ import {
   Navbar,
   ScrollToTop,
   SinglePage,
+  IconPageLinks,
 } from "./components";
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
     <AppProvider>
       <BrowserRouter>
         <Navbar />
+        <IconPageLinks />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

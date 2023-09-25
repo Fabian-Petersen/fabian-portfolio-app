@@ -23,7 +23,7 @@ const About = () => {
   return (
     <Wrapper>
       <section
-        className="section section-center about"
+        className="section section-center"
         id="about"
         // variants={""}
         // initial="initialState"
@@ -45,7 +45,7 @@ const About = () => {
           ></motion.div>
         </motion.div>
         {/* <!-- end of section title --> */}
-        <motion.div className="section-center" variants={""}>
+        <motion.div variants={""}>
           {/* <!-- about info --> */}
           <article className="about-info">
             <motion.p

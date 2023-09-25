@@ -8,15 +8,11 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 
-//import { useObserverContext } from "../ObserverAPI";
-
 const Contact = () => {
   const [parentContainerHeading, childContainerHeading] = headingVariants;
-  //const { ref3 } = useObserverContext();
   return (
     <Wrapper>
-      {/* <section className="contact" id="contact"> */}
-      <div className="section-center">
+      <section className="section-center section">
         <motion.div
           className="section-title"
           variants={parentContainerHeading}
@@ -95,8 +91,7 @@ const Contact = () => {
             </button>
           </form>
         </div>
-      </div>
-      {/* </section> */}
+      </section>
     </Wrapper>
   );
 };

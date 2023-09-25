@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const Wrapper = styled.section`
+  margin-bottom: 5rem;
+
   .projects-text {
     font-size: var(--fs-text);
     text-align: center;
@@ -93,9 +95,18 @@ const Wrapper = styled.section`
       -moz-column-gap: 2rem;
       column-gap: 2rem;
     }
+
+    .filterButtons {
+      border: 1px solid red;
+      padding: 5rem 0rem;
+      margin-bottom: 5rem;
+    }
   }
 
   @media screen and (min-width: 992px) {
+    .section-center {
+      padding: 0% 8%;
+    }
     .projects-center {
       grid-template-columns: repeat(4, 1fr);
     }
