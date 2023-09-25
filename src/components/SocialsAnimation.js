@@ -5,7 +5,7 @@ import {
   faFacebook,
   faLinkedin,
   faGithub,
-  faTwitter
+  faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
 
@@ -55,6 +55,6 @@ const SocialsAnimation = () => {
       </ul>
     </Wrapper>
   );
-}
+};
 
-export default SocialsAnimation
+export default SocialsAnimation;

@@ -4,14 +4,17 @@ import Wrapper from "../styleWrappers/styleHome";
 import { useGlobalContext } from "../ContextAPI";
 import { motion } from "framer-motion";
 import homeVariants from "../animations/homeAnimate";
-import { Outlet } from "react-router-dom";
+
+// import { Outlet } from "react-router-dom";
 import {
   SideBar,
   //SocialsHover,
   // ScrollToTop,
-  SocialGroup,
+  // SocialGroup,
   Motivation,
   SocialsAnimation,
+  IconPageLinks,
+  HomeMainContent,
 } from "../components/index.js";
 
 const [containerVariants, animateLine, buttonVariants] = homeVariants;
@@ -23,39 +26,21 @@ const Home = () => {
       {openSidebar && (
         <SideBar setOpenSidebar={setOpenSidebar} openSidebar={openSidebar} />
       )}
-      <SocialGroup />
       <motion.header
-        className="hero"
-        id="home"
+        className="section-center section"
         variants={containerVariants}
         initial="initialState"
         animate="animateState"
       >
-        <div className="section-center hero-center">
-          <article className="hero-info">
-            <motion.div
-              className="underline"
-              variants={animateLine}
-            ></motion.div>
-            <h3>Hi, my name is</h3>
-            <h1>
-              <span>Fabian </span>Petersen.
-            </h1>
-            <p className="hero-sub-heading">
-              Welcome to my official portfolio website showcasing my work as a
-              <span> Front End Developer.</span>
-            </p>
-            <motion.div className="btn-container" variants={buttonVariants}>
-              <a href={"/projects"} className="btn btn-projects">
-                My Projects
-              </a>
-            </motion.div>
-            <Outlet />
-          </article>
-          <Motivation />
-        </div>
+        {/* <SocialGroup /> */}
         <SocialsAnimation />
+        <HomeMainContent
+          animateLine={animateLine}
+          buttonVariants={buttonVariants}
+        />
+        <IconPageLinks />
       </motion.header>
+      <Motivation />
     </Wrapper>
   );
 };

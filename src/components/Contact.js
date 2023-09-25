@@ -70,7 +70,6 @@ const Contact = () => {
             method="POST"
           >
             <input type="text" name="name" placeholder="Name" required />
-
             <input
               type="email"
               name="_replyto"

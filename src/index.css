@@ -206,19 +206,25 @@ p {
   background-color: var(--clr-white);
   color: var(--clr-primary);
 }
-/* section */
 
+/* sections */
+
+/* Center the page contents */
 .section-center {
-  min-height: 100%;
   position: relative;
   margin: 0 auto;
-  max-width: 1170px;
-  /* border: 1px solid white; */
+  max-width: 1440px;
+}
+
+/* Control the section height and other styles */
+.section {
+  height: 95vh;
+  padding: 3%;
 }
 
 @media screen and (min-width: 992px) {
   .section-center {
-    width: 95vw;
+    /* width: 100%; */
   }
 }
 
@@ -231,7 +237,7 @@ p {
 }
 
 .section-title {
-  margin: 10rem 0 2rem;
+  margin: 1rem 0rem;
   text-align: center;
 }
 

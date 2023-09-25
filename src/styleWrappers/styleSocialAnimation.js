@@ -4,9 +4,9 @@ const Wrapper = styled.div`
   ul {
     position: fixed;
     list-style: none;
-    top: 50%;
+    top: 80%;
     transform: translateY(-50%);
-    left: 1%;
+    left: 2%;
     width: 10rem;
     height: 25rem;
     // border: 1px solid blue;
@@ -111,6 +111,13 @@ const Wrapper = styled.div`
 
   .gitHubClose {
     animation: gitHubCloseAnimation 0.5s ease-in-out 0.2s forwards;
+  }
+
+  /* ========================== Media Queries ============================= */
+  @media screen and (min-width: 992px) {
+    ul {
+      top: 50%;
+    }
   }
 
   @keyframes menuOpenAnimation {

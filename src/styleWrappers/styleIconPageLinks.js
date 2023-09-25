@@ -2,26 +2,26 @@ import styled from "styled-components";
 
 const Wrapper = styled.ul`
   .nav-links {
+    display: flex;
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    right: 1%;
-    display: flex;
+    right: 1.5%;
     flex-direction: column;
     gap: 3.5rem;
-    justify-content: space-around;
-    justify-content: center;
     opacity: 0;
-    /* border: 1.5px solid red; */
+    /* border: 1px solid yellow; */
 
     li {
-      position: relative;
-      width: 2.5rem;
-      height: 2.5rem;
-      /* background-color: var(--clr-bg); */
-      outline: 2.5px solid var(--clr-font);
-      border-radius: 50%;
       display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 3rem;
+      height: 3rem;
+      border: 2.5px solid var(--clr-font);
+      border-radius: 50%;
+      /* background-color: white; */
     }
 
     li::before {
@@ -33,7 +33,6 @@ const Wrapper = styled.ul`
       height: 100%;
       border-radius: 50%;
       background: var(--clr-primary);
-      transform: scale(0.9);
       z-index: -1;
     }
 
@@ -43,8 +42,8 @@ const Wrapper = styled.ul`
     }
 
     li:hover {
+      transform: scale(110%);
       box-shadow: 0 0 20px var(--clr-primary);
-      outline: 2.5px solid var(--clr-primary);
       cursor: pointer;
     }
 

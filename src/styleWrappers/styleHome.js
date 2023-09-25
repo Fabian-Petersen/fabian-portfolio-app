@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 const Wrapper = styled.header`
-  header {
+  .hero {
     position: fixed;
     height: 100vh;
     width: 100%;
-    /* border: 1px solid white; */
+    border: 1px solid green;
   }
 
   .section-center {
@@ -13,7 +13,11 @@ const Wrapper = styled.header`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* border: 1px solid orangered; */
+  }
+
+  .hero-info {
+    /* border: 3px solid red; */
+    width: 100%;
   }
 
   .underline {
@@ -60,23 +64,20 @@ const Wrapper = styled.header`
 
   .btn-container {
     position: relative;
-    margin: 2.5rem 0;
-    /* border: 1px solid white; */
+    margin: 5rem 0;
     max-width: 14rem;
-    height: 5rem;
-    display: flex;
   }
 
   .btn-projects {
     font-size: 1em;
     border-radius: 50px;
-    text-align: center;
     text-transform: uppercase;
     letter-spacing: 1.3px;
-    padding: 1.2em;
+    padding: 1.2em 1.5em;
     color: var(--clr-white);
     transition: transform 0.1s ease-in;
-    background-color: var(--clr-primary);
+    border: 1.5px solid var(--clr-primary);
+    background-color: transparent;
     width: 100%;
     height: 100%;
     z-index: 1;
@@ -88,7 +89,7 @@ const Wrapper = styled.header`
     /* transform: scale(1); */
   }
 
-  .btn-container::before {
+  /* .btn-container::before {
     content: "";
     position: absolute;
     top: 0;
@@ -100,9 +101,9 @@ const Wrapper = styled.header`
     border: 1px solid var(--clr-primary);
     opacity: -1;
     padding: 10px 20px;
-  }
+  } */
 
-  .btn-container::after {
+  /* .btn-container::after {
     content: "";
     position: absolute;
     top: 0;
@@ -114,7 +115,7 @@ const Wrapper = styled.header`
     border: 1px solid var(--clr-primary);
     opacity: -1;
     padding: 10px 20px;
-  }
+  } */
 
   .btn-container:hover::before {
     animation: pulse 750ms ease-in-out infinite;
@@ -135,13 +136,18 @@ const Wrapper = styled.header`
     }
 
     .btn-projects {
-      padding: 1.8em 2em;
+      padding: 1.8em 2.5em;
+      letter-spacing: 1.3px;
     }
   }
 
   @media screen and (min-width: 720px) {
+    .hero-info {
+      padding-left: 8rem;
+    }
+
     .btn-container {
-      margin: 5rem 0;
+      margin: 5rem 0rem;
     }
 
     h1 {
@@ -158,6 +164,10 @@ const Wrapper = styled.header`
   }
 
   @media screen and (min-width: 992px) {
+    .hero-info {
+      left: 5%;
+    }
+
     .hero .underline {
       margin-bottom: 1.5rem;
     }

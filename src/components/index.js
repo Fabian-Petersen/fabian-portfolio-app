@@ -18,6 +18,7 @@ import IconPageLinks from "./IconPageLinks";
 import SocialGroup from "./SocialGroup";
 import Motivation from "./Motivation";
 import SocialsAnimation from "./SocialsAnimation";
+import HomeMainContent from "./HomeMainContent";
 
 export {
   About,
@@ -40,4 +41,5 @@ export {
   ScrollNav,
   Motivation,
   SocialsAnimation,
+  HomeMainContent,
 };

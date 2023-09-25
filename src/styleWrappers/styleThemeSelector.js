@@ -2,10 +2,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   .theme {
-    position: fixed;
-    right: 1%;
-    top: 15%;
-    width: 2rem;
+    position: relative;
     height: 2rem;
     font-size: 1.5rem;
     display: flex;
@@ -17,7 +14,7 @@ const Wrapper = styled.div`
   }
 
   .icon {
-    color: var(--clr-font);
+    /* color: var(--clr-font); */
     position: relative;
   }
 
@@ -37,16 +34,10 @@ const Wrapper = styled.div`
     cursor: pointer;
   }
 
-  @media screen and (min-width: 450px) {
-    .theme {
-    }
-  }
-
   @media screen and (min-width: 768px) {
     .theme {
       width: 2.5rem;
       height: 2.5rem;
-      top: 1.5%;
     }
   }
 `;

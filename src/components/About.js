@@ -45,7 +45,7 @@ const About = () => {
           ></motion.div>
         </motion.div>
         {/* <!-- end of section title --> */}
-        <motion.div className="section-center about-center" variants={""}>
+        <motion.div className="section-center" variants={""}>
           {/* <!-- about info --> */}
           <article className="about-info">
             <motion.p
@@ -53,14 +53,17 @@ const About = () => {
               initial="initialState"
               animate="animateState"
             >
-              I'm a chemical engineer and throughout my career I worked on
-              various software implementation projects with TotalEnergies.
-              Through this exposure I fell in love with the development of apps
-              myself and today I'm a passionate React Developer.
+              My journey began as a chemical engineer, during which I was
+              involved in several software implementation projects with
+              TotalEnergies. This experience sparked my interest in app
+              development, and I eventually transitioned into a dedicated React
+              Developer, a role I am incredibly passionate about today.
               <br />
-              <br /> As a developer I love to learn new technologies and to
-              build exciting projects. Below is a list (and growing) of
-              technologies I have worked with thus far.
+              <br />
+              As a developer, I am enthusiastic about learning new technologies
+              and working on thrilling projects. Here is a list of technologies
+              I have had the opportunity to work with so far, and I am
+              continuously expanding my skill set.
             </motion.p>
             <motion.h3
               className="heading-mySkills"
@@ -101,6 +104,7 @@ const About = () => {
                               variants={skillsChildContainer}
                             >
                               <motion.div
+                                styling={styling}
                                 className={`icon-container ${styling}`}
                                 variants={skillsChildContainer}
                               >

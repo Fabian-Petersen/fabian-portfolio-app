@@ -3,7 +3,7 @@ import { navIcons } from "./assets/icons";
 const { house, user, clipboard, phone } = navIcons;
 
 const links = [
-  { id: 1, href: "/home", section: "home", icon: house },
+  { id: 1, href: "/", section: "home", icon: house },
   { id: 2, href: "/about", section: "about", icon: user },
   { id: 3, href: "/projects", section: "projects", icon: clipboard },
   { id: 4, href: "/contact", section: "contact", icon: phone },
