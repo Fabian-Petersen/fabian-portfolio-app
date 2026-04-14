@@ -8,9 +8,9 @@ const LandingPage = () => {
   return (
     <main
       id="landing"
-      className="relative w-full bg-bgLight dark:bg-bgDark z-[0]"
+      className="relative w-full bg-bgLight dark:bg-bgDark z-0"
     >
-      <div className="absolute w-full h-[80%] top-1/2 -translate-y-1/2 -z-[1] opacity-50">
+      <div className="absolute w-full h-[80%] top-1/2 -translate-y-1/2 -z-1 opacity-50">
         <img
           src={backgroundImage}
           alt="background image"
